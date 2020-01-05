@@ -1,8 +1,7 @@
 
 ---
 layout: post
-title: Bachelor Thesis thought process
-published: false
+title: Bachelor Thesis - thought process
 ---
 
 ### Prior research
