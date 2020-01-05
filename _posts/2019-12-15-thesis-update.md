@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: Bachelor Thesis: My thought process
+title: Bachelor Thesis thought process
 published: false
 ---
 
