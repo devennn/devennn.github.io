@@ -12,6 +12,10 @@ Most of the work being done are further research. This is to establish the topic
 
 #### Smart home is inevitable
 
+My speculation on privacy issue is not wrong. Many people when they heared about data taken and being used, would say they don't like it. Even if I mention that it will make the smart home system better. 
+
+But what I find out interesting is when they mention about the application of smart home and how it will benefit them. This include m
+
 #### Is smart home like Jarvis?
 
 #### People would consider a trade off for privacy
