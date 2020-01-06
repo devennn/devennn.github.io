@@ -24,6 +24,7 @@ The jarvis effect can be a way to introduce smart home. Maybe making jarvis like
 
 #### People would consider a trade off for privacy
 
+This is related to the privacy issue. I asked them if they will consider giving out their data if they will receive something. Some of them said that they will, and some said depends on what. What can I conclude is people will have the tendency to compromise their privacy if they will receive something.
 
 ### Possible Hiccups
 
