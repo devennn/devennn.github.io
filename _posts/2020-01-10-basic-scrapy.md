@@ -3,7 +3,7 @@ layout: post
 title: How to use scrapy, basic
 ---
 
-According to the official website,
+According to the official website, scrapy is...
 
 > An open source and collaborative framework for extracting the data you need from websites. In a fast, simple, yet extensible way.
 
