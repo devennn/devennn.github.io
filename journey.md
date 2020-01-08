@@ -19,21 +19,5 @@ My programming journey. What i have learn so far, and plan to learn in the futur
   - ANN, RNN, CNN
 - Python Library
   - Keras, Pandas, Matplotlib, scikit-learn
-  
-
-## Future plan
-- Python Library
-  - OpeCV
-  - Seaborn
-- Other Library
-  - Ludwig - Fast deep learning modelling
-  - Scrapy - Web Crawling Framework
-- Full Stack Web Development
-  - HTML, CSS
-  - Django
-  - Bootstrap
-  - jQuery
-  - javascript
-- from \_\_future\_\_ import interesting_stuff
 
 
