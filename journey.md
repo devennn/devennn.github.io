@@ -1,5 +1,8 @@
-My programming journey. What i have learn so far, and plan to learn in the future
-
+---
+layout: page
+title: About
+permalink: /journey/
+---
 ## What have I Learn
 - C programming
   - Self learn basics by doing [Hacker Rank Challenge](https://github.com/devennn/Coding-Challenges/tree/master/Hacker-Rank)
