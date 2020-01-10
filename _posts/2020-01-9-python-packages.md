@@ -108,6 +108,7 @@ To use functions from a.py, b.py and d.py, I kind of 'skip' the usual import suc
 or
 
 > from first import a
+
 > a.calc_plus(a=4, b=3)
 
 Instead, I imported them the init. This is common to do inside \_\_init\_\_.py. It will make the package first/ to be treated as a module having all the functions.
