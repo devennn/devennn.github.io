@@ -4,16 +4,17 @@ title: Getting the python import right for packaging
 publihsed: false
 ---
 
-The main use of __init__.py is to initialize a Python package.
+Whenever a directory need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
 
 ```
+main/
 ├── run_this.py
-├── first
+├── first/
 │   ├── a.py
 │   ├── b.py
 │   ├── __init__.py
 │   └── d.py
-└── second
+└── second/
     ├── c.py
     └── __init__.py
 ```
