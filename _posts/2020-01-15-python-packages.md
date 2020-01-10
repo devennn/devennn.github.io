@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Usage of \_\_init\_\_.py
-publihsed: false
+title: Usage of __init__.py
 ---
 
 Python packages make project more organized. Whenever a folder need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
@@ -18,9 +17,9 @@ main/
     ├── c.py
     └── __init__.py
 ```
-The example shown uses run_this.py as the main script. It uses few components from package first/ and second/
+The example shown use run_this.py as the main script. It use few components from package first/ and second/
 
-In run_this.py,
+In run_this.py
 ```
 # run_this.py
 import first
@@ -43,7 +42,8 @@ if __name__ == '__main__':
     main()
 
 ```
-In a.py,
+
+In a.py
 ```
 # a.py
 def calc_plus(a, b):
@@ -83,7 +83,7 @@ from .a import *
 from .b import *
 from .d import *
  ```
-.module_name need to be present to statisfy Python 3 relative imports rule
+Note: .module_name need to be present to statisfy Python 3 relative imports rule
 
 In c.py
 ```
@@ -92,7 +92,7 @@ def calc_minus(a, b):
     return ans
 ```
 
-second/ \_\_init\_\_.py empty. Run ```python run_this.py``` from main/ and the outputs are
+second/ \_\_init\_\_.py is empty. Run ```python run_this.py``` from main/ and the outputs are
 ```
 calc_divide 2
 calc_plus 7
