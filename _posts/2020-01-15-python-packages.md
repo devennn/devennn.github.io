@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Usage of __init__.py
+title: Python package and the usage of __init__.py
 ---
 
 Python packages make project more organized. Whenever a folder need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
