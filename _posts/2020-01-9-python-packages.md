@@ -5,7 +5,7 @@ title: Python package and the usage of __init__.py
 
 Python packages make project more organized. Whenever a folder need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
 
-```
+```python
 main/
 ├── run_this.py
 ├── first/
@@ -20,7 +20,7 @@ main/
 The example shown use run_this.py as the main script. It use few components from package first/ and second/
 
 In run_this.py
-```
+```python
 # run_this.py
 import first
 from second import c
@@ -44,16 +44,15 @@ if __name__ == '__main__':
 ```
 
 In a.py
-```
+```python
 # a.py
 def calc_plus(a, b):
     ans = a + b
     return ans
-
 ```
  
 In b.py
-```
+```python
 # b.py
 import math
 
@@ -63,7 +62,7 @@ def calc_divide(a, b):
 ```
 
 In d.py
-```
+```python
 # d.py
 import sys
 sys.path.append("..")
@@ -74,11 +73,10 @@ def calc_add_minus(a, b):
     ans = calc_minus(a=ans, b=0)
 
     return ans
-
 ```
 
- In first/ \_\_init\_\_.py
- ```
+In first/ \_\_init\_\_.py
+ ```python
 from .a import *
 from .b import *
 from .d import *
@@ -86,14 +84,14 @@ from .d import *
 Note: .module_name need to be present to statisfy Python 3 relative imports rule
 
 In c.py
-```
+```python
 def calc_minus(a, b):
     ans = a - b
     return ans
 ```
 
 second/ \_\_init\_\_.py is empty. Run ```python run_this.py``` from main/ and the outputs are
-```
+```python
 calc_divide 2
 calc_plus 7
 calc_minus 1
