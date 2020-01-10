@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Getting the python import right for packaging
+title: Usage of \_\_init\_\_.py
 publihsed: false
 ---
 
-Whenever a directory need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
+Python packages make project more organized. Whenever a folder need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
 
 ```
 main/
@@ -18,7 +18,7 @@ main/
     ├── c.py
     └── __init__.py
 ```
-The example shown uses run_this.py as the main script. It uses few components from package first and second. 
+The example shown uses run_this.py as the main script. It uses few components from package first/ and second/
 
 In run_this.py,
 ```
@@ -77,12 +77,13 @@ def calc_add_minus(a, b):
 
 ```
 
- In first\ \_\_init\_\_.py
+ In first/ \_\_init\_\_.py
  ```
 from .a import *
 from .b import *
 from .d import *
  ```
+.module_name need to be present to statisfy Python 3 relative imports rule
 
 In c.py
 ```
@@ -91,12 +92,27 @@ def calc_minus(a, b):
     return ans
 ```
 
-I leave the second\ \_\_init\_\_.py empty
-Run python run_this.py from main/ and the outputs are
+second/ \_\_init\_\_.py empty. Run ```python run_this.py``` from main/ and the outputs are
 ```
 calc_divide 2
 calc_plus 7
 calc_minus 1
 calc_add_minus 6
 ```
+
+### Explanation
+To use functions from a.py, b.py and d.py, I kind of 'skip' the usual import such as
+
+> from first.a import *
+
+or
+
+> from first import a
+> a.calc_plus(a=4, b=3)
+
+Instead, I imported them the init. This is common to do inside \_\_init\_\_.py. It will make the package first/ to be treated as a module having all the functions.
+
+Conclusion:
+- In bigger package, Classes are commonly imported at \_\_init\_\_.py to avoid messy import from another script and improve readibility.
+- It can be empty. Having empty \_\_init\_\_.py will declare the Folder as package.
 
