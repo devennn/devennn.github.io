@@ -21,7 +21,7 @@ The example shown use run_this.py as the main script. It use few components from
 
 In run_this.py
 ~~~python
-# run_this.py
+# run_this.py new
 import first
 from second import c
 
