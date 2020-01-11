@@ -20,7 +20,7 @@ main/
 The example shown use run_this.py as the main script. It use few components from package first/ and second/
 
 In run_this.py
-```python
+~~~python
 # run_this.py
 import first
 from second import c
@@ -41,7 +41,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-```
+~~~
 
 In a.py
 ```python
