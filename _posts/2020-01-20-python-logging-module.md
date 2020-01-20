@@ -5,7 +5,7 @@ title: Python logging module
 
 One of good debuging practice will be to test the theory. One of the testing method is to see the output. Function like print can be used. However, in large program, using print is not "developer fiendly" since it has to be placed and removed manually. 
 
-Python has a built-in module called """Logging""" that can be used to solve the problem. Common benefits of logging are:
+Python has a built-in module called ```Logging``` that can be used to solve the problem. Common benefits of logging are:
 - Able to set logging level. Don't have to delete log function if not used. 
 - Saving log messages to file. Useful if program is printing output to console. Preventing mixed message.
 
