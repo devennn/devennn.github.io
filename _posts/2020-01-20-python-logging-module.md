@@ -137,4 +137,4 @@ and logfile.log containing the same output is created.
 
 Conclusion:
 - Using logging module for debugging or recording message bring more benefits than print
-- ```__name``` can be useful for multi module logging
+- ```__name__``` can be useful for multi module logging
