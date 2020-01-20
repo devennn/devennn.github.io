@@ -138,3 +138,5 @@ and logfile.log containing the same output is created.
 Conclusion:
 - Using logging module for debugging or recording message bring more benefits than print
 - ```__name__``` can be useful for multi module logging
+
+Refer [logging official docs](https://docs.python.org/3/library/logging.html) for more features and examples
