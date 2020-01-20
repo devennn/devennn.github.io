@@ -17,7 +17,7 @@ Python built-in module called ```Logging``` can be used to log everything that n
 | Info     | logging.info()     |
 | Debug    | logging.debug()    |
 
-I usually use logging.info to confirm the flow of program, checking exit status and for other normal operation monitoring. I will put logging.debug at critical function entry to monitor the input and will only be activated if function is not outputing expected value. Logging.warning is used to monitor unexpected behavior and logging.critical is used to catch fatal that will make the program break or unable to continue.
+I usually use logging.info to confirm the flow of program, checking exit status and for other normal operation monitoring. logging.debug at critical function entry to monitor the input and will only be activated if function is not outputing expected value. Logging.warning is used to monitor unexpected behavior and logging.critical is used to catch fatal error that will make the program break or unable to continue.
 
 ### Setting up basic Logger
 
@@ -124,7 +124,7 @@ def set_logger(level=logging.WARNING):
 ```
 FORMAT set the logging message format to desired output.
 
-Usine ```__name__``` will automatically set the name of logger according to the name of module. In this case, it will be set_logger. This is useful when setting up logger for different module.
+Using ```__name__``` will automatically set the name of logger according to the name of module. In this case, it will be set_logger. This is useful when setting up logger for different module.
 
 To save the output, create file using FileHandler. setFormatter will change the format and addHandler will make the logger channel the output to specified file ```logfile.log```
 
