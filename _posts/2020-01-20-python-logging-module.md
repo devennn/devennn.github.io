@@ -128,6 +128,13 @@ Usine ```__name__``` will automatically set the name of logger according to the 
 
 To save the output, create file using FileHandler. setFormatter will change the format and addHandler will make the logger channel the output to specified file ```logfile.log```
 
+The output will be 
+```
+2020-01-20 21:18:46,757 : CRITICAL : set_logger : Fatal error. Cannot continue in file1
+2020-01-20 21:18:46,759 : CRITICAL : set_logger : Fatal error. Cannot continue in file2
+```
+and logfile.log containing the same output is created.
+
 Conclusion:
 - Using logging module for debugging or recording message bring more benefits than print
 - ```__name``` can be useful for multi module logging
