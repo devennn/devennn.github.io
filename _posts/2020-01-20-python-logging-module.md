@@ -56,3 +56,78 @@ CRITICAL:root:In function add this critical
 This is useful to decide what level of log to show for cleaner and informative output.
 
 ### Example of multiple program logging
+```
+.
+├── file1.py
+├── file2.py
+├── logfile.log
+└── set_logger.py
+```
+In this example file1 is the main dirver to run function from file2. set_logger is use to setup the logger.
+
+In file1.py
+```python
+import logging
+from set_logger import set_logger
+from file2 import run_file2
+
+logger = set_logger(level=logging.CRITICAL)
+
+# Logs
+logger.debug('A debug in file1')
+logger.info('An info in file1')
+logger.warning('Something is not right in file1')
+logger.error('A Major error has happened in file1')
+logger.critical('Fatal error. Cannot continue in file1')
+
+run_file2()
+```
+
+In file2.py
+```python
+from set_logger import set_logger
+
+logger = set_logger()
+
+def run_file2():
+    # Logs
+    logger.debug('A debug in file2')
+    logger.info('An info in file2')
+    logger.warning('Something is not right in file2')
+    logger.error('A Major error has happened in file2')
+    logger.critical('Fatal error. Cannot continue in file2')
+```
+set_logger is called to setup the log settings. 
+
+In set_logger.py
+```python
+import logging
+
+def set_logger(level=logging.WARNING):
+    FORMAT = '%(asctime)s : %(levelname)s : %(name)s : %(message)s'
+    logging.basicConfig(format=FORMAT)
+    # Gets or creates a logger
+    logger = logging.getLogger(__name__)
+
+    # set log level
+    logger.setLevel(level=level)
+
+    # define file handler and set formatter
+    formatter = logging.Formatter(FORMAT)
+    file_handler = logging.FileHandler('logfile.log')
+    file_handler.setFormatter(formatter)
+
+    # add file handler to logger
+    logger.addHandler(file_handler)
+
+    return logger
+```
+FORMAT set the logging message format to desired output.
+
+Usine ```__name__``` will automatically set the name of logger according to the name of module. In this case, it will be set_logger. This is useful when setting up logger for different module.
+
+To save the output, create file using FileHandler. setFormatter will change the format and addHandler will make the logger channel the output to specified file ```logfile.log```
+
+Conclusion:
+- Using logging module for debugging or recording message bring more benefits than print
+- ```__name``` can be useful for multi module logging
