@@ -42,6 +42,7 @@ Sentences like these will also be a problem.
 ## Analysis 3: Prefix
 
 Rungus has their own prefix such as:
+
 | Before  | After       |
 |---------|-------------|
 | Tuvong  | Mituvong    |
