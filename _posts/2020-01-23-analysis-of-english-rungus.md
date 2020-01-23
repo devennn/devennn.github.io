@@ -1,3 +1,8 @@
+---
+layout: post
+title: Analysis of English - Rungus language for NMT
+---
+
 The analysis is made based on [eng - rgs language corpus](https://github.com/devennn/rungus-language-corpus). The language may not be the official translation.
 
 Basic overview as of 23/1/2020:
