@@ -3,7 +3,7 @@ layout: post
 title: Analysis of English - Rungus language for NMT
 ---
 
-The analysis is made based on [eng - rgs language corpus](https://github.com/devennn/rungus-language-corpus). The language may not be the official translation.
+The analysis is made based on [eng - rgs language corpus](https://github.com/devennn/rungus-language-corpus).
 
 Basic overview as of 23/1/2020:
 - Total Rungus word = 1764
@@ -12,9 +12,7 @@ Basic overview as of 23/1/2020:
   - [Rungus frequency](https://github.com/devennn/rungus-language-corpus/blob/master/rgs_overview.csv)
   - [English translation frequency](https://github.com/devennn/rungus-language-corpus/blob/master/rgs_eng_translated_overview.csv)
   
-## Analysis 1: Phrase translations rather than word by word
-
-Some of the rungus words translate into English phrases. For example:
+## Analysis 1: Some rungus words translate into English phrases
 
 | Rungus     | English                |
 |------------|------------------------|
@@ -22,11 +20,9 @@ Some of the rungus words translate into English phrases. For example:
 | riwayat    | background story       |
 | binurangus | bamboo water container |
 
-When used in a sentence, it can increase the number of translated words. Since the algorithm might map it one to one, it can cause translation error.
+When used in sentences, it can increase the number of translated words and cause translation error.
 
-## Analysis 2: Different words order after translation
-
-Sentences like these will also be a problem.
+## Analysis 2: Different words order after sentence translation
 
 | Rungus     | English                |
 |------------|------------------------|
@@ -39,9 +35,7 @@ Sentences like these will also be a problem.
   - Example 2: Backward translation
   - Example 3: Sentences have different length. 8 rungus words translated to 12 English words.
 
-## Analysis 3: Prefix
-
-Rungus has their own prefix such as:
+## Analysis 3: Rungus prefix
 
 | Before  | After       |
 |---------|-------------|
@@ -55,13 +49,13 @@ And there is no direct translation of the prefix when used in a sentence such as
 ```The buffalo's baby escaped == Nakalabus it uzog do karabau.```
 The example above will cause the algorithm to treat it as different words.
 
-## What's the plan?
+## My proposed solution?
 
-I find it useful to translate based on typical phrases rather than word by word. For example:
+I find it useful to train algorithm based on phrases rather than word by word. For example:
 ```
 English: My calf bitten by a dog.
 Rungus: Nokokot dot asu iti votis ku.
 ```
-_Nokokot_ is not _My_. Same as _votis ku_ is not _a dog_.
+_Nokokot_ is not _My_ and _votis ku_ is not _a dog_.
 
-My proposed solution will be that phrase _votis ku_ can be translated as _my calf_, and _Nokokot dot asu_ is translated as _bitten by a dog_. Having two phrases may give better results rather than one to one translation.
+Phrase _votis ku_ can be translated as _my calf_, and _Nokokot dot asu_ is translated as _bitten by a dog_. Having two phrases may reduce translation error.
