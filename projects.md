@@ -16,25 +16,35 @@ permalink: /projects/
   - Applying pipe for hub - player communication
   - Applying multiprocesses for player spawning
   - Utilize signal handling functions
+  
+---
 
 - [Client - Server system](https://github.com/devennn/depot-server-client)
   - Build a server - client system
   - Build a communication protocol using localhost
   - Build a two way communications and instructions processing system
+  
+---
 
 - [Fileorg - File Organizer](https://github.com/devennn/Filorg)
   - Organize files based on file extension
   - Rename files
   - GUI based application
+ 
+---
 
 - Neural Model Translator for English - Rungus language
   - Perform natural language processing on raw data
   - Exploring Machine Learning algorithm for translating sentences
   - Perform evaluation of accuracy and usability
+  
+---
 
 - [Scrapping Momogun Language corpus](https://github.com/devennn/rungus-language-corpus)
   - Collecting Rngus - English corpus
   - Analyzing language to be used as datasets
+
+===
 
 ## Activities
 
