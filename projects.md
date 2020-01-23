@@ -9,6 +9,8 @@ permalink: /projects/
   - Using [Elm Chan FatFs module](http://elm-chan.org/fsw/ff/00index_e.html)
   - Design recursive implementation to read file.
   - Design fast write-to-file function to record sensor data.
+  
+---
 
 - [Multiplayer console game](https://github.com/devennn/multiplayer-hub)
   - Applying pipe for hub - player communication
