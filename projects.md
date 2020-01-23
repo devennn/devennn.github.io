@@ -30,7 +30,7 @@ permalink: /projects/
   - Organize files based on file extension
   - Rename files
   - GUI based application
- 
+
 ---
 
 - Neural Model Translator for English - Rungus language
@@ -43,8 +43,6 @@ permalink: /projects/
 - [Scrapping Momogun Language corpus](https://github.com/devennn/rungus-language-corpus)
   - Collecting Rngus - English corpus
   - Analyzing language to be used as datasets
-
-===
 
 ## Activities
 
