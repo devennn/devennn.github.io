@@ -7,7 +7,7 @@ I want to build something "futuristic" while learning something new. So, I build
 
 I called it Tonduyutung. Don't mind the name. It is a [dusun language for slow loris](https://glosbe.com/dtp/en/tonduyutung). 
 
-I develop the bot using Anaconda on Windows 10. Start by installing required dependencies
+I develop the bot using Anaconda on Windows 10 with Python 3.7. Start by installing required dependencies
 
 - [python-telegram-bot](https://python-telegram-bot.readthedocs.io/en/stable/)
 
@@ -76,14 +76,10 @@ from .chat_v1 import set_chat_v1
 
 In chat_v1.py
 ```python
-import re
 from telegram.ext import (MessageHandler, Filters, ConversationHandler,
                             CommandHandler)
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-
-from logs.set_logger import set_logger
-logger = set_logger(name=__name__, level='Info')
 
 chatbot = ChatBot('Ron Obvious')
 # Create a new trainer for the chatbot
@@ -94,7 +90,6 @@ trainer.train("chatterbot.corpus.english")
 RESPONSE = range(1)
 
 def start_chat_v1(update, context):
-    logger.info('Sending start message')
     update.message.reply_text(
         'You are now chatting with an AI version 1\n\n'
         'INFORMATION:\n'
@@ -107,24 +102,14 @@ def start_chat_v1(update, context):
     return RESPONSE
 
 def cancel_chat_v1(update, context):
-    logger.info("User {} quitting the conversation.".format(
-        update.message.from_user.first_name
-    ))
     update.message.reply_text('Goodbye! Talk later')
     return ConversationHandler.END
 
 def get_bot_response(update, context):
-    logger.info('Start /chat_v1')
     text = update.message.text
-    logger.info('Input: {}'.format(text))
     response = str(chatbot.get_response(text))
     chat_id = update.message.chat_id
-    logger.info('Response: {} , type: {}'.format(response, type(response)))
     context.bot.send_message(chat_id=chat_id, text=response)
-    logger.info( 'Reply sent to {}'.format(
-        update.message.from_user.first_name
-    ))
-
 
 def set_chat_v1():
     conv_handler = ConversationHandler(
@@ -136,3 +121,58 @@ def set_chat_v1():
     )
     return conv_handler
 ```
+
+## Test the bot
+
+Run...
+> python main.py
+
+Then go to Telegram, search the bot's name and start the conversation by sending
+> /start_v1
+
+Example output:
+```
+Me: hello
+Tonduyutung: How are you doing?
+Me: Fine, how are you?
+Tonduyutung: well, from what i can recall it is the study of cells.
+```
+I don't think that is the right response for my questions. Nevermind, the bot is working.
+
+For now, the bot is hosted on my local machine. To scale it, the program need to be hosted on a server. 
+
+## Choosing and deploying to Server
+
+I am using AWS EC2 Linux 16.04. At first, i tried the t2.micro instance Free trial. It has 1Gb ram with 1vCpu. However, I encounter out of memory problem when installing the requirements.txt. So, i choose the t2.small with 4Gb ram with 2vCpu. To upload local files to virtual machine, I used WinSCP.
+
+Reference:
+- [Logging into EC2 Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
+- [Transferring file to EC2 Server](https://winscp.net/eng/docs/guide_amazon_ec2)
+
+Before proceeding, make sure to install python 3.7 and program requirements.
+
+To let the process running after logging out, install ```screen``` . It allows user detachment from the SSH session without exiting the remote job.
+> sudo apt-get install screen
+
+Start screen session
+> screen
+
+Then run program
+> python3 main.py
+
+To detach the session, press ```ctrl + a``` followed by ```d```.
+Then output such as below will appear
+> [detached from 1365.pts-0.server]
+
+To reattach, login to the instances and:
+> screen -r
+
+or view the process by
+> screen -ls
+
+If there are lots of session running, reattach to specific session using
+> screen -r 1365
+
+## Final Thoughts
+
+Now, I have a conversation bot which is not hosted on my computer. What's next? Maybe improving the conversation technique?
