@@ -12,7 +12,7 @@ I write this blog because of 3 reasons.
 - Well, wise man said "to really understand something, summarize them". So, i write to summarize.
 
 ### Interest
-- How to prepare datasets for training
+- Data preprocessing - Trying to understand different ways of preprocessing data.
 - AI in agriculture
 
 ### More Information
