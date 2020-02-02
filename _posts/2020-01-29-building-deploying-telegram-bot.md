@@ -127,9 +127,9 @@ def set_chat_v1():
 Explanations
 - Set the conversation handler in main.py by calling set_chat_v1()
 - Make sure to set up the basic stuff
- - entry_points: Command that is used to trigger the conversation
- - states: The main process
- - fallbacks: Command to exit the program
+    - entry_points: Command that is used to trigger the conversation
+    - states: The main process
+    - fallbacks: Command to exit the program
 - The conversation handler will automatically restart the program in states section
 - The bot will be trained using the ready available chatterbot english corpus
 
