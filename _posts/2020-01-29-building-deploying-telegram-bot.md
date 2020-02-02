@@ -7,6 +7,8 @@ I want to build something "futuristic" while learning something new. So, I build
 
 I called it Tonduyutung. Don't mind the name. It is a [dusun language for slow loris](https://glosbe.com/dtp/en/tonduyutung). 
 
+_Disclaimer: You can find the bot on telegram. But, the server is not online because I'm low on budget._
+
 I develop the bot using Anaconda on Windows 10 with Python 3.7. Start by installing required dependencies
 
 - [python-telegram-bot](https://python-telegram-bot.readthedocs.io/en/stable/)
@@ -122,6 +124,15 @@ def set_chat_v1():
     return conv_handler
 ```
 
+Explanations
+- Set the conversation handler in main.py by calling set_chat_v1()
+- Make sure to set up the basic stuff
+    - entry_points: Command that is used to trigger the conversation
+    - states: The main process
+    - fallbacks: Command to exit the program
+- The conversation handler will automatically restart the program in states section
+- The bot will be trained using the ready available chatterbot english corpus
+
 ## Test the bot
 
 Run...
@@ -143,7 +154,7 @@ For now, the bot is hosted on my local machine. To scale it, the program need to
 
 ## Choosing and deploying to Server
 
-I am using AWS EC2 Linux 16.04. At first, i tried the t2.micro instance Free trial. It has 1Gb ram with 1vCpu. However, I encounter out of memory problem when installing the requirements.txt. So, i choose the t2.small with 4Gb ram with 2vCpu. To upload local files to virtual machine, I used WinSCP.
+I am using AWS EC2 Linux 16.04. At first, i tried the t2.micro instance Free trial. It has 1Gb ram with 1vCpu. However, the server quickly run out of memory when installing the requirements.txt. So, i choose the t2.small with 4Gb ram with 2vCpu. To upload local files to virtual machine, use WinSCP.
 
 Reference:
 - [Logging into EC2 Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
@@ -175,4 +186,4 @@ If there are lots of session running, reattach to specific session using
 
 ## Final Thoughts
 
-Now, I have a conversation bot which is not hosted on my computer. What's next? Maybe improving the conversation technique?
+Now, I have a conversation bot which is not hosted on my computer. What's next? Maybe improving the conversation. I am thinking of using the bot as my project showcase.
