@@ -7,7 +7,7 @@ I want to build something "futuristic" while learning something new. So, I build
 
 I called it Tonduyutung. Don't mind the name. It is a [dusun language for slow loris](https://glosbe.com/dtp/en/tonduyutung). 
 
-Disclaimer: You can find the bot on telegram. But, the server is not online because I'm low on budget :sweat_smile:
+_Disclaimer: You can find the bot on telegram. But, the server is not online because I'm low on budget._
 
 I develop the bot using Anaconda on Windows 10 with Python 3.7. Start by installing required dependencies
 
