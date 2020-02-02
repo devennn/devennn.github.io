@@ -4,7 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Start learning to program in 2019. C become my first toy. First met deep learning through Computer Vision class(elective course). I don't even know if I can pass it. Since then, AI, ML and deep learning become my main interest because of how it can impact the society.
+Start learning to program in 2019 by playing with C. First met deep learning through Computer Vision class(elective course). I don't even know if I can pass it. Since then, AI, ML and deep learning become my interest.
+
+I write this blog because of 3 reasons.
+- Improve my communications skills. Especially on how to share my ideas.
+- To write about something that I found interesting.
+- Well, wise man said "to really understand something, summarize them". So, i write to summarize.
 
 ### Interest
 - How to prepare datasets for training
