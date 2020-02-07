@@ -1,9 +1,9 @@
 ---
-title: Kaggle Disaster Tweets sentiment analysis
+title: Predicting real and fake Disaster Tweets
 layout: post
 ---
 
-This goal of this competitions is to predict real and fake tweets from twitter tweets. Full code can be found [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
+This is a kaggle competitions to predict real and fake tweets from twitter tweets. Full code can be found [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
 
 I'm still exploring different approach to the problem. Hence, the code will not be 100% same as to what will be presented here.
 
