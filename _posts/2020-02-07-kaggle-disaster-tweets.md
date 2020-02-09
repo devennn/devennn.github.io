@@ -94,9 +94,11 @@ combined_tr_tst = pd.concat([processed_tr_tweets[0], processed_tst_tweets[0]], a
 combined_vect, count_vect = vectorize_tweets(count_vect, combined_tr_tst)
 print('length of Vocabulary: %d' %len(count_vect.vocabulary_))
 
+vect_tweets = combined_vect[:len_tr]
+vect_tst_tweets = combined_vect[len_tr:]
 ```
 
-The output of this function is a collection of arrays that represents every sentence. Every array shows how many times every words in a sentence exists compared to the whole vocabulary of the corpus.
+The output of this function is a collection of arrays that represents every sentence. Every array shows how many times every words in a sentence exists compared to the whole vocabulary of the corpus. The return value  ```combined_vect``` is then split back to training (vect_tweets) and testing (vect_tst_tweets _a.k.a_ new data to predict)
 
 Output:
 
@@ -118,7 +120,60 @@ Final tokenization results. It is very hard to view the values as every array is
  [0 0 0 ... 0 0 0]]
 ```
 
-## Training
+## Training, Evaluation and Prediction
 
-## Evaluation and Prediction
+Up to now, I only have a combined data. I used the built in test_train_split function froms sklearn to divide the data
+```
+# Split training and testing
+X_train, X_test, y_train, y_test  = train_test_split(
+        vect_tweets, 
+        processed_tr_tweets['target'],
+        train_size=0.80, 
+        random_state=True,
+        shuffle=True
+)
+```
+I prefer my data to be 80% train and 20% evaluation. I also like the data to be shuffled even though they looked shuffled. Just in case.
 
+For the classifier model. I'm using logistic regression. 
+```
+# Train
+model_rg = LogisticRegression(solver='liblinear')
+model_rg = model_rg.fit(X=X_train, y=y_train)
+
+# Evaluate model
+y_pred = model_rg.predict(X_test)
+print(accuracy_score(y_test, y_pred))
+```
+
+Then, the output is 
+```
+0.8030203545633617
+```
+
+With the trained model, it is time to perform prediciton of new data
+```
+# Predict
+new_prediction = model.predict(vect_tst_tweets)
+new_prediction = pd.DataFrame(new_prediction)
+new_prediction = pd.concat([test_df['id'], new_prediction], axis=1)
+print(new_prediction)
+```
+
+Output:
+```
+id  target
+0         0       1
+1         2       1
+2         3       1
+3         9       1
+4        11       1
+...     ...     ...
+3258  10861       1
+3259  10865       1
+3260  10868       1
+3261  10874       1
+3262  10875       0
+
+[3263 rows x 2 columns]
+```
