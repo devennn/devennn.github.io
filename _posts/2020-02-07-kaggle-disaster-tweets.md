@@ -34,7 +34,7 @@ As seen, there are lots of variations that can be found.
 - Unicode
 - Links
 
-These stuff must be removed to get a clean text.
+Since these stuff (except punctuations) are not useful to humans, they must be removed.
 
 ## Preprocessing - Cleaning the texts!
 ```python
@@ -71,13 +71,52 @@ processed_tr_tweets = cleaning(train_df['text'], train_df)
 processed_tst_tweets = cleaning(test_df['text'], test_df)
 ```
 
-test_df is the new data to be predicted. Because test_df does not have target column, they will be processed when KeyError triggerd. 
-
-Pretty much what I have done is removing all things that can't be understood by human.
+test_df is the new data to be predicted. Because test_df does not have target column, it will be processed when KeyError triggerd. Pretty much what I have done is removing all things that can't be understood by human.
 
 I couldn't understand why the texts are having binary symbol eventhough they are string type right from the sile. So, I remove the binary symbol (b' ') manually. Because removing them create whitespaces, I applied .strip() to remove them.
 
+At first I tried to remove all hashtags, leaving only the tweet. But, I found out that the hashtags affect the sentiment of a tweet. Thus, I decided to remove the '#' and leave the word.
+
 ## Tokenization
+
+It is time to break them up. Tokenization is a must do step. This is a process whereby all sentences are split into something meaningful that can be used for later process. The result of tokenization are based on the tokenizing algorithm used.
+
+I am using CountVectorizer. Because the return value is a ```scipy.sparse.csr.csr_matrix``` , it needs to be converted to array.
+
+```
+def vectorize_tweets(count_vect, data):
+    vect_tweets = count_vect.fit_transform(data)
+    vect_tweets = vect_tweets.toarray()
+    return vect_tweets, count_vect
+    
+count_vect = CountVectorizer(analyzer='word', lowercase=False, stop_words='english')
+combined_tr_tst = pd.concat([processed_tr_tweets[0], processed_tst_tweets[0]], axis=0)
+combined_vect, count_vect = vectorize_tweets(count_vect, combined_tr_tst)
+print('length of Vocabulary: %d' %len(count_vect.vocabulary_))
+
+```
+
+The output of this function is a collection of arrays that represents every sentence. Every array shows how many times every words in a sentence exists compared to the whole vocabulary of the corpus.
+
+Output:
+
+```
+length of Vocabulary: 19847
+```
+
+The corpus consists of lots of words. This is one of the reason to perform cleaning. Any 'noise' will add the vocabulary and eventually affect the training result. I also remove english stopwords as they usually exist in every sentences without really giving information to the sentence as a whole.
+
+Final tokenization results. It is very hard to view the values as every array is 19847 long. Imagine tokenizing 'hey you' against the corpuse vocab.
+
+```
+[[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+```
 
 ## Training
 
