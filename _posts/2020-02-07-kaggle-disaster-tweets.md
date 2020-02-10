@@ -83,7 +83,7 @@ It is time to break them up. Tokenization is a must do step. This is a process w
 
 I am using CountVectorizer. Because the return value is a ```scipy.sparse.csr.csr_matrix``` , it needs to be converted to array.
 
-```
+```python
 def vectorize_tweets(count_vect, data):
     vect_tweets = count_vect.fit_transform(data)
     vect_tweets = vect_tweets.toarray()
@@ -120,10 +120,10 @@ Final tokenization results. It is very hard to view the values as every array is
  [0 0 0 ... 0 0 0]]
 ```
 
-## Training, Evaluation and Prediction
+## Training model and predict new data
 
-Up to now, I only have a combined data. I used the built in test_train_split function froms sklearn to divide the data
-```
+Up to now, I only have a combined data.
+```python
 # Split training and testing
 X_train, X_test, y_train, y_test  = train_test_split(
         vect_tweets, 
@@ -133,10 +133,49 @@ X_train, X_test, y_train, y_test  = train_test_split(
         shuffle=True
 )
 ```
-I prefer my data to be 80% train and 20% evaluation. I also like the data to be shuffled even though they looked shuffled. Just in case.
+I used the built in test_train_split function froms sklearn to divide the data. I prefer the data to be 80% train and 20% evaluation and shuffled.
 
-For the classifier model. I'm using logistic regression. 
+Now it is time to select a model. The output has 2 discrete values which represent class True and False. This is a classification problem and thus required classification algorithm.
+```python
+ def test_classifier(X_train, X_test, y_train, y_test):
+        algorithm = [
+            RandomForestClassifier(n_estimators=200, max_depth=3, random_state=0),
+            LinearSVC(),
+            LogisticRegression(solver='lbfgs'),
+            KNeighborsClassifier(3)
+        ]
+        for i in range(len(algorithm)):
+            print("=" * 40)
+            print("Running : " + algorithm[i].__class__.__name__)
+            model = algorithm[i]
+            model.fit(X_train, y_train)
+            predictions = model.predict(X_test)
+            accuracy = accuracy_score(y_test, predictions)
+            print("Accuracy: {:.4%}".format(accuracy))
+            
+test_classifier(X_train, X_test, y_train, y_test)
 ```
+
+The output shows that LogisticRegression outperform the second highest by 3%. That means it predicts almost 183 more correct classes correctly compared to LinearSVC. The difference may caused by preproccessing or the algorithm itself. I would consider using LinearSVC if the difference is 1% or below. 
+
+```
+========================================
+Running : RandomForestClassifier
+Accuracy: 57.9120%
+========================================
+Running : LinearSVC
+Accuracy: 77.8070%
+========================================
+Running : LogisticRegression
+Accuracy: 80.4334%
+========================================
+Running : KNeighborsClassifier
+Accuracy: 69.8621%
+```
+
+Rather than trying to explore both possibilities, I just went for the first place option. Using LogisticRegression.
+
+```python
 # Train
 model_rg = LogisticRegression(solver='liblinear')
 model_rg = model_rg.fit(X=X_train, y=y_train)
@@ -146,13 +185,14 @@ y_pred = model_rg.predict(X_test)
 print(accuracy_score(y_test, y_pred))
 ```
 
-Then, the output is 
+The output varies a little bit from the first run, which will not effect the overall performance. Probably caused by internal computation which is not a problem .
 ```
 0.8030203545633617
 ```
 
 With the trained model, it is time to perform prediciton of new data
-```
+
+```python
 # Predict
 new_prediction = model.predict(vect_tst_tweets)
 new_prediction = pd.DataFrame(new_prediction)
@@ -161,6 +201,7 @@ print(new_prediction)
 ```
 
 Output:
+
 ```
 id  target
 0         0       1
@@ -177,3 +218,11 @@ id  target
 
 [3263 rows x 2 columns]
 ```
+
+## Future Work
+1. I am still exploring few possibilities to fine tune the model such as running grid search on the algorithm
+2. Try different way of tokenizing.
+3. Cleaning texts
+  -  Short form words
+  - Numbers
+  - Non english words
