@@ -29,14 +29,14 @@ I'm still exploring different approach to the problem. Hence, the code will not 
 
 As seen, there are lots of variations that can be found.
 - Punctuations
-- Hashtags
+- Hashtags (the sign, #)
 - username
 - Unicode
 - Links
 
-Since these stuff (except punctuations) are not useful to humans, they must be removed.
+Since these stuff (except punctuations) does not contribute to understanding of the tweet for humans, they must be removed.
 
-## Preprocessing - Cleaning the texts!
+## Preprocessing - Cleaning the texts.
 ```python
 def cleaning(tweet_text, df):
     temp = []
@@ -54,8 +54,6 @@ def cleaning(tweet_text, df):
         tweet = tweet.translate(table).lower()
         # Remove 'b' at the begining for binary
         tweet = tweet.replace('b', '', 1)
-        # Remove whitespace at start of sentence
-        tweet = tweet.strip()
         temp.append(tweet)
     try:
         # Concatenate training with target
@@ -73,15 +71,15 @@ processed_tst_tweets = cleaning(test_df['text'], test_df)
 
 test_df is the new data to be predicted. Because test_df does not have target column, it will be processed when KeyError triggerd. Pretty much what I have done is removing all things that can't be understood by human.
 
-I couldn't understand why the texts are having binary symbol eventhough they are string type right from the sile. So, I remove the binary symbol (b' ') manually. Because removing them create whitespaces, I applied .strip() to remove them.
+The texts are having binary symbol eventhough they are string type right from the file. So, I remove the binary symbol (b' ') manually.
 
-At first I tried to remove all hashtags, leaving only the tweet. But, I found out that the hashtags affect the sentiment of a tweet. Thus, I decided to remove the '#' and leave the word.
+At first I tried to remove all hashtags(# sign and the word), leaving only the tweet. But, I found out that the hashtags affect the sentiment as user use hashtag to set the topic of the tweeet. If every tweets have hashtags, maybe it is a good idea to only use them for sentiment analysis data.
 
 ## Tokenization
 
-It is time to break them up. Tokenization is a must do step. This is a process whereby all sentences are split into something meaningful that can be used for later process. The result of tokenization are based on the tokenizing algorithm used.
+It is time to break them up. This is a process whereby all sentences are split into something meaningful that can be used for later process. The result of tokenization are based on the tokenizing algorithm used.
 
-I am using CountVectorizer. Because the return value is a ```scipy.sparse.csr.csr_matrix``` , it needs to be converted to array.
+I am using CountVectorizer. Because the return value is a ```scipy.sparse.csr.csr_matrix``` , it needs to be converted to numpy array.
 
 ```python
 def vectorize_tweets(count_vect, data):
