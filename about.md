@@ -4,14 +4,14 @@ title: About
 permalink: /about/
 ---
 
-My first encounter of AI programming was through Computer Vision class(elective course). I took the class to challenge myself even though I have 0 experience of programming. To my excitement, I passed it!. The next semester I took a compulsory programming course called Computer System and Programming Principles which required me to learn C. Also passed it!
+My first encounter of AI programming was through Computer Vision class(elective course). I took the class to challenge myself even though I have zero experience of programming. To my excitement, I passed it!. The next semester I took a compulsory programming course called Computer System and Programming Principles which required me to learn C. Also passed it!
 
 Since then, I become interested in AI, ML and DL.
 
-3 reasons why I blog.
+Three reasons why I blog.
 - Improve my communications skills. Especially on how to share my ideas.
 - To write about something that I found interesting.
-- Well, wise man said, "to really understand something, summarize it". So, i write to summarize.
+- Well, wise men said, "to understand something, summarize it". So, I write to summarize.
 
 ### Current Interest
 - Data preprocessing
