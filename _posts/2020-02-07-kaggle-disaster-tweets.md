@@ -3,9 +3,7 @@ title: Predicting real and fake Disaster Tweets
 layout: post
 ---
 
-This is a kaggle competitions to predict real and fake tweets from twitter tweets. Full code can be found [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
-
-I'm still exploring different approach to the problem. Hence, the code will not be 100% same as to what will be presented here.
+This is a Kaggle competition to predict real and fake tweets from twitter tweets. You can find the full code [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
 
 ## Exploring dataset
 ```
@@ -28,13 +26,12 @@ I'm still exploring different approach to the problem. Hence, the code will not 
 ```
 
 As seen, there are lots of variations that can be found.
-- Punctuations
-- Hashtags (the sign, #)
-- username
-- Unicode
-- Links
-
-Since these stuff (except punctuations) does not contribute to understanding of the tweet for humans, they must be removed.
+  - Punctuations
+  - Hashtags (the sign, #)
+  - username
+  - Unicode
+  - Links
+Since the variations listed (except punctuations) does not contribute to the understanding of the tweet for humans, I decide to remove them.
 
 ## Preprocessing - Cleaning the texts.
 ```python
@@ -69,17 +66,16 @@ processed_tr_tweets = cleaning(train_df['text'], train_df)
 processed_tst_tweets = cleaning(test_df['text'], test_df)
 ```
 
-test_df is the new data to be predicted. Because test_df does not have target column, it will be processed when KeyError triggerd. Pretty much what I have done is removing all things that can't be understood by human.
+test_df is the new data to be predicted. Because test_df does not have a target column, it will be processed when KeyError triggered. Pretty much what I have done is removing all things that can’t be understood by humans.
+The texts are having binary symbol even though they are string type right from the file. So, I remove the binary characters (b’ ‘) manually.
 
-The texts are having binary symbol eventhough they are string type right from the file. So, I remove the binary symbol (b' ') manually.
-
-At first I tried to remove all hashtags(# sign and the word), leaving only the tweet. But, I found out that the hashtags affect the sentiment as user use hashtag to set the topic of the tweeet. If every tweets have hashtags, maybe it is a good idea to only use them for sentiment analysis data.
+At first, I am thinking of removing all hashtags(# sign and the word), leaving only the tweet. But, I found out that the hashtags affect the sentiment as user use hashtag to set the topic of the tweet. If every tweet has hashtags, maybe it is a good idea only to use them for sentiment analysis data.
 
 ## Tokenization
 
-It is time to break them up. This is a process whereby all sentences are split into something meaningful that can be used for later process. The result of tokenization are based on the tokenizing algorithm used.
+It is time to break them up. Tokenization is a process to break sentences into something meaningful. The result of tokenization depends on the tokenizing algorithm used.
 
-I am using CountVectorizer. Because the return value is a ```scipy.sparse.csr.csr_matrix``` , it needs to be converted to numpy array.
+I am using CountVectorizer. The return value is a ```scipy.sparse.csr.csr_matrix``` so it needs to be converted to numpy array.
 
 ```python
 def vectorize_tweets(count_vect, data):
@@ -96,7 +92,7 @@ vect_tweets = combined_vect[:len_tr]
 vect_tst_tweets = combined_vect[len_tr:]
 ```
 
-The output of this function is a collection of arrays that represents every sentence. Every array shows how many times every words in a sentence exists compared to the whole vocabulary of the corpus. The return value  ```combined_vect``` is then split back to training (vect_tweets) and testing (vect_tst_tweets _a.k.a_ new data to predict)
+The output of this function is a collection of arrays that represents every sentence. Every array shows how many times every word in a sentence exists compared to the whole vocabulary of the corpus. The return value combined_vect is then split back to training (vect_tweets) and testing (vect_tst_tweets a.k.a new data to predict)
 
 Output:
 
@@ -104,9 +100,9 @@ Output:
 length of Vocabulary: 19847
 ```
 
-The corpus consists of lots of words. This is one of the reason to perform cleaning. Any 'noise' will add the vocabulary and eventually affect the training result. I also remove english stopwords as they usually exist in every sentences without really giving information to the sentence as a whole.
+By setting stop_word to English, the algorithm will remove English stopwords. English stopwords are noises as they usually exist in every sentence without really giving information.
 
-Final tokenization results. It is very hard to view the values as every array is 19847 long. Imagine tokenizing 'hey you' against the corpuse vocab.
+Final tokenization results. It is very hard to view the values as every array is 19847 long. Imagine tokenizing ‘hey you’ against the corpuse vocab.
 
 ```
 [[0 0 0 ... 0 0 0]
@@ -131,9 +127,11 @@ X_train, X_test, y_train, y_test  = train_test_split(
         shuffle=True
 )
 ```
+
 I used the built in test_train_split function froms sklearn to divide the data. I prefer the data to be 80% train and 20% evaluation and shuffled.
 
-Now it is time to select a model. The output has 2 discrete values which represent class True and False. This is a classification problem and thus required classification algorithm.
+Now it is time to select a model. The output has two discrete values which represent two classes, True and False. Grouping texts according to the sentiment is a classification problem; thus, required a classification algorithm. I tried four algorithms and decide based on the accuracy from accuracy_score function.
+
 ```python
  def test_classifier(X_train, X_test, y_train, y_test):
         algorithm = [
@@ -184,6 +182,7 @@ print(accuracy_score(y_test, y_pred))
 ```
 
 The output varies a little bit from the first run, which will not effect the overall performance. Probably caused by internal computation which is not a problem .
+
 ```
 0.8030203545633617
 ```
@@ -218,9 +217,10 @@ id  target
 ```
 
 ## Future Work
-1. I am still exploring few possibilities to fine tune the model such as running grid search on the algorithm
-2. Try different way of tokenizing.
+
+1. I am still exploring few possibilities to fine-tune the model such as running grid search on the algorithm
+2. Try different ways of tokenizing.
 3. Cleaning texts
-  -  Short form words
+  - Short-form words
   - Numbers
-  - Non english words
+  - Non-English words
