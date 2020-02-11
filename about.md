@@ -4,16 +4,20 @@ title: About
 permalink: /about/
 ---
 
-Start learning to program in 2019 by playing with C. First met deep learning through Computer Vision class(elective course). I don't even know if I can pass it. Since then, AI, ML and deep learning become my interest.
+My first encounter of AI programming was through Computer Vision class(elective course). I took the class to challenge myself even though I have 0 experience of programming. To my excitement, I passed it!. The next semester I took a compulsory programming course called Computer System and Programming Principles which required me to learn C. Also passed it!
 
-I write this blog because of 3 reasons.
+Since then, I become interested in AI, ML and DL.
+
+3 reasons why I blog.
 - Improve my communications skills. Especially on how to share my ideas.
 - To write about something that I found interesting.
-- Well, wise man said "to really understand something, summarize them". So, i write to summarize.
+- Well, wise man said, "to really understand something, summarize it". So, i write to summarize.
 
-### Interest
-- Data preprocessing - Trying to understand different ways of preprocessing data.
-- AI in agriculture
+### Current Interest
+- Data preprocessing
+  - To understand different ways of natural language processing
+  - To understand image processing for better representation
+  - To understand how texts and numbers affect Machine Learning algortihm
 
 ### More Information
 
@@ -31,11 +35,26 @@ I write this blog because of 3 reasons.
 - Diploma of Engineering Technology in Avionics Maintenance
   - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology
   - 2014 - 2016
+  
+### Other Learning Path
+- Lynda.com (now called Linkednin Learning) - This is where I started learning about AI. My University provide Free access to the contents. Thanks!
+  - C Programming
+  - Recommendation ALgorithms
+  - Deep Learning with Keras
+- Udemy.com - Love their discounted course
+  - STM32 firmware programming
+  - Basics of Embedded System
+  - Microcontroller Real Time Opertaing System (RTOS)
+- Youtube
+  - Python programming
+  - Machine learning algorithms
 
-### Hobby
-- Sports!
-- Reading blogposts
-- Programming?
+### Hobbies
+- Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming. Since, my new year resolution is to achieve 5km sub 30 minutes, I run a lot.
+
+- Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs and research papers, Economics, Malaysian politics and diets(not good at this).
+
+- Programming - Spend much of my time doing this. I like to test fun open source project such as chatbot. Have not yet become a contributor. But, I want to.
 
 ### Contact me
 
