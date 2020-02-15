@@ -140,3 +140,4 @@ Conclusion:
 - ```__name__``` can be useful for multi module logging
 
 Refer [logging official docs](https://docs.python.org/3/library/logging.html) for more features and examples
+Obtain code used in blogpost [here](https://github.com/devennn/blog-code/tree/master/logger)
