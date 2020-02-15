@@ -115,3 +115,4 @@ Conclusion:
 - In bigger package, Classes are commonly imported at \_\_init\_\_.py to avoid messy import from another script and improve readibility.
 - It can be empty. Having empty \_\_init\_\_.py will declare the Folder as package.
 
+Obtain code used in this blogpost [here](https://github.com/devennn/blog-code/tree/master/package)
