@@ -1,5 +1,6 @@
 ---
 layout: post
+published: False
 title: Bachelor thesis - Update and findings
 ---
 
