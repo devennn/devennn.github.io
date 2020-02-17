@@ -33,7 +33,7 @@ permalink: /projects/
 
 ---
 
-- [Neural Model Translator for English - Rungus language](https://github.com/devennn/eng-rgs-NMT)
+- [Neural Model Translator for English - Rungus language](https://github.com/devennn/neural-model-translation)
   - Perform natural language processing on raw data
   - Exploring Machine Learning algorithm for translating sentences
   - Perform evaluation of accuracy and usability
