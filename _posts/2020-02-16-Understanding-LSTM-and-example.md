@@ -75,6 +75,36 @@ Another things to observe from the reconstructed sentence are <start> and <UNK>.
   - <UNK> : Label new words that is not present in English dictionary.
   
 ### Define Model
+Before defining model, we need to make sure training and testing data have the same sequences length. This process is required because it defines the model input length. Not having the same length will cause shape error. Keras provide a built in function to do so by calling ```tensorflow.keras.preprocessing.sequence.pad_sequences```.
+
+```python
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+pad_size = 1000
+X_train_pad = pad_sequences(X_train, maxlen=pad_size)
+X_test_pad = pad_sequences(X_test, maxlen=pad_size)
+```
+
+Defining maxlen will set the desired maximum length of every sequence. This value will be used as the input length of the model. 
+
+```
+vocab_size=len(word2id)
+embedding_size=32
+output_units = 1
+
+model=Sequential()
+model.add(Embedding(input_dim=vocab_size, output_dim=embedding_size,
+    input_length=pad_size))
+model.add(LSTM(units=100))
+model.add(Dense(output_units, activation='sigmoid'))
+
+model.compile(loss='binary_crossentropy', 
+             optimizer='adam', 
+             metrics=['accuracy'])
+
+print(model.summary())
+
+```
 
 ### Perform Training and Evaluation
 
