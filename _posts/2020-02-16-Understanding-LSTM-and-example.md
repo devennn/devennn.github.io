@@ -8,9 +8,11 @@ Humans interpret based on context. We do not try to understand everything withou
 
 The key to understand is to listen. When we listen, we try to understand what the word means. Then, we pass the information to our future self, which will then interpret. It is human's nature to understand word sequences
 
-Sequence dependence learning is associated with RNN or Recurrent Neural Network. LSTM or Long Short Term Memory is a type of RNN with a powerful application. The main reason that makes it useful in sequence learning is the ability avoids long-term dependency problems. They can remember information for a long time.
+Sequence dependence learning is associated with RNN or Recurrent Neural Network. However convectional RNN has 2 major problems. LSTM or Long Short Term Memory is a type of RNN with a powerful application. The main reason that makes it useful in sequence learning is the ability avoids long-term dependency problems. They can remember information for a long time.
 
 ## Understanding components of LSTM
+
+![LSTM network](https://miro.medium.com/max/1156/1*laH0_xXEkFE0lKJu54gkFQ.png)
 
 ## Using LSTM for sentiment analysis
 
