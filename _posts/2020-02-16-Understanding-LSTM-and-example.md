@@ -12,7 +12,10 @@ Sequence dependence learning is associated with RNN or Recurrent Neural Network.
 
 ## Understanding components of LSTM
 
-![LSTM network](https://miro.medium.com/max/1156/1*laH0_xXEkFE0lKJu54gkFQ.png)
+![LSTM network](https://colah.github.io/images/post-covers/lstm.png)
+[Source: Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+Image above is the representation of LSTM cell and its operations. The overall process of a cell depends on its gates.
 
 ## Using LSTM for sentiment analysis
 
