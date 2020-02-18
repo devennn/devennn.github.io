@@ -12,14 +12,18 @@ Sequence dependence learning is associated with RNN or Recurrent Neural Network.
 
 ## Understanding components of LSTM
 
-![LSTM network](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsYwVhO5KqLdATyxxAnxbAq1LSiFrBmgsst66M8h7vagF-AL1i)
+![LSTM network](https://hackernoon.com/hn-images/1*z4qT1SIp79JZ21x86w_4gA.jpeg)
 
-[Source: Predicting Tongue Motion in Unlabeled Ultrasound Videos Using Convolutional Lstm Neural Networks](https://www.groundai.com/project/predicting-tongue-motion-in-unlabeled-ultrasound-videos-using-convolutional-lstm-neural-network/)
+[Source: Understanding architecture of LSTM cell from scratch with code](https://hackernoon.com/understanding-architecture-of-lstm-cell-from-scratch-with-code-8da40f0b71f4)
 
 Image above is the representation of LSTM cell and its operations. The overall process of a cell depends on its gates.
 
 Brief explanations:
-- 
+- Ct-1 : Memory from previous block
+- ht-1 : Output from previous block
+- Xt : Input Vector
+- ht : Output of current block
+- Ct : Memory from current block
 
 ## Using LSTM for sentiment analysis
 
