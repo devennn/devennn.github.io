@@ -87,7 +87,7 @@ X_test_pad = pad_sequences(X_test, maxlen=pad_size)
 
 Defining maxlen will set the desired maximum length of every sequence. This value will be used as the input length of the model. 
 
-```
+```python
 vocab_size=len(word2id)
 embedding_size=32
 output_units = 1
@@ -103,7 +103,6 @@ model.compile(loss='binary_crossentropy',
              metrics=['accuracy'])
 
 print(model.summary())
-
 ```
 
 ### Perform Training and Evaluation
