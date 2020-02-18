@@ -186,4 +186,4 @@ That's it. The result is quite impressive. It shows that the model can detect Po
 ## Conclusion
 The ability to pass information from one state to another is useful to understand texts. Its application is not only for texts. Any data interpretation that requires sequence understanding can use LSTM for learning.
 
-Obtain full code [here](https://www.kaggle.com/deventommy96/lstm-sentiment)
+View full code [here](https://www.kaggle.com/deventommy96/lstm-sentiment)
