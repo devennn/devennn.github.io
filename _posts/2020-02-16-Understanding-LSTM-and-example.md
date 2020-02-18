@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Understanding LSTM for sentiment analysis
 ---
 
@@ -24,6 +23,19 @@ Brief explanations:
 - Xt : Input Vector
 - ht : Output of current block
 - Ct : Memory from current block
+
+The first stage ft is called the forget gate. As the name said, it decides whether to remember or forget the input. This gate is controlled by sigmoid activation function which produce value of 0 and 1.
+
+| Value | What it does |
+|-------|--------------|
+| 0 | Forget input |
+| 1 | Remember input |
+
+There are no in-between numbers. Hence, there are no other choices other than forgetting or remember.
+
+The second stage, which is the result of it and ct is the new memory stage. Tanh activation function is used at ct because it will never go to 0. So, there will always be "something". 
+
+The last part is the output of the network. There is another sigmoid function used. It will decide which information is going to the next stage. Then, the data will go through a tanh function, which produces values needed.
 
 ## Using LSTM for sentiment analysis
 
