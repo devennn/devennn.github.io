@@ -68,14 +68,14 @@ Output:
 <START> begins better than it ends funny that the russian submarine crew <UNK> all other actors it's like those scenes where documentary shots br br spoiler part the message <UNK> was contrary to the whole story it just does not <UNK> br br
 ```
 
-Looks like the corpus has been preprocessed to numpy array. Every review is represented as word index sequence. The sentiment is in binary. So, there is no need to perform manual categorizing.
+It looks like the corpus has been preprocessed to numpy array. Every review is represented as word indexes sequence. The sentiment is in binary. So, there is no need to perform manual categorizing.
 
-Another things to observe from the reconstructed sentence are <start> and <UNK>.
-  - <start> : This is to set the boundary such as informing the starting point of sentence
-  - <UNK> : Label new words that is not present in English dictionary.
+Other things to observe from the reconstructed sentence are <start> and <UNK>.
+  - <start> : This is to set the boundary such as informing the starting point of a sentence
+  - <UNK> : Label new words that is not present in the English dictionary.
   
 ### Define Model
-Before defining model, we need to make sure training and testing data have the same sequences length. This process is required because it defines the model input length. Not having the same length will cause shape error. Keras provide a built in function to do so by calling ```tensorflow.keras.preprocessing.sequence.pad_sequences```.
+Before defining the model, we need to make sure training and testing data to have sequences of the same length. This process is required because it defines the model input length. Not having the same length will cause input shape error. Keras provide a built-in function to do so by calling ```tensorflow.keras.preprocessing.sequence.pad_sequences```.
 
 ```python
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -105,6 +105,85 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 ```
 
+Function usage
+- Embedding: Turns positive integers (indexes) into dense vectors of fixed size. This layer turns one-hot encoded words to weights based on output_dim dimensions. These weights represent how similar the words are. [source 1](https://www.quora.com/What-is-the-embedding-layer-in-LSTM-long-short-term-memory), [source 2](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work)
+- LSTM: LSTM layer
+- Dense: Fully connected Neural Netowork.
+
+I am using one output class to classify 0 and 1 as Negative and Positive. Because the output value will only be in the range of 0 to 1, I decide to use a Sigmoid activation function.
+
+For compilation, adam optimizer is used to change neural network attributes such as weights and hopefully minimize losses along the way.
+
+Output
+```
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding (Embedding)        (None, 1000, 32)          2834816   
+_________________________________________________________________
+lstm (LSTM)                  (None, 100)               53200     
+_________________________________________________________________
+dense (Dense)                (None, 1)                 101       
+=================================================================
+Total params: 2,888,117
+Trainable params: 2,888,117
+Non-trainable params: 0
+_________________________________________________________________
+None
+```
+
 ### Perform Training and Evaluation
+
+Befor running the model, data needs to be divided into training and validation. I use 80% of the data for training and 20 for validation.
+
+```python
+train_size = math.ceil(0.8 * len(X_train))
+
+X, y = X_train_pad[:train_size], y_train[:train_size]
+X_val, y_val = X_train_pad[train_size:], y_train[train_size:]
+```
+
+Now it's time to train
+
+```python
+batch_size = 64
+epochs = 5
+
+model.fit(X, y, validation_data=(X_val, y_val), batch_size=batch_size,
+          epochs=epochs, shuffle=True)
+```
+
+Output
+```
+Train on 20000 samples, validate on 5000 samples
+Epoch 1/5
+20000/20000 [==============================] - 20s 987us/sample - loss: 0.4444 - accuracy: 0.7983 - val_loss: 0.2997 - val_accuracy: 0.8780
+Epoch 2/5
+20000/20000 [==============================] - 20s 1ms/sample - loss: 0.2677 - accuracy: 0.8945 - val_loss: 0.2820 - val_accuracy: 0.8846
+Epoch 3/5
+20000/20000 [==============================] - 20s 977us/sample - loss: 0.2296 - accuracy: 0.9105 - val_loss: 0.3176 - val_accuracy: 0.8784
+Epoch 4/5
+20000/20000 [==============================] - 19s 971us/sample - loss: 0.1684 - accuracy: 0.9392 - val_loss: 0.3305 - val_accuracy: 0.8832
+Epoch 5/5
+20000/20000 [==============================] - 20s 996us/sample - loss: 0.1714 - accuracy: 0.9338 - val_loss: 0.3900 - val_accuracy: 0.8246
+```
+
+Finally, evaluate the trained model using test data
+
+```python
+scores = model.evaluate(X_test_pad, y_test, verbose=0)
+print('Model Accuracy:', scores[1])
+```
+
+Output
+```
+Model Accuracy: 0.81556
+```
+
+That's it. The result is quite impressive. It shows that the model can detect Positive and Negative review correctly for 81%. With better LSTM algorithm, the model can learn better!
+
+## Conclusion
+The ability to pass information from one state to another is useful to understand texts. Its application is not only for texts. Any data interpretation that requires sequence understanding can use LSTM for learning.
 
 Obtain full code [here](https://www.kaggle.com/deventommy96/lstm-sentiment)
