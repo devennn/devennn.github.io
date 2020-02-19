@@ -13,10 +13,9 @@ Three reasons why I blog.
 - To write about something that I found interesting.
 - Well, wise men said, "to understand something, summarize it". So, I write to summarize.
 
-### Currently Learning
-- LSTM for sentiment Analysis
-- Generate images using GAN
-- Train model with less memory
+### Current learning Goals
+- LSTM, GAN using Kerass
+- Building Deep learning Models with tensorflow
 
 ### More Information
 
