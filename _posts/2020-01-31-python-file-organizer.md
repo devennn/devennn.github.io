@@ -8,6 +8,7 @@ Usually, at the end of semester, my Download folder is full of files. They are u
 
 How it works:
 1) User choose directory to organize
+2) User choose What to do - Reararnge or Rename
 2) Program do the rest!
 
 I think this would be useful not just for download folder, but also to other messy folder such as Desktop etc.
@@ -86,4 +87,99 @@ def check_options_chosen(values):
 Tweaking the layout function will change the appearance of GUI. ```sg.Window``` will create window based on layout settings. ```window.read()``` will read event that is happening such as clicks, box tick, text fill etc.
 
 As seen from driver function, main, the gui should return process chosen and values for it.
+
+## Main Processes
+
+I set every option as a class so that it's easy for me to change/add features in the future.
+
+### Arrange files:
+```
+class Arrange:
+
+    def __init__(self, allFile=[], dirToAccess=""):
+        logger.info('=== Initializing class: Arrange ===')
+        self.allFile = allFile
+        self.dirToAccess = dirToAccess
+
+    # Create folder based on file extension and move all file into folder
+    def process_file(self):
+        logger.info('=== Start process_file ===')
+        for file in self.allFile:
+            dir = os.path.join(self.dirToAccess, file)
+            filename, file_extension = os.path.splitext(dir)
+            if(file_extension != ""):
+                file_extension = file_extension.strip('.')
+                new_fname = ("%s_file" %file_extension)
+                new_fpath = os.path.join(self.dirToAccess, new_fname)
+                try:
+                    os.mkdir(new_fpath)
+                except FileExistsError:
+                    pass
+                new_fpath = os.path.join(new_fpath, file)
+                os.rename(dir, new_fpath)
+```
+
+This class perform file organizing according to extension. It started by stripping all files in current directory to obtain their extension. Then, new folder will be created such as ```file_extension_file``` . The program will the try to create new directory and will pass if the directory exists.
+
+After ```os.mkdir``` the old directory will be rename to the newly made oe existing directory. Applying this process to every file will rearange all of them.
+
+### Rename Files:
+
+Before going to process class, it has to pass through error checking function. This is to make sure every new file name specified by user does not contain characters that cannot be used in Windows filename system.
+
+```
+# Check if string entered containing forbidden characters on windows
+def check_rename_newname(str):
+    logger.info('=== Start check_rename_newname ===')
+    regex = re.compile('[<>:"/\|?*]')
+    if(regex.search(str) == None):
+        return 0
+    else:
+        return -1
+```
+
+Using regex search will return None if no position in the string matches specified pattern. I want the return value to be ```None``` which indicates no forbidden characters used. So, other than that, all values can be discarded.
+
+
+```
+class Rename:
+
+    def __init__(self, allFile=[], dirToAccess=""):
+        logger.info('=== Initializing class: Rename ===')
+        self.allFile = allFile
+        self.dirToAccess = dirToAccess
+
+    # Renaming files
+    def rename_files(self, new_name):
+        logger.info('=== Start rename_files ===')
+        i = 1;
+        dir = self.dirToAccess + "/"
+        for file in self.allFile:
+            filename, file_extension = os.path.splitext(file)
+            file = os.path.join(dir, file)
+            new_path = dir + str('{}_{}'.format(new_name, i)) + file_extension
+            os.rename(file, new_path)
+            logger.info('=== os.rename: {} -> {}'.format(file, new_path))
+            i += 1
+```
+
+Renaming process is almost the same as rearangging, except the function has argument ```new_name``` which is required. User can choose to fill up the GUI text box for renaming options. If not, default placeholder ```New_Filename``` will be used as the new name.
+
+## Compilation
+
+I want to create an executable file so I don't have to open terminal to use this program. To do so, I use pyinstaller package which is very handy.
+
+> pyinstaller.exe --onefile --windowed --icon=dist/icon.ico gui.py -n Filorg
+
+Explanation:
+- --onefile : Since my entry point is gui.py, i only need to specify a file.
+- --windowed : Making sure the program will not start console window when program is running
+- --icon : Program icon
+- -n : Executable file name. For this proram, i named it Filorg
+
+When compilation is done, the executable file can be found in dist/ folder.
+
+Click Filorg.exe:
+
+
 
