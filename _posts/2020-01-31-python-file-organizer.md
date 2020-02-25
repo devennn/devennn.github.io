@@ -1,7 +1,9 @@
 ---
 layout: post
-title: Simple GUI file organizer to clean up file mess
+title: Simple GUI file organizer to Rearrange amd Rename files
 ---
+
+![File Organizer](https://raw.githubusercontent.com/devennn/mysite/master/images/Filorg.PNG?token=ALZQJUU7IGNHBW6IXH6BDLC6KSJA4)
 
 Usually, at the end of the semester, my Download folder is full of files. The files are useful. I don't want to waste them, but trying to organize them is a pain. Luckily, I know Python! So, I decided to build a semi-automatic file organizer. I think this would be useful not just for download folder, but also to another messy folder such as Desktop, etc.
 
@@ -175,9 +177,5 @@ Explanation:
 - -n: Executable file name. For this program, I named it Filorg
 
 When the compilation is done, the executable file can be found in the dist/ folder.
-
-Click Filorg.exe, and now I can organize folders easily!
-
-![File Organizer](https://raw.githubusercontent.com/devennn/mysite/master/images/Filorg.PNG?token=ALZQJUU7IGNHBW6IXH6BDLC6KSJA4)
 
 I may add more file organizing features in the future. So, the code may change. You can view full code [here](https://github.com/devennn/Filorg)
