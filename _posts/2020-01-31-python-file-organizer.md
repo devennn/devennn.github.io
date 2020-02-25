@@ -1,32 +1,29 @@
 ---
 layout: post
-published: false
-title: Simple GUI based file organizer
+title: Simple GUI file organizer to clean up file mess
 ---
 
-Usually, at the end of semester, my Download folder is full of files. They are usually useful, but trying to organize them is a pain. Luckily, I know Python! Let's automate them. So, my plan was to build a semi-automatic file organizer.
+Usually, at the end of the semester, my Download folder is full of files. The files are useful. I don't want to waste them, but trying to organize them is a pain. Luckily, I know Python! So, I decided to build a semi-automatic file organizer. I think this would be useful not just for download folder, but also to another messy folder such as Desktop, etc.
 
 How it works:
 1) User choose directory to organize
-2) User choose What to do - Reararnge or Rename
-2) Program do the rest!
-
-I think this would be useful not just for download folder, but also to other messy folder such as Desktop etc.
+2) User choose What to do - Rearrange or Rename
+2) The program will do the rest!
 
 ## Program Breakdown
 
-I divide the program into 2 parts:
-- GUI - Mainly for interaction. I do not want to open terminal just to organize files. So, having GUI make it easier and more intuitive
+I divide the program into two parts:
+- GUI - Mainly for interaction. I do not want to open a terminal to organize files. So, having GUI make it easier and more intuitive
 - Main Process - Where all the processing happens.
 
 Step by step:
 1) User select directory
 2) User choose menu - Rearrange or Rename
 3) User's choices are processed
-4) Send Done! to indicate successful process
+4) Send ```Done!``` to indicate a successful process
 
-As stated in step 2, user is able to choose 2 process
-- Reararnge: To group file according to file extension
+As stated in step 2, the user can choose two process
+- Rearrange: To group file according to file extension
 - Rename: Renaming batch of files
 
 ## Program code
@@ -84,16 +81,16 @@ def check_options_chosen(values):
       return -1
 ```
 
-Tweaking the layout function will change the appearance of GUI. ```sg.Window``` will create window based on layout settings. ```window.read()``` will read event that is happening such as clicks, box tick, text fill etc.
+Tweaking the layout function will change the appearance of GUI. ```sg.Window``` will create a window based on layout settings. ```window.read()``` will read event that is happening such as clicks, box tick, text fill, etc.
 
-As seen from driver function, main, the gui should return process chosen and values for it.
+As seen from driver function ```main()```, the GUI should return the chosen process and values for it.
 
 ## Main Processes
 
 I set every option as a class so that it's easy for me to change/add features in the future.
 
 ### Arrange files:
-```
+```python
 class Arrange:
 
     def __init__(self, allFile=[], dirToAccess=""):
@@ -119,15 +116,15 @@ class Arrange:
                 os.rename(dir, new_fpath)
 ```
 
-This class perform file organizing according to extension. It started by stripping all files in current directory to obtain their extension. Then, new folder will be created such as ```file_extension_file``` . The program will the try to create new directory and will pass if the directory exists.
+This class organizes files according to its extension. It started by stripping all files in the current directory to obtain their extension. Then, a new folder will be created, such as ```file_extension_file```. After that, the program will try to create a new directory by using the new folder and will pass if it already exists.
 
-After ```os.mkdir``` the old directory will be rename to the newly made oe existing directory. Applying this process to every file will rearange all of them.
+After ```os.mkdir```, the old directory will be renamed to the new or existing directory. Applying this process to every file will rearrange all of them.
 
 ### Rename Files:
 
-Before going to process class, it has to pass through error checking function. This is to make sure every new file name specified by user does not contain characters that cannot be used in Windows filename system.
+Before going to process class, it has to pass through an error checking function. It is to make sure that every new file name that was specified by the user does not contains Windows filename forbidden characters.
 
-```
+```python
 # Check if string entered containing forbidden characters on windows
 def check_rename_newname(str):
     logger.info('=== Start check_rename_newname ===')
@@ -138,10 +135,10 @@ def check_rename_newname(str):
         return -1
 ```
 
-Using regex search will return None if no position in the string matches specified pattern. I want the return value to be ```None``` which indicates no forbidden characters used. So, other than that, all values can be discarded.
+Using regex search will return None if no position in the string matches the specified pattern. I want the return value to be ```None```, which indicates no characters used. Other than that, the function will return -1 to show errors.
 
 
-```
+```python
 class Rename:
 
     def __init__(self, allFile=[], dirToAccess=""):
@@ -163,25 +160,24 @@ class Rename:
             i += 1
 ```
 
-Renaming process is almost the same as rearangging, except the function has argument ```new_name``` which is required. User can choose to fill up the GUI text box for renaming options. If not, default placeholder ```New_Filename``` will be used as the new name.
+The renaming process is almost the same as rearranging, except the function has argument ```new_name```, which is required. Users can choose to fill up the GUI text box for renaming options. If not, default placeholder ```New_Filename``` will be used as the new name.
 
 ## Compilation
 
-I want to create an executable file so I don't have to open terminal to use this program. To do so, I use pyinstaller package which is very handy.
+I want to create an executable file, so I don't have to open the terminal to use this program. To do so, I use the PyInstaller package. [Official docs](https://pythonhosted.org/PyInstaller/usage.html)
 
 > pyinstaller.exe --onefile --windowed --icon=dist/icon.ico gui.py -n Filorg
 
 Explanation:
-- --onefile : Since my entry point is gui.py, i only need to specify a file.
-- --windowed : Making sure the program will not start console window when program is running
-- --icon : Program icon
-- -n : Executable file name. For this proram, i named it Filorg
+- --onefile: Since the entry point is gui.py, I only need to specify a file.
+- --windowed: Making sure the program will not start console window when the application is running
+- --icon: Program icon
+- -n: Executable file name. For this program, I named it Filorg
 
-When compilation is done, the executable file can be found in dist/ folder.
+When the compilation is done, the executable file can be found in the dist/ folder.
 
-Click Filorg.exe:
+Click Filorg.exe, and now I can organize folders easily!
 
 ![File Organizer](https://raw.githubusercontent.com/devennn/mysite/master/images/Filorg.PNG?token=ALZQJUU7IGNHBW6IXH6BDLC6KSJA4)
 
-
-
+I may add more file organizing features in the future. So, the code may change. You can view full code [here](https://github.com/devennn/Filorg)
