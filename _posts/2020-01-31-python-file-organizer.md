@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Simple GUI file organizer to Rearrange amd Rename files
+title: Simple GUI file organizer to Rearrange and Rename files
 ---
 
-Usually, at the end of the semester, my Download folder is full of files. The files are useful. I don't want to waste them, but trying to organize them is a pain. Luckily, I know Python! So, I decided to build a semi-automatic file organizer. I think this would be useful not just for download folder, but also to another messy folder such as Desktop, etc.
-
 ![File Organizer](/images/Filorg.PNG)
+
+Usually, at the end of the semester, my Download folder is full of files. The files are useful. I don't want to waste them, but trying to organize them is a pain. Luckily, I know Python! So, I decided to build a semi-automatic file organizer. I think this would be useful not just for download folder, but also to another messy folder such as Desktop, etc.
 
 How it works:
 1) User choose directory to organize
