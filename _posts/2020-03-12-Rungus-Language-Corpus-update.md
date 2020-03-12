@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Updates on Rungus language corpus, future plan
-publish: false
+published: false
 ---
 
 Since today, I have been playing with the dataset to train a machine translation model. The results are not good which makes me take a step behind to see what can be improved.
