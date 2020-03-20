@@ -48,7 +48,10 @@ Three reasons why I blog.
   - Machine learning algorithms
 
 ### Hobbies
-- Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming. Since, my new year resolution is to achieve 5km sub 30 minutes, I run a lot.
+- Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming.
+  - New year resolution:
+    - 5km sub 30 minutes(achieved on 19/March/2020 27 minutes)
+    - 25 minutes
 
 - Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs and research papers, Economics, Malaysian politics and diets(not good at this).
 
