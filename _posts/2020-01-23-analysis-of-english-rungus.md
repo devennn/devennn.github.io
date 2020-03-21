@@ -20,7 +20,14 @@ Basic overview as of 23/1/2020:
 | riwayat    | background story       |
 | binurangus | bamboo water container |
 
-When used in sentences, it can increase the number of translated words and cause translation error.
+There are no exact words to translate some of the Rungus words. Rather than translating directly, some dictionary explain the meaning using phrase. This method will increase word counts of English words and the sentences overall as shown below. 
+
+"""
+Rungus: Ihibai poka do vaig iti sangit, inumon ku.
+English: Please pour some water in this bamboo container, I want to drink.
+"""
+
+It could be a problem if the ratio of input and target sequence(sentence) differ too much as it will affect the ability of a model to process long words. 
 
 ## Analysis 2: Different words order after sentence translation
 
@@ -28,14 +35,14 @@ When used in sentences, it can increase the number of translated words and cause
 |------------|------------------------|
 | Ogumu ma dahava ong ikau o barasan to | You argue so much when people advised you |
 | Dumarun dati iti tu akapal ino mituvong | The cloud is dark, it will be raining |
-| Ihibai poka do vaig iti sangit, inumon ku. | Please pour some water in this bamboo container, I want to drink. |
 
 - Observation
   - Example 1: Translation is not one to one.
   - Example 2: Backward translation
-  - Example 3: Sentences have different length. 8 rungus words translated to 12 English words.
+  
+Just by rough judgement to the sequences above, I can decide that Encoder-Decoder model might not train well with it. This will affect the generelization ability of a model as it will tends to remember the sequence as a whole rather than "understand" how every words maps to the target. As a result, model will perform well(translate well) if the input sequence exists in the training set. Other input will be consider noise as it will output empty translate a.k.a "Is this even a word?"
 
-## Analysis 3: Rungus prefix
+## Analysis 3: Rungus prefix and lingos
 
 | Before  | After       |
 |---------|-------------|
@@ -49,13 +56,15 @@ And there is no direct translation of the prefix when used in a sentence such as
 ```The buffalo's baby escaped == Nakalabus it uzog do karabau.```
 The example above will cause the algorithm to treat it as different words.
 
-## My proposed solution?
+As such, having proper language preprocessing toolkit will help. The toolkit should work like NLTK and handle prefixex and common words. Not only that, language lingo will be a huge problem to the translation. They shouldn't be removed or it will bring different meaning to rungus phrase. Some of know language lingos(up to the time of writing) are:
 
-I find it useful to train algorithm based on phrases rather than word by word. For example:
-```
-English: My calf bitten by a dog.
-Rungus: Nokokot dot asu iti votis ku.
-```
-_Nokokot_ is not _My_ and _votis ku_ is not _a dog_.
-
-Phrase _votis ku_ can be translated as _my calf_, and _Nokokot dot asu_ is translated as _bitten by a dog_. Having two phrases may reduce translation error.
+"""
+- 'do'
+- 'ong'
+- 'no'
+- 'ko'
+- 'po'
+- 'dino'
+- 'ino'
+- 'o'
+"""
