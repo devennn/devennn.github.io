@@ -26,7 +26,9 @@ Encoder and Decoder algorithm work almost the same as the illustration given. It
 
 [IMAGE]
 
-In the image above, the final states is the higher dimension of the Encoder. This is used in the decoder part for prediction. 
+In the image above, the final states is the higher dimension of the Encoder. This is used in the decoder part for prediction. In theory, this model will work. However, as longer sentence is fed to the model, more information need to be captured. The higher dimension of the encoder which is a vector that holds information will need to "summarize" the information. So, longer sentences will result in poor vector representation. Will explore more into this concept in the later part. There are different ways to tackle this problem. One of them, that I'm using, is the Atention Mechanism.
+
+talk about attention mechanism........
 
 # Understanding Encoder, Decoder and Attention
 
