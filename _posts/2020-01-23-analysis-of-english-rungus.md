@@ -22,10 +22,10 @@ Basic overview as of 23/1/2020:
 
 There are no exact words to translate some of the Rungus words. Rather than translating directly, some dictionary explain the meaning using phrase. This method will increase word counts of English words and the sentences overall as shown below. 
 
-"""
+```
 Rungus: Ihibai poka do vaig iti sangit, inumon ku.
 English: Please pour some water in this bamboo container, I want to drink.
-"""
+```
 
 It could be a problem if the ratio of input and target sequence(sentence) differ too much as it will affect the ability of a model to process long words. 
 
@@ -58,6 +58,6 @@ The example above will cause the algorithm to treat it as different words.
 
 As such, having proper language preprocessing toolkit will help. The toolkit should work like NLTK and handle prefixex and common words. Not only that, language lingo will be a huge problem to the translation. They shouldn't be removed or it will bring different meaning to rungus phrase. Some of know language lingos(up to the time of writing) are:
 
-"""
+```
 'do', 'ong', 'no', 'ko', 'po', 'dino', 'ino', 'o'
-"""
+```
