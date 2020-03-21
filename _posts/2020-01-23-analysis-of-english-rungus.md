@@ -27,7 +27,7 @@ Rungus: Ihibai poka do vaig iti sangit, inumon ku.
 English: Please pour some water in this bamboo container, I want to drink.
 ```
 
-It could be a problem if the ratio of input and target sequence(sentence) differ too much as it will affect the ability of a model to process long words. 
+It could be a problem if the ratio of input and target sequence(sentence) differ too much as it will affect the ability of a model to process long sequence. 
 
 ## Analysis 2: Different words order after sentence translation
 
