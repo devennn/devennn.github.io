@@ -40,7 +40,7 @@ It could be a problem if the ratio of input and target sequence(sentence) differ
   - Example 1: Translation is not one to one.
   - Example 2: Backward translation
   
-Just by rough judgement to the sequences above, I can decide that Encoder-Decoder model might not train well with it. This will affect the generelization ability of a model as it will tends to remember the sequence as a whole rather than "understand" how every words maps to the target. As a result, model will perform well(translate well) if the input sequence exists in the training set. Other input will be consider noise as it will output empty translate a.k.a "Is this even a word?"
+Just by rough judgement to the sequences above, I can decide that LSTM will not work well with it and Encoder-Decoder model will overfit. This will affect the generelization ability of Encoder-Decoder model as it will tends to remember the sequence as a whole rather than "understand" how every words maps to the target. As a result, model will perform well(translate well) if the input sequence exists in the training set. Other input will be consider noise as it will output empty translate a.k.a "Is this even a word?"
 
 ## Analysis 3: Rungus prefix and lingos
 
