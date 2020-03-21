@@ -59,12 +59,5 @@ The example above will cause the algorithm to treat it as different words.
 As such, having proper language preprocessing toolkit will help. The toolkit should work like NLTK and handle prefixex and common words. Not only that, language lingo will be a huge problem to the translation. They shouldn't be removed or it will bring different meaning to rungus phrase. Some of know language lingos(up to the time of writing) are:
 
 """
-- 'do'
-- 'ong'
-- 'no'
-- 'ko'
-- 'po'
-- 'dino'
-- 'ino'
-- 'o'
+'do', 'ong', 'no', 'ko', 'po', 'dino', 'ino', 'o'
 """
