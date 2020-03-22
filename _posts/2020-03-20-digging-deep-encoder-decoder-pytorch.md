@@ -12,6 +12,24 @@ The code used is taken directly from [Pytorch tutroial on NMT](https://pytorch.o
 
 # Preprocessing
 
+The purpose of this preprocessing is to remove as much as possible meaningless characters or words, known as noise and also expanding shortened phrase such as I'm, she's, they're, etc. Punctuation may not be useful either in case of machine translation. Unless, one is training a character level model.
+
+```python
+def unicodeToAscii(s):
+  return ''.join(
+      c for c in unicodedata.normalize('NFD', s)
+      if unicodedata.category(c) != 'Mn'
+  )
+
+# Lowercase, trim, and remve non-letter characters
+def normalizeString(s):
+  s = unicodeToAscii(s.lower().strip())
+  s = re.sub(r'([.!?])', r' \1', s)
+  s = re.sub(r'[^a-zA-Z.!?]+', r' ', s)
+  return s 
+```
+....... explain preprocess
+
 # Introduction on Encoder, Decoder and Attention
 
 When human make conversion from one state to another, most of the times, we are performing encoding and ecoding. For example, if someone ask a question like "Can you pass me the spice for curry?", we try to get insights of the question by performing simple judgement in our head such as:
