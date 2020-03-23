@@ -28,7 +28,7 @@ def normalizeString(s):
   s = re.sub(r'[^a-zA-Z.!?]+', r' ', s)
   return s 
 ```
-....... explain preprocess
+The process starts by normalizing every characters in the sentence. 'NFD' is use to decompose the strings(s). This will split the unicode characters. Then, the decomposed string will be evaluted using 'Mn' category which will leave us with known charaters. After that, the sentences will be transformed to lower case and the certain punctuations and numbers will be removed.
 
 # Introduction on Encoder, Decoder and Attention
 
