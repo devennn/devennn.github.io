@@ -7,13 +7,16 @@ Activation function is a way to represent the output base on a given set of inpu
 
 1. Linear
 2. Relu
+
 Rectifier liner unit. It transform the value to either 0 or no the value itself. So, the lower limit is 0 and the upper limit is the maximum value in the input sequence.
 
 When the input is less than or equal to 0, the function will transform the value to be 0, whereas if the input is more than 0, the function will output the value itself 
 
 3. Softmax
 4. Sigmoid
+
 image
+
 Sigmoid has a lower limit of 0 and upper limit of 1. It has binary simmilarity which makes it used in binary related output classifications. The main takeaway of this is when features value are mostly negative, they are likely to be 0 when sigmoid activation function is used. So, the closer to 0 the activation output, the less activated the neuron is.
 
 
