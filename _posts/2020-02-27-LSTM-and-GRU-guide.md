@@ -31,12 +31,12 @@ def LSTM_cell(prev_cell_state, prev_hiddden_state, input):
   
   return ht, Ct
   
-  # Control flow
-  # Using generated ct and ht for next iteration prediction
-  ct = [0, 0, 0]
-  ht = [0, 0, 0]
-  for input in inputs:
-    Ct, ht = LSTM_cell9cCt, ht, input)
+# Control flow
+# Using generated ct and ht for next iteration prediction
+ct = [0, 0, 0]
+ht = [0, 0, 0]
+for input in inputs:
+  Ct, ht = LSTM_cell9cCt, ht, input)
  ```
  
  GRU update gate act similar to forget and input gate. decide what information to throw away and to add
