@@ -57,6 +57,55 @@ As said before, this approach is useful for longer sequences(which is usualy the
 
 # Understanding Encoder, Decoder and Attention
 
+__The Encoder__
+
+```python
+class EncoderRNN(nn.Module):
+    def __init__(self, input_size, hidden_size):
+        super(EncoderRNN, self).__init__()
+        self.hidden_size = hidden_size
+
+        self.embedding = nn.Embedding(input_size, hidden_size)
+        self.gru = nn.GRU(hidden_size, hidden_size)
+
+    def forward(self, input, hidden):
+        embedded = self.embedding(input).view(1, 1, -1)
+        output = embedded
+        output, hidden = self.gru(output, hidden)
+        return output, hidden
+
+    def initHidden(self):
+        return torch.zeros(1, 1, self.hidden_size, device=device)
+```
+
+As said in the illustration before, the encoder is a way to convert words to higher dimension. The higher dimension will contain word vector in a sequence that is fed in. In the code snipptes above, there are 2 layers, embedding layer as the input and the GRU layer as the output.
+
+The embedding layer works by taking tokenized words with length(number of words) denoted as input_size and represent them as embedding of size denoted as hidden_size. For example, tokenized and processed sequence of ```I like you``` are ```SOS, i, like, you, EOS``` . This tokens will be processed as:
+
+```
+SOS --> [0.01, 0.1, 0.5]
+i --> [0.11, 0.21, 0.48]
+like --> [0.12, 0.05, 0.32]
+you --> [0.07, 0.14, 0.58]
+EOS --> [0.09, 0.75, 0.63]
+```
+The embedding input_size will have length equal to the number of unique words in the dataset. If the sequence above are part of full dataset with vocabulary size of 100, the embedding layer will produce:
+
+```
+SOS --> [0.01, 0.1, 0.5]
+i --> [0.11, 0.21, 0.48]
+like --> [0.12, 0.05, 0.32]
+you --> [0.07, 0.14, 0.58]
+EOS --> [0.09, 0.75, 0.63]
+......
+otherword1 --> [0.32, 0.71, 0.3]
+otherword2 --> [0.11, 0.53, 0.24]   <- at index 99
+```
+
+So, tokenized list, will make sure that every words will start at their assigned input neuron. During forward pass, for words that pass for the first time, the embedding values are randomly initialized. Then during backward pass, the values are updated(training). The more frequent the word, the better its embedding representation against other words in the sequence related to it. 
+
+
+
 # Train, Evaluate and observing results and performance
 
 # Conclusion
