@@ -80,6 +80,8 @@ class EncoderRNN(nn.Module):
 
 As said in the illustration before, the encoder is a way to convert words to higher dimension. The higher dimension will contain word vector in a sequence that is fed in. In the code snipptes above, there are 2 layers, embedding layer as the input and the GRU layer as the output.
 
+__Embedding Layer__
+
 The embedding layer works by taking tokenized words with length(number of words) denoted as input_size and represent them as embedding of size denoted as hidden_size. For example, tokenized and processed sequence of ```I like you``` are ```SOS, i, like, you, EOS``` . This tokens will be processed as:
 
 ```
@@ -97,9 +99,8 @@ i --> [0.11, 0.21, 0.48]
 like --> [0.12, 0.05, 0.32]
 you --> [0.07, 0.14, 0.58]
 EOS --> [0.09, 0.75, 0.63]
-......
-otherword1 --> [0.32, 0.71, 0.3]
-otherword2 --> [0.11, 0.53, 0.24]   <- at index 99
+...... <-- Embeddings of every words
+otherword2 --> [0.11, 0.53, 0.24]   <-- at index 99
 ```
 
 So, tokenized list, will make sure that every words will start at their assigned input neuron. During forward pass, for words that pass for the first time, the embedding values are randomly initialized. Then during backward pass, the values are updated(training). The more frequent the word, the better its embedding representation against other words in the sequence related to it. 
