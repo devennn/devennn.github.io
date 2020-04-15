@@ -46,12 +46,11 @@ Encoder and Decoder algorithm works almost the same as the illustration given. I
 
 In the image above, the final states is the higher dimension of the Encoder. This is used in the decoder part for prediction. In theory, this model will work. However, as longer sentence is fed to the model, more information are required to be captured. The higher dimension of the encoder which is a vector that holds information will need to "summarize" the information. So, longer sentences will result in poor vector representation as only the last hidden state of the encdoer model is used in the decoder section. Will explore more into this concept in the later part. There are different ways to tackle this problem. One of them, that I'm using, is the Attention Mechanism.
 
-The mechanism solves the problem stated just now. Rather than using only the last part of the model, it retains and uses all hidden states from the encoder when decoding the input sequence in the decoder section. This technique amplify the usage of mini sequence from whole input sequence. For example, ```I love my family``` will be utilizes fully by processing each mini sequence which looks like
+The mechanism solves the problem stated just now. Rather than using only the last part of the model, it retains and uses all hidden states from the encoder when decoding the input sequence in the decoder section. This technique amplify the usage of mini sequence from whole input sequence. For example, ```I like curry``` will be utilizes fully by processing each mini sequence which looks like
 ```
 > I
-> I love
-> I love my
-> I love my family
+> I like
+> I like curry
 ```
 As said before, this approach is useful for longer sequences(which is usualy the case) and has been the starting point of many state of the art model.
 
@@ -104,7 +103,6 @@ otherword2 --> [0.11, 0.53, 0.24]   <-- at index 99
 ```
 
 So, tokenized list, will make sure that every words will start at their assigned input neuron. During forward pass, for words that pass for the first time, the embedding values are randomly initialized. Then during backward pass, the values are updated(training). The more frequent the word, the better its embedding representation against other words in the sequence related to it. 
-
 
 
 # Train, Evaluate and observing results and performance
