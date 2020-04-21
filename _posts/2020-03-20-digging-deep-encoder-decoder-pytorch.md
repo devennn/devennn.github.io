@@ -54,9 +54,7 @@ The mechanism solves the problem stated just now. Rather than using only the las
 ```
 As said before, this approach is useful for longer sequences(which is usualy the case) and has been the starting point of many state of the art model.
 
-# Understanding Encoder, Decoder and Attention
-
-__The Encoder__
+# Understanding Encoder
 
 ```python
 class EncoderRNN(nn.Module):
@@ -81,7 +79,7 @@ As said in the illustration before, the encoder is a way to convert words to hig
 
 __Embedding Layer__
 
-The embedding layer works by taking tokenized words with length(number of words) denoted as input_size and represent them as embedding of size denoted as hidden_size. For example, tokenized and processed sequence of ```I like you``` are ```SOS, i, like, you, EOS``` . This tokens will be processed as:
+The embedding layer works by taking tokenized words with length(number of words) denoted as input_size and represent them as embedding of size denoted as hidden_size. For example, tokenized and processed sequence of ```I like curry``` are ```SOS, i, like, curry, EOS``` . This tokens will be processed as:
 
 ```
 SOS --> [0.01, 0.1, 0.5]
@@ -96,15 +94,16 @@ The embedding input_size will have length equal to the number of unique words in
 SOS --> [0.01, 0.1, 0.5]
 i --> [0.11, 0.21, 0.48]
 like --> [0.12, 0.05, 0.32]
-you --> [0.07, 0.14, 0.58]
+curry --> [0.07, 0.14, 0.58]
 EOS --> [0.09, 0.75, 0.63]
 ...... <-- Embeddings of every words
-otherword2 --> [0.11, 0.53, 0.24]   <-- at index 99
+lastword --> [0.11, 0.53, 0.24]   <-- at index 99
 ```
 
 So, tokenized list, will make sure that every words will start at their assigned input neuron. During forward pass, for words that pass for the first time, the embedding values are randomly initialized. Then during backward pass, the values are updated(training). The more frequent the word, the better its embedding representation against other words in the sequence related to it. 
 
+__GRU Layer__
 
-# Train, Evaluate and observing results and performance
 
-# Conclusion
+# Understanding Attention Decoder
+
