@@ -66,20 +66,15 @@ vocab = collections.OrderedDict(sorted(vocab.items(), key=lambda x: x[1], revers
 ```
 Combine all words and record the number of usage. Sort words according to frequency of occurences
 
-```python
-vocab_trimmed = dict(itertools.islice(vocab.items(), 100))  
-```
-The total vocab is 11673, which is too long. We only want to see the top 100 words. So, the vocab dict is trimmed.
-
 ## Plotting wordcloud
 
 ```python
-text = " ".join([(k + " ")*v for k, v in vocab_trimmed.items()])
-# lower max_font_size
-wordcloud = WordCloud(max_font_size=40, collocations=False).generate(text)
+text = ' '.join([(k + ' ')*v for k, v in vocab.items()])
+wordcloud = WordCloud(width=500, height=250, max_font_size=40, background_color='white', 
+                      collocations=False).generate(text)
 fig = plt.figure()
-plt.imshow(wordcloud, interpolation="bilinear")
-plt.axis("off")
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
 plt.savefig('/content/drive/My Drive/covidcloud.png')
 plt.show()
 ```
