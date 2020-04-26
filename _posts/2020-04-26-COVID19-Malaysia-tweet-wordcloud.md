@@ -29,7 +29,7 @@ text 	retweet_count 	favourites_count 	created_at 	lang
 ```
 As you can see, there are lots of garbage characters and also emoji. I found out that most of the tweet datasets have html tag included. That is probably because of how they collect the data. If not carefully cleaned, they can be noise to the dataset if they exists frequently.
 
-## Cleaning
+## Cleaning & Preprocessing
 
 ```python
 def unicodeToAscii(s):
@@ -38,22 +38,45 @@ def unicodeToAscii(s):
         if unicodedata.category(c) != 'Mn'
     )
 
-def remove_stopword(words):
-    texts = [word for word in words if not word in stop_words]
-    return ' '.join(texts)
-
-table = str.maketrans("", "", string.punctuation)
+table = str.maketrans('', '', string.punctuation)
 def clean_string(tweet):
-    tweet = re.sub(r"http\S+", "", tweet)
-    tweet = re.sub('@[^\s]+','',str(tweet))
+    tweet = re.sub('<.*?>', '', tweet)
+    tweet = re.sub(r'http\S+', '', tweet)
+    tweet = re.sub('#\S+', '', tweet)  # remove hashtags
+    tweet = re.sub('@\S+', '', tweet)  # remove mentions
+    tweet = re.sub('&\S+', '', tweet) # remove tag
     tweet = tweet.translate(table).lower()
     tweet = unicodeToAscii(tweet.lower().strip())
-    tweet = re.sub(r"([.!?])", r" \1", tweet)
-    tweet = re.sub(r"[^a-zA-Z.!?]+", r" ", tweet)
-    tweet = remove_stopword(tweet.split())
+    tweet = re.sub(r'[^a-zA-Z.!?]+', r' ', tweet)
     return tweet.strip()
 ```
 
-## Plotting the wordcloud
+```python
+vocab = {}
+for s in df_text:
+  for w in s.split():
+    if w not in vocab:
+      vocab[w] = 1
+    else:
+      vocab[w] += 1
+      
+vocab = collections.OrderedDict(sorted(vocab.items(), key=lambda x: x[1], reverse=True))
+```
 
-## What can I understand?
+```python
+vocab_trimmed = dict(itertools.islice(vocab.items(), 100))  
+```
+
+## Plotting wordcloud
+
+```python
+text = " ".join([(k + " ")*v for k, v in vocab_trimmed.items()])
+# lower max_font_size
+wordcloud = WordCloud(max_font_size=40, collocations=False).generate(text)
+fig = plt.figure()
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.savefig('/content/drive/My Drive/covidcloud.png')
+plt.show()
+```
+
