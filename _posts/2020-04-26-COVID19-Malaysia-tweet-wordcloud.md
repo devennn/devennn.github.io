@@ -79,3 +79,4 @@ plt.savefig('/content/drive/My Drive/covidcloud.png')
 plt.show()
 ```
 
+View full code [here](https://colab.research.google.com/drive/1nSl_Av8mTg-923H3pn76fJbXH_ymQKRF)
