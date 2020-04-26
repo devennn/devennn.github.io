@@ -51,6 +51,8 @@ def clean_string(tweet):
     return tweet.strip()
 ```
 
+what does the cleaning do?
+
 ```python
 vocab = {}
 for s in df_text:
@@ -62,10 +64,12 @@ for s in df_text:
       
 vocab = collections.OrderedDict(sorted(vocab.items(), key=lambda x: x[1], reverse=True))
 ```
+Combine all words and record the number of usage. Sort words according to frequency of occurences
 
 ```python
 vocab_trimmed = dict(itertools.islice(vocab.items(), 100))  
 ```
+The total vocab is 11673, which is too long. We only want to see the top 100 words. So, the vocab dict is trimmed.
 
 ## Plotting wordcloud
 
