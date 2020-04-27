@@ -27,7 +27,7 @@ text 	retweet_count 	favourites_count 	created_at 	lang
 
 4785 rows × 5 columns
 ```
-As you can see, there are lots of garbage characters and also emoji. I found out that most of the tweet datasets have html tag included. That is probably because of how they collect the data. If not carefully cleaned, they can be noise to the dataset if they exists frequently.
+As you can see, there are lots of garbage characters and emojis. In some cases, html tag exists. If not cleaned carefully, they can cause noise to the dataset as some tag exists frequently and are comparable to other words.
 
 ## Cleaning & Preprocessing
 
@@ -40,7 +40,6 @@ def unicodeToAscii(s):
 
 table = str.maketrans('', '', string.punctuation)
 def clean_string(tweet):
-    tweet = re.sub('<.*?>', '', tweet)
     tweet = re.sub(r'http\S+', '', tweet)
     tweet = re.sub('#\S+', '', tweet)  # remove hashtags
     tweet = re.sub('@\S+', '', tweet)  # remove mentions
@@ -50,8 +49,7 @@ def clean_string(tweet):
     tweet = re.sub(r'[^a-zA-Z.!?]+', r' ', tweet)
     return tweet.strip()
 ```
-
-what does the cleaning do?
+Ffrom the snippets above, I decide to remove some parts of the tweet that is not useful. The removed parts are links, hashtag, mentions, html tags and punctuations. Hashtag can be useful to decide on related topic, however, in this task, I removed them as they are not part the sentence.
 
 ```python
 vocab = {}
