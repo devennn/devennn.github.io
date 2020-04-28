@@ -53,7 +53,7 @@ Three reasons why I blog.
     - 5km sub 30 minutes(achieved on 19/March/2020 27 minutes)
     - 5km sub 25 minutes(achieved on 25/March/2020 21 minutes)
 
-- Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs and research papers, Economics, Malaysian politics and diets(not good at this).
+- Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs, self help and Economics
 
 - Programming - Spend much of my time doing this. I like to test fun open source project such as chatbot. Have not yet become a contributor. But, I want to.
 
