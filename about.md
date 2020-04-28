@@ -55,7 +55,7 @@ Three reasons why I blog.
 
 - Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs, self help and Economics
 
-- Programming - Spend much of my time doing this. I like to test fun open source project such as chatbot. Have not yet become a contributor. But, I want to.
+- Programming - I like to test fun open source project such as chatbot, GAN, etc.
 
 ### Contact me
 
