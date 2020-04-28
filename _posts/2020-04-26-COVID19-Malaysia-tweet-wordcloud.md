@@ -11,7 +11,6 @@ The original dataset combines tweets from other countries. I have filtered the t
 
 ## Exploring raw dataset
 ```
-text 	retweet_count 	favourites_count 	created_at 	lang
 0 	When will this be over #CoronavirusOutbreak 	0 	12523 	2020-03-05T03:19:35Z 	en
 1 	I miss those days when I sneeze people would p... 	1 	5107 	2020-03-05T09:54:45Z 	en
 2 	Bond movie postponed cuz nobody wants to die. ... 	0 	5107 	2020-03-05T11:47:07Z 	en
