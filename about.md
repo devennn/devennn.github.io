@@ -6,7 +6,7 @@ permalink: /about/
 
 My first encounter of AI programming was through Computer Vision class(elective course). I took the class to challenge myself even though I have zero experience of programming. To my excitement, I passed it!. The next semester I took a compulsory programming course called Computer System and Programming Principles which required me to learn C. Also passed it!
 
-Since then, I become interested in AI, ML and DL.
+Since then, I become interested Machine Learning.
 
 Three reasons why I blog.
 - Improve my communications skills. Especially on how to share my ideas.
@@ -51,7 +51,7 @@ Three reasons why I blog.
 - Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming.
   - New year resolution:
     - 5km sub 30 minutes(achieved on 19/March/2020 27 minutes)
-    - 25 minutes
+    - 5km sub 25 minutes(achieved on 25/March/2020 21 minutes)
 
 - Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs and research papers, Economics, Malaysian politics and diets(not good at this).
 
