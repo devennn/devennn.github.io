@@ -45,8 +45,7 @@ def clean_string(tweet):
     tweet = re.sub('&\S+', '', tweet) # remove html entities
     tweet = tweet.translate(table).lower() # remove punctuations and lower all letters
     tweet = unicodeToAscii(tweet.lower().strip()) # normalize ascii
-    # clean all non-letter string
-    tweet = re.sub(r'[^a-zA-Z]+', r' ', tweet)
+    tweet = re.sub(r'[^a-zA-Z]+', r' ', tweet) # clean all non-letter string
     return tweet.strip()
 ```
 From the snippets above, I decide to remove some parts of the tweet that is not useful. The removed parts are links, hashtag, mentions, HTML entities and punctuations. Hashtags are helpful to decide the tweet topic. However, for this task, I remove them as they are not part of the sentence.
