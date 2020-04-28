@@ -25,6 +25,8 @@ The original dataset combines tweets from other countries. I have filtered the t
 
 4785 rows × 5 columns
 ```
+Columns: text 	retweet_count 	favourites_count 	created_at 	lang
+
 As you can see, there are lots of garbage characters and emojis. In some cases, HTML tags exist. If not cleaned carefully, they can cause noise to the dataset as some tag exists frequently and are comparable to other words.
 
 ## Cleaning & Preprocessing
