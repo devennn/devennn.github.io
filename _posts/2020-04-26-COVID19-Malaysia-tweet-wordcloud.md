@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Simple wordcloud to understand Malaysian COVID19 tweet
+title: Exploring Malaysian covid19 tweets with Wordclouds
 ---
-This simple project is to explore the value of word cloud plot. I am exploring COVID19 twitter tweets that belong to Malaysians.
+This simple project is to explore the value of word cloud plot. I am exploring Malaysian COVID19 Twitter tweets.
 
 Full dataset:
 - [Coronavirus (covid19) Tweets](https://www.kaggle.com/smid80/coronavirus-covid19-tweets)
