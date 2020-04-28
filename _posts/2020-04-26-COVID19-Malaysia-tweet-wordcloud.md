@@ -1,14 +1,13 @@
 ---
 layout: post
 title: Simple wordcloud to understand Malaysian COVID19 tweet
-published: false
 ---
-This simple project is to explore the value of word cloud plot. I am exploring COVID19 twitter tweets that belongs to Malaysian.
+This simple project is to explore the value of word cloud plot. I am exploring COVID19 twitter tweets that belong to Malaysians.
 
 Full dataset:
 - [Coronavirus (covid19) Tweets](https://www.kaggle.com/smid80/coronavirus-covid19-tweets)
 
-The original dataset combines tweets from other countries. I have filter the tweets based on county_code = 'MY'. This produce 4785 lines of tweets to play with. I only take few meaningful columns which are tweet, retweet_count, favourites_count, created_at, and lang.
+The original dataset combines tweets from other countries. I have filtered the tweets based on county_code = 'MY'. The result produce 4785 lines of tweets to explore. I only take a few meaningful columns, which are tweet, retweet_count, favourites_count, created_at, and lang.
 
 ## Exploring raw dataset
 ```
@@ -27,7 +26,7 @@ text 	retweet_count 	favourites_count 	created_at 	lang
 
 4785 rows × 5 columns
 ```
-As you can see, there are lots of garbage characters and emojis. In some cases, html tag exists. If not cleaned carefully, they can cause noise to the dataset as some tag exists frequently and are comparable to other words.
+As you can see, there are lots of garbage characters and emojis. In some cases, HTML tags exist. If not cleaned carefully, they can cause noise to the dataset as some tag exists frequently and are comparable to other words.
 
 ## Cleaning & Preprocessing
 
@@ -49,7 +48,7 @@ def clean_string(tweet):
     tweet = re.sub(r'[^a-zA-Z.!?]+', r' ', tweet)
     return tweet.strip()
 ```
-From the snippets above, I decide to remove some parts of the tweet that is not useful. The removed parts are links, hashtag, mentions, html entities and punctuations. Hashtag is useful to decide the tweet topic. However, for this task, I remove them as they are not part the sentence.
+From the snippets above, I decide to remove some parts of the tweet that is not useful. The removed parts are links, hashtag, mentions, HTML entities and punctuations. Hashtags are helpful to decide the tweet topic. However, for this task, I remove them as they are not part of the sentence.
 
 ```python
 vocab = {}
@@ -62,7 +61,7 @@ for s in df_text:
       
 vocab = collections.OrderedDict(sorted(vocab.items(), key=lambda x: x[1], reverse=True))
 ```
-Combine all words and record the number of usage. Sort words according to frequency of occurences.
+Combine all words and record the number of usages. Sort words according to its frequency of occurrences.
 
 ## Plotting wordcloud
 
@@ -86,14 +85,15 @@ As you notice from the comment, the default value is set to 200. I found out tha
 
 ## Conclusion
 
-I find that wordcloud plot help to understand the big picture of corpus sentiment. It can be an inital analysis which is simple enough to help us:
+
+I find that wordcloud plot helps to understand the big picture of corpus sentiment. It can be an initial analysis which is simple enough to help us:
 
 1) observe the effectiveness of data cleaning
-    - Are there any non-human words exists? Tags? weird stuff?
+    - Are there any non-human words exists? Tags? Weird stuff?
 2) direct our output goals 
     - Setting output class assumption.
-    - Are the dataset balance?
+    - Is the dataset balance?
 
-For example, Malaysians in general are supportive of government orders of movement restriction. This is evident from the prominent words such as ```rumah, kawalan, pergerakan, kawalan, stay, perintah``` and many more. This plot also gives a good sign that the corpus can be used to analyze How government orders effect Malaysians, which can be classified as ```effective``` vs ```not effective```.
+For example, Malaysians, in general, are supportive of government orders of movement restriction. This hypothesis is evident from the prominent words such as ```rumah, kawalan, pergerakan, kawalan, stay, perintah``` and many more. This plot also gives a good sign that the corpus can be used to analyze How government orders affect Malaysians, which can be classified as ```effective``` vs ```not effective```.
 
 View full code [here](https://colab.research.google.com/drive/1nSl_Av8mTg-923H3pn76fJbXH_ymQKRF)
