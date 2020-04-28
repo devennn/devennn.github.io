@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Exploring Malaysian covid19 tweets with Wordclouds
+title: Exploring Malaysian covid19 tweets with WordCloud
 ---
 This simple project is to explore the value of word cloud plot. I am exploring Malaysian COVID19 Twitter tweets.
 
