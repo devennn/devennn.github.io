@@ -3,9 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-I believe that mistake is the best teacher. So, for me to learn better, I need to explore more.
-
 Three reasons why I blog.
 - Improve my communications skills. Especially on how to share my ideas.
 - To write about something that I found interesting.
