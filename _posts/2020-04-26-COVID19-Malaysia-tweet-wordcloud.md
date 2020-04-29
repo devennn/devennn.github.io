@@ -84,6 +84,8 @@ As you notice from the comment, the default value is set to 200. I found out tha
 
 ![image](/images/covidcloud.png =700x350)
 
+<img src=/images/covidcloud.png width=700 height=350>
+
 ## Conclusion
 
 
