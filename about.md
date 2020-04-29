@@ -13,24 +13,14 @@ Three reasons why I blog.
 
 ### Frequently used tools
 - Machine Learning
-  - Data Cleaning
-    - NLTK, Keras for text
-  - Modelling
-    - Pytorch, Keras
-  - Visualization
-    - Matplotlib, Seaborn
-  - Others
-    - Numpy, Pandas
+  - Data Cleaning: NLTK, Keras for text
+  - Modelling: Pytorch, Keras
+  - Visualization: Matplotlib, Seaborn
+  - Others: Numpy, Pandas
 - Software Development
-  - C programming & Java
-    - Windows Subsystem for Linux
-    - Atom editor
-  - C programming for Embedded system
-    - Eclipse
-    - STM32 Workbench to generate HAL Library
-  - Python
-    - Anaconda prompt
-    - Atom editor, Jupyter
+  - C & Java: Windows Subsystem for Linux, Atom editor
+  - C for Embedded system: Eclipse, STM32 Workbench to generate HAL Library
+  - Python: Anaconda prompt, Atom editor, Jupyter
 
 ### More Information
 
@@ -42,12 +32,10 @@ Three reasons why I blog.
 - Bachelor of Engineering (Honours), Electrical Engineering
   - University of Queensland, Australia
 - Bachelor of Engineering (Honours), Electrical Engineering
-  - Universiti Kuala Lumpur, British Malaysian Institute
-  - 2017 - 2018
+  - Universiti Kuala Lumpur, British Malaysian Institute (2017 - 2018)
   - Transfer to UQ under MARA scholarship
 - Diploma of Engineering Technology in Avionics Maintenance
-  - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology
-  - 2014 - 2016
+  - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology (2014 - 2016)
 
 ### Hobbies
 - Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming.
