@@ -67,12 +67,11 @@ Combine all words and record the number of usages. Sort words according to its f
 ## Plotting wordcloud
 
 ```python
-text = ' '.join([(k + ' ')*v for k, v in vocab.items()])
-# lower max_font_size
 # by default max_words is 200
-wordcloud = WordCloud(width=500, height=250, max_font_size=40,
-                      background_color='white', collocations=False).generate(text)
-fig = plt.figure()
+wordcloud = WordCloud(width=700, height=350, max_font_size=40,
+                      background_color='white', max_words=1000, 
+                      stopwords=None).generate_from_frequencies(vocab)
+fig = plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud)
 plt.axis('off')
 plt.savefig('/content/drive/My Drive/covidcloud.png')
@@ -80,19 +79,21 @@ plt.show()
 ```
 To plot the dictionary, I am using the wordcloud library. You can view the [documentation here](http://amueller.github.io/word_cloud/). I am using the minimal example from the docs.
 
-As you notice from the comment, the default value is set to 200. I found out that setting max_words more than 200 will not add value to the visualization as the image will be too crowded.
+As you notice from the comment, the default value is set to 200. I found out that setting max_words more than 200 will not add value to the visualization as the image will be too crowded. The stopwords parameter is specified to None, which means I am going to use the internal stopwords collection.
+
+We have to be careful when setting the size. Well, it is not a big deal. But, you don't want to end up having an image that is zoomed to blur. WordCloud width and height is used to initialize NumPy array to create image pixels, while figsize is in inches. Bigger WordCloud size means more words can be fitted, while bigger figsize will give a zooming effect.
 
 ![image](/images/covidcloud.png)
 
 ## Conclusion
 
 
-I find that wordcloud plot helps to understand the big picture of corpus sentiment. It can be an initial analysis which is simple enough to help us:
+I think wordcloud plot helps to understand the big picture of corpus sentiment. It can be used as an initial analysis which is simple enough to help us:
 
-1) observe the effectiveness of data cleaning
+1) to observe the effectiveness of data cleaning
     - Are there any non-human words exists? Tags? Weird stuff?
-2) direct our output goals 
-    - Setting output class assumption.
+2) to direct our output goals 
+    - Setting output class assumption. eg: how many classes?
     - Is the dataset balance?
 
 For example, Malaysians, in general, are supportive of government orders of movement restriction. This hypothesis is evident from the prominent words such as ```rumah, kawalan, pergerakan, kawalan, stay, perintah``` and many more. This plot also gives a good sign that the corpus can be used to analyze How government orders affect Malaysians, which can be classified as ```effective``` vs ```not effective```.
