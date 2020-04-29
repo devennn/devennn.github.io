@@ -4,18 +4,33 @@ title: About
 permalink: /about/
 ---
 
-My first encounter of AI programming was through Computer Vision class(elective course). I took the class to challenge myself even though I have zero experience of programming. To my excitement, I passed it!. The next semester I took a compulsory programming course called Computer System and Programming Principles which required me to learn C. Also passed it!
-
-Since then, I become interested Machine Learning.
+I believe that mistake is the best teacher. So, for me to learn better, I need to explore more.
 
 Three reasons why I blog.
 - Improve my communications skills. Especially on how to share my ideas.
 - To write about something that I found interesting.
 - Well, wise men said, "to understand something, summarize it". So, I write to summarize.
 
-### Current learning Goals
-- LSTM, GAN using Kerass
-- Building Deep learning Models with tensorflow
+### Frequently used tools
+- Machine Learning
+  - Data Cleaning
+    - NLTK, Keras for text
+  - Modelling
+    - Pytorch, Keras
+  - Visualization
+    - Matplotlib, Seaborn
+  - Others
+    - Numpy, Pandas
+- Software Development
+  - C programming & Java
+    - Windows Subsystem for Linux
+    - Atom editor
+  - C programming for Embedded system
+    - Eclipse
+    - STM32 Workbench to generate HAL Library
+  - Python
+    - Anaconda prompt
+    - Atom editor, Jupyter
 
 ### More Information
 
@@ -33,28 +48,13 @@ Three reasons why I blog.
 - Diploma of Engineering Technology in Avionics Maintenance
   - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology
   - 2014 - 2016
-  
-### Other Learning Path
-- Lynda.com (now called Linkednin Learning) - This is where I started learning about AI. My University provide Free access to the contents. Thanks!
-  - C Programming
-  - Recommendation ALgorithms
-  - Deep Learning with Keras
-- Udemy.com - Love their discounted course
-  - STM32 firmware programming
-  - Basics of Embedded System
-  - Microcontroller Real Time Opertaing System (RTOS)
-- Youtube
-  - Python programming
-  - Machine learning algorithms
 
 ### Hobbies
 - Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming.
   - New year resolution:
     - 5km sub 30 minutes(achieved on 19/March/2020 27 minutes)
     - 5km sub 25 minutes(achieved on 25/March/2020 21 minutes)
-
 - Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs, self help and Economics
-
 - Programming - I like to test fun open source project such as chatbot, GAN, etc.
 
 ### Contact me
