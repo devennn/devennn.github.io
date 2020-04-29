@@ -82,7 +82,7 @@ To plot the dictionary, I am using the wordcloud library. You can view the [docu
 
 As you notice from the comment, the default value is set to 200. I found out that setting max_words more than 200 will not add value to the visualization as the image will be too crowded.
 
-![image](/images/covidcloud.png)
+![image](/images/covidcloud.png =700x350)
 
 ## Conclusion
 
