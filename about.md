@@ -33,7 +33,7 @@ Three reasons why I blog.
   - University of Queensland, Australia
 - Bachelor of Engineering (Honours), Electrical Engineering
   - Universiti Kuala Lumpur, British Malaysian Institute (2017 - 2018)
-  - Transfer to UQ under MARA scholarship
+  - Transfer to UQ, supported by MARA sponsorship
 - Diploma of Engineering Technology in Avionics Maintenance
   - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology (2014 - 2016)
 
