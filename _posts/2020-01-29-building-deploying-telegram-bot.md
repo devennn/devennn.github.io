@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How I build and deploy Telegram conversation bot
+title: A simple Telegram conversation bot
 ---
 
 I want to build something "futuristic" while learning something new. So, I build a Telegram conversation bot. View [full code here](https://github.com/devennn/blog-code/tree/master/tonduyutung-bot)
