@@ -4,18 +4,18 @@ title: Find similar words in Word2Vec embeddings
 published: false
 ---
 
-Word2Vec is no doubt a powerful algorithm to compute word embeddings. The one layer network approach make it consume less compute power while producing excellent result compared to other embeddings algorithm. One of the downside of Word2Vec embeddings model is the inability to identify new words. In this post, I tested a simple method to overcome this problem. 
+Word2Vec is no doubt a powerful algorithm to compute word embeddings. The one layer network make it consume less compute power while producing excellent result compared to other embeddings algorithm. One of the downside of Word2Vec embeddings model is the inability to identify new words. In this post, I tested a simple method to overcome this problem. 
 
-The dataset used is the COVID-19 Malaysian tweets. I have also pretrained a Word2Vec model on Malaysian Tweets. One interesting observation on Twitter dataset is a word can have lots of variation.
+The test dataset used is the COVID-19 Malaysian tweets. I also pretrained a Word2Vec model on Malaysian Tweets. One interesting observation on Twitter dataset is the variation of words caused by typo, prefix or someone just think it is better to add extra letter :satisfied:.
 ```
 psttt -> ['pssttt', 'pstt', 'psstttt', 'psssttt']
 
 entrances -> ['entrance', 'entranced', 'enterance', 'entrace']
 ```
 
-The word ```psttt``` is not a formal word. However, they we definitely understand what it means. So, we don't really care how the word is spelled. The second word, ```entrances``` exists in english dictionary. We may or may not care how it is spelled. But we can still understand the word. For a computer, even one letter difference is enough to convice the words are not the same. 
+The word ```psttt``` is not a formal word. However, we definitely understand what it means. So, we don't really care how the word is spelled. The second word, ```entrances``` exists in english dictionary. We may or may not care how it is spelled as long as we understand it. For human, most of the times, we're able to self-correct a word. For a computer, even one letter difference is enough to convice the words are not the same. 
 
-# Plan of Attack
+# Predict unknown words
 
 Since word embeddings are trained based on context words, we can use this idea to predict similar words as well. We understand that frequent words in the tranining corpus will have better embedding representation. In a social media corpus, this idea can be tricky since we don't know what is the most used words. In the example above, we don't know which of the word ```psttt``` exists frequently. But, that doesn't matter since we only want to find the similar words. So, any variation is okay as long as the word make sense for computer and human especially. 
 
@@ -25,7 +25,7 @@ With this understanding, the plan overview is:
  results = difflib.get_close_matches(word, model_vocab, n=7)
 ```
 
-2. Compare every similar strings to the context word in the sentences 
+2. Compare every similar strings to the context words from the sentence
 ```python
 similarity_score = [model.wv.similarity(r, token) for r in results]
 ```
@@ -64,7 +64,7 @@ def find_closest_string_with_embeddings(word, sentence):
   print("Similar by embedding -> {}".format(similar_word))
   print("Most similar word -> {}".format(count_words(similar_word)))
 ```
-I am using try except method to skip unknown word. the model.ev.similarity will raise KeyError if the word is not in vocabulary. count_words is used to arrange predicted word according to value.
+I am using try except method to skip unknown word. The model.wv.similarity will raise KeyError if the word is not in vocabulary. count_words is a helper function used to sort predicted word according to value.
 
 # Correct Results
 ```python
@@ -109,7 +109,7 @@ Most similar word -> {'dinobatkan': 14, 'nobat': 9, 'inoba': 1, 'dinot': 1}
 ```
 1) For ```moleq```, ```lariss``` and ```session```, the most similar word produced by difflib is wrong, but the correct word is still in the list. By comparing word embeddings, the correct word is recognized.
 
-2) For ```sesssion```, ```dipermudohkan``` and ```dinobat```, difflib works well to find all simmilar words as almost all the words, including the most similar are correct. When combine with embedding, higher context word is chosen. This is caused by frequency of the word in the training corpus.
+2) For ```sesssion```, ```dipermudohkan``` and ```dinobat```, difflib works well to find all simmilar words as almost all the words, including the most similar are correct. When compared with embedding, higher context word is chosen. This is caused by frequency of the word in the training corpus.
 
 # Wrong Results
 ```python
@@ -153,6 +153,11 @@ Similar words -> ['mathi', 'bathi', 'basmathi', 'momati', 'mathri', 'mathis', 'b
 Similar by embedding -> ['mathri', 'bumati', 'bumati', 'bathi', 'bumati', 'mathri', 'mathri', 'bumati', 'mathri', 'bathi', 'bumati', 'mathri']
 Most similar word -> {'mathri': 5, 'bumati': 5, 'bathi': 2}
 ```
-1) For ```reassemble```, ```compasses```, ```boleeeeeh``` and ```meningatkan```, difflib does a good job to find the most similar word. Most of the embedding score also produce the correct words. However, since this experiment uses every word in the sentence, more noise are included in the similar by embedding list, outnumbering the correct word. This can be observed from Most similar word list, where the second word for ```compasses```, ```boleeeeeh```, ```meningatkan``` is the correct word.
+1) For ```reassemble```, ```compasses```, ```boleeeeeh``` and ```meningatkan```, difflib does a good job to find the most similar word. Most of the embedding score also produce the correct words. However, since this experiment uses every word in the sentence as the contexts, more noise are included in the similar by embedding list which outnumber the correct word. This can be observed from Most similar word list, where the second word for ```compasses```, ```boleeeeeh```, ```meningatkan``` is the correct word.
 
 2) ```bomathi``` is not a malay or english word (or it is?). When plotting every word in the sentence, the result shows that most of the words are not in the vocab. While it still gives output, I have no idea if that is correct.
+
+# Conclusion
+One of the important parameter that should be focused is context word size. The pretrained model only used 5 word to the left and right as the context. That means, every every words after that range are considered noise as prove in the worng results above. 
+
+You can view the full code [here](https://github.com/devennn/word_embeddings/blob/master/MYTweet_wordNotInVocab.ipynb).
