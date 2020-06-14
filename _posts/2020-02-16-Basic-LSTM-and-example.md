@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Basic LSTM and its application for sentiment analysis
+title: Basic LSTM for sentiment analysis
 ---
 
 Humans interpret based on context. We do not try to understand everything without connecting the "dots" of information. In other words, when we make decisions, it is always based on what happened before. We pass data from one stage to another, which builds up the context of problems or situations, including text interpretation.
