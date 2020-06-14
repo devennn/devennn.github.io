@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Find similar words in Word2Vec embeddings
-published: false
 ---
 
 Word2Vec is no doubt a powerful algorithm to compute word embeddings. The one layer network make it consume less compute power while producing excellent result compared to other embeddings algorithm. One of the downside of Word2Vec embeddings model is the inability to identify new words. In this post, I tested a simple method to overcome this problem. 
@@ -160,4 +159,4 @@ Most similar word -> {'mathri': 5, 'bumati': 5, 'bathi': 2}
 # Conclusion
 One of the important parameter that should be focused is context word size. The pretrained model only used 5 word to the left and right as the context. That means, every every words after that range are considered noise as prove in the worng results above. 
 
-You can view the full code [here](https://github.com/devennn/word_embeddings/blob/master/MYTweet_wordNotInVocab.ipynb).
+View the full code [here](https://github.com/devennn/word_embeddings/blob/master/MYTweet_wordNotInVocab.ipynb).
