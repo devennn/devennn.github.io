@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Find similar words in Word2Vec embeddings
+title: Predicting similar words for unknown word in Word2Vec
 ---
 
 Word2Vec is no doubt a powerful algorithm to compute word embeddings. The one layer network make it consume less compute power while producing excellent result compared to other embeddings algorithm. One of the downside of Word2Vec embeddings model is the inability to identify new words. In this post, I tested a simple method to overcome this problem. 
