@@ -7,11 +7,11 @@ published: false
 Word2Vec is no doubt a powerful algorithm to compute word embeddings. The one layer network approach make it consume less compute power while producing excellent result compared to other embeddings algorithm. One of the downside of Word2Vec embeddings model is the inability to identify new words. In this post, I tested a simple method to overcome this problem. 
 
 The dataset used is the COVID-19 Malaysian tweets. I have also pretrained a Word2Vec model on Malaysian Tweets. One interesting observation on Twitter dataset is a word can have lots of variation.
-~~~
+```
 psttt -> ['pssttt', 'pstt', 'psstttt', 'psssttt']
 
 entrances -> ['entrance', 'entranced', 'enterance', 'entrace']
-~~~
+```
 
 The word ```psttt``` is not a formal word. However, they we definitely understand what it means. So, we don't really care how the word is spelled. The second word, ```entrances``` exists in english dictionary. We may or may not care how it is spelled. But we can still understand the word. For a computer, even one letter difference is enough to convice the words are not the same. 
 
@@ -21,21 +21,22 @@ Since word embeddings are trained based on context words, we can use this idea t
 
 With this understanding, the plan overview is:
 1. Generate simillar words from vocabulary - I am using difflib get_close_matches here. It will generate 7 close match string from the model vocabulary list. 
-```
+```python
  results = difflib.get_close_matches(word, model_vocab, n=7)
 ```
 
 2. Compare every similar strings to the context word in the sentences 
-```
+```python
 similarity_score = [model.wv.similarity(r, token) for r in results]
 ```
 
 3. Find the highest similarity score for each similar words.
-```
+```python
 results[similarity_score.index(max(similarity_score))]
 ```
+
 That's it! Below is the full implementation. The unknown word and its sentence is passed to the arguments.
-```
+```python
 def count_words(words):
   d = {}
   for w in words:
@@ -66,7 +67,7 @@ def find_closest_string_with_embeddings(word, sentence):
 I am using try except method to skip unknown word. the model.ev.similarity will raise KeyError if the word is not in vocabulary. count_words is used to arrange predicted word according to value.
 
 # Correct Results
-```
+```python
 word_tests = ['moleq', 'lariss', 'sesssion', 'dipermudohkn', 'dinobat']
 for word in word_tests:
   text = get_sentence(word)
@@ -111,7 +112,7 @@ Most similar word -> {'dinobatkan': 14, 'nobat': 9, 'inoba': 1, 'dinot': 1}
 2) For ```sesssion```, ```dipermudohkan``` and ```dinobat```, difflib works well to find all simmilar words as almost all the words, including the most similar are correct. When combine with embedding, higher context word is chosen. This is caused by frequency of the word in the training corpus.
 
 # Wrong Results
-```
+```python
 word_tests = ['reassemble', 'compasses', 'boleeeeeh', 'meningatkan', 'bomathi']
 for word in word_tests:
   text = get_sentence(word)
