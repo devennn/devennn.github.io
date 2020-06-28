@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Projects & Activities
 permalink: /projects/
 ---
 ## Universtiy Projects
