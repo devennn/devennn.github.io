@@ -3,7 +3,7 @@ layout: page
 title: Projects & Activities
 permalink: /projects/
 ---
-## Projects
+## Universtiy Projects
 
 - [STM32 F446RE SD Card and Filesystem firmware](https://github.com/devennn/sd_card_l446re_spi)
   - Using [Elm Chan FatFs module](http://elm-chan.org/fsw/ff/00index_e.html)
@@ -23,15 +23,10 @@ permalink: /projects/
   - Build a server - client system
   - Build a communication protocol using localhost
   - Build a two way communications and instructions processing system
-  
----
-
-- [Fileorg - File Organizer](https://github.com/devennn/Filorg)
-  - Organize files based on file extension
-  - Rename files
-  - GUI based application
 
 ---
+
+## Personal Projects
 
 - [Neural Model Translator for English - Rungus language](https://github.com/devennn/neural-model-translation)
   - Perform natural language processing on raw data
@@ -43,9 +38,23 @@ permalink: /projects/
 - [Scrapping Momogun Language corpus](https://github.com/devennn/rungus-language-corpus)
   - Collecting Rngus - English corpus
   - Analyzing language to be used as datasets
+ 
+  ---
 
-## Activities
-
-- Hacker Rank Problem Solving Challene
-
-- Kaggle Data Science Competitions
+- [Fileorg - File Organizer](https://github.com/devennn/Filorg)
+  - Organize files based on file extension
+  - Rename files
+  - GUI based application
+  
+  ---
+  
+- [Syncer cli - GUI for RClone](https://github.com/devennn/Syncer-cli)
+  - Using RClone for backend process
+  - Using PySimpleGUI for GUI
+  - Running RClone process via subprocess
+  
+  ---
+  
+- [Twitter text dataset](https://github.com/devennn/malaysian-tweet-text-corpus)
+  - Scrapped twitter text data using Twint
+  - Train Word2Vec model from scratch
