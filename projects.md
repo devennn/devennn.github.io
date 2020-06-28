@@ -32,7 +32,15 @@ permalink: /projects/
   - User is able to draw or choose predefined life for initial state.
   - GOL alogrithm will simulate generations
   - Simulations is shown on terminal 
+  
+---
 
+- [Mini smart home system to detect and regulate user's emotions](https://github.com/devennn/Smart-Home-Emotional-Detection-Regulation)
+  - This project is used for design fiction for my undergraduate thesis
+  - Using Keras model to detect user's emotion from facial expressions
+  - Using predicted emotion to change LIFX lamp color
+  - User can view real-time detection and change settings with the GUI.
+  - User is able to receive notifications via IFTT to email and Telegram bot.
 
 ## Personal Projects
 
