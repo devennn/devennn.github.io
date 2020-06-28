@@ -26,6 +26,14 @@ permalink: /projects/
 
 ---
 
+- [Conway Game Of Life Simulator](https://github.com/devennn/csse3010-2020Sem1)
+  - Using FreeRTOS to handle multitasking
+  - Using STM32 HAL Library for low level interfacing
+  - User is able to draw or choose predefined life for initial state.
+  - GOL alogrithm will simulate generations
+  - Simulations is shown on terminal 
+
+
 ## Personal Projects
 
 - [Neural Model Translator for English - Rungus language](https://github.com/devennn/neural-model-translation)
