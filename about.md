@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 Three reasons why I blog.
-- Improve my communications skills. Especially on how to share my ideas.
-- To write about something that I found interesting.
-- Well, wise men said, "to understand something, summarize it". So, I write to summarize.
+- Improve my communications skills. Especially idea sharing.
+- Write about something that I found interesting.
+- Well, wise men said, "to understand something, summarize it". So, I write to learn.
 
 ### Frequently used tools
 - Machine Learning
@@ -33,14 +33,6 @@ Three reasons why I blog.
   - Transfer to UQ, supported by MARA sponsorship
 - Diploma of Engineering Technology in Avionics Maintenance
   - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology (2014 - 2016)
-
-### Hobbies
-- Sports! -  Love playing basketball, badminton, football, rugby and many more except swimming.
-  - New year resolution:
-    - 5km sub 30 minutes(achieved on 19/March/2020 27 minutes)
-    - 5km sub 25 minutes(achieved on 25/March/2020 21 minutes)
-- Reading - I read to expand my understanding, judgements and beliefs. My favorite topics are Christianity, AI blogs, self help and Economics
-- Programming - I like to test fun open source project such as chatbot, GAN, etc.
 
 ### Contact me
 
