@@ -70,6 +70,6 @@ permalink: /projects/
   
   ---
   
-- [Twitter text dataset](https://github.com/devennn/malaysian-tweet-text-corpus)
+- [Twitter text dataset](https://github.com/devennn/malaysian-tweets)
   - Scrapped twitter text data using Twint
   - Train Word2Vec model from scratch
