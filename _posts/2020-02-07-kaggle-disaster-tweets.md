@@ -3,7 +3,7 @@ title: Predicting real and fake Disaster Tweets
 layout: post
 ---
 
-This is a Kaggle competition to predict real and fake tweets from twitter tweets. You can find the full code [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
+This is a basic Kaggle competition to predict real and fake tweets from twitter tweets. You can find the full code [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
 
 ## Exploring dataset
 ```
