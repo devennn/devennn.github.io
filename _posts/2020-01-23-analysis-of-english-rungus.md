@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Analysis of English - Rungus language for NMT
+published: false
 ---
 
 The analysis is based on [en - drg language corpus](https://github.com/devennn/rungus-language-corpus).
