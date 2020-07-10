@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Rungus language corpus - Need more data
+published: false
 ---
 
 I have been playing with the dataset to train a machine translation model. The results are not good, which makes me take a step behind to see what can be improved. 
