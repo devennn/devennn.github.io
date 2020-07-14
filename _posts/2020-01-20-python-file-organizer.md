@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Simple GUI file organizer to Rearrange and Rename files
+published: false
 ---
 
 ![File Organizer](/images/Filorg.PNG)
