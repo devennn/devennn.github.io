@@ -1,7 +1,7 @@
 # Site settings
-title_left    : "De"
-title_right   : "ven" # default: ""
-description   : "Personal Blog of Deven Yantis"
+title_left    : "Deven's"
+title_right   : " blog" # default: ""
+description   : "Personal Blog"
 keywords      : "Machine Learnig, Artificial Intelligence, Malaysia, Sabah"
 url           : https://devennn.xyz/ # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
