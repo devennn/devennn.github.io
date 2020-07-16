@@ -27,6 +27,6 @@ A little bit about myself. I like to play sports! Probably, I am average in ever
 
 #### Contacts
 
-[devenyantis@gmail.com](mailto:devenyantis@gmail.com)
-[LinkedIn](https://www.linkedin.com/in/devenyantis/)
-[Github](https://github.com/devennn)
+- [devenyantis@gmail.com](mailto:devenyantis@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/devenyantis/)
+- [Github](https://github.com/devennn)
