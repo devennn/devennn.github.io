@@ -31,6 +31,7 @@ permalink: /projects/
   - User is able to draw or choose predefined life for initial state.
   - GOL alogrithm will simulate generations
   - Simulations is shown on terminal 
+  - Tools: C, FreeRTOS, STM32 Nucleo, Joystick, Keypad
   
 ---
 
@@ -40,6 +41,7 @@ permalink: /projects/
   - Using predicted emotion to change LIFX lamp color
   - User can view real-time detection and change settings with the GUI.
   - User is able to receive notifications via IFTT to email and Telegram bot.
+  - Tools: Python, Keras, Telegram Bot, IFTTT,  DigitalOcean droplet, Google Colab.
 
 ## Personal Projects
 
@@ -67,9 +69,11 @@ permalink: /projects/
   - Using RClone for backend process
   - Using PySimpleGUI for GUI
   - Running RClone process via subprocess
+  - Tools: Python, Open Souce Library: RClone, PySimpleGUI
   
   ---
   
 - [Twitter text dataset](https://github.com/devennn/malaysian-tweets)
   - Scrapped twitter text data using Twint
   - Train Word2Vec model from scratch
+  - Tools: Python, DigitalOcean droplet, Gensim, Google Colab, Open Source Library: Twint
