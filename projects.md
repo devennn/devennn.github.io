@@ -8,6 +8,7 @@ permalink: /projects/
   - Using [Elm Chan FatFs module](http://elm-chan.org/fsw/ff/00index_e.html)
   - Design recursive implementation to read file.
   - Design fast write-to-file function to record sensor data.
+  - Tools: C, STM32 Nucleo
   
 ---
 
@@ -15,6 +16,7 @@ permalink: /projects/
   - Applying pipe for hub - player communication
   - Applying multiprocesses for player spawning
   - Utilize signal handling functions
+  - Tools: C, Linux OS
   
 ---
 
@@ -22,6 +24,7 @@ permalink: /projects/
   - Build a server - client system
   - Build a communication protocol using localhost
   - Build a two way communications and instructions processing system
+  - Tools: C, Linux OS
 
 ---
 
@@ -49,12 +52,14 @@ permalink: /projects/
   - Perform natural language processing on raw data
   - Exploring Machine Learning algorithm for translating sentences
   - Perform evaluation of accuracy and usability
+  - Tools: Python, Keras, Kaggle GPU
   
 ---
 
 - [Scrapping Momogun Language corpus](https://github.com/devennn/rungus-language-corpus)
   - Collecting Rngus - English corpus
   - Analyzing language to be used as datasets
+  - Tools: Python, Keras
  
   ---
 
@@ -62,6 +67,7 @@ permalink: /projects/
   - Organize files based on file extension
   - Rename files
   - GUI based application
+  - Tools: Python, Open Source library: PySimpleGUI, PyInstaller
   
   ---
   
