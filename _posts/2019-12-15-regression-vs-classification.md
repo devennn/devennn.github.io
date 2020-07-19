@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Regression vs Classification basic intuition
+title: Intuition of Regression vs Classification
 description: "When predicting, regression is more accurate. Sometimes, the other way around"
 comments: true
 keywords: "Regression vs Classification"

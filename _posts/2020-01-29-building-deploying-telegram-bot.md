@@ -1,9 +1,9 @@
 ---
 layout: post
-title: A simple Telegram conversation bot
+title: I build s simple Telegram chatbot
 ---
 
-I want to build something "futuristic" while learning something new. So, I build a Telegram conversation bot. View [full code here](https://github.com/devennn/blog-code/tree/master/tonduyutung-bot)
+I want to build something "futuristic" while learning something new. So, I build a Telegram chatbot. View [full code here](https://github.com/devennn/blog-code/tree/master/tonduyutung-bot)
 
 I called it Tonduyutung. Don't mind the name. It is a [dusun language for slow loris](https://glosbe.com/dtp/en/tonduyutung). 
 
