@@ -1,5 +1,5 @@
 ---
-title: How to predicting real and fake disaster tweets ?
+title: How to predicting real and fake disaster tweets?
 layout: post
 ---
 

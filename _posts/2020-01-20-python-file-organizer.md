@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Simple GUI file organizer to Rearrange and Rename files
+title: Mini project - GUI file organizer to Rearrange and Rename files
 published: false
 ---
 
