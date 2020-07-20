@@ -76,8 +76,8 @@ So, going back to the initial example, if the size of text input data is 128 by 
 ### How CNN works for Text
 
 If you get the idea of word embedding, you will understand two things:
- - Every row represents a word
- - Matrix columns mean nothing. They are just points to represent the word in the vector space. 
+- Every row represents a word
+- Matrix columns mean nothing. They are just points to represent the word in the vector space. 
 
 That means, using a filter that slide from left to right is useless. The features of a word in a sentence is its neighbouring word or context words.
 
@@ -91,8 +91,8 @@ window size = 2
 ```
 
 If we are checking for the word ```jump```, the context words are:
-    - 2 words to its left: ```brown, fox```
-    - 2 words to its right: ```over, the```
+- 2 words to its left: ```brown, fox```
+- 2 words to its right: ```over, the```
 
 #### CNN filter for text
 
@@ -109,8 +109,8 @@ And the last layer should be the standard neural network, which is connected to 
 ### Conclusion
 
 In this post, I hope:
-    - You gain good insights regarding the intuition of CNN for both application. 
-    - You see the difference in process
-    - You understand the input format of both process.
+- You gain good insights regarding the intuition of CNN for both application. 
+- You see the difference in process
+- You understand the input format of both process.
 
 Thanks for reading!
