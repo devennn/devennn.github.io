@@ -11,7 +11,7 @@ However, it is not frequently used in the NLP world. In this post, I present the
 
 ### How CNN works for Image
 
-If I would summarize the functionality of CNN, it would be "algorithm that search for local features in an image." You can say it is observing sign of shapes. It is very useful in a classification task. The usual process of an image related task is usually as below:
+If I would summarize the functionality of CNN, it would be *"algorithm that search for local features in an image."* You can say it is observing sign of shapes. It is very useful in a classification task. The usual process of an image related task is usually as below:
 
 ```
 1. Convolution Layer
