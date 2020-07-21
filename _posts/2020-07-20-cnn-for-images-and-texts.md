@@ -34,7 +34,7 @@ It uses feature detector called filter. At the begining of training, all filters
 
 The process undergo element-wise multiplication of input and filter matrix. This process produce a feature map according to the filter. As the filter become more descriptive, the feature map will show a better sumamry of the image.
 
-![gif](/assets/image/element-wise-multiplication.gif)
+![gif](/assets/images/element_wise_multiplication.gif)
 
 [Source](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
 
