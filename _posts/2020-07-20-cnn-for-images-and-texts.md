@@ -3,6 +3,7 @@ layout: post
 title: An overview of CNN for Image vs Text
 description: "Diffferences of CNN for texts vs images"
 keywords: "CNN, NLP, Images"
+published: false
 ---
 
 In this post, I would like to write about the differences of the application of CNN for image versus text.
@@ -26,7 +27,7 @@ The usual classification process of an image is usually as below:
 [*Image Source: ResearchGate*](https://www.researchgate.net/profile/Tao_Jiang10/publication/320441691/figure/fig3/AS:631629156462608@1527603534394/A-CNN-architecture-that-adds-convolution-layers-and-pooling-layers-before-dense-layers.png)
 
 #### Convolutional Layer
-Humans classify an image by observing shapes to form an object. Almost the same idea is applied here. The only difference is CNN observe much more detail representation of shape. 
+Humans classify images by observing shapes to form an object. Almost the same idea is applied here. The only difference is CNN observe much more detail representation of shape. 
 
 It uses feature detector called filter. At the begining of training, all filters are randomly initialized. Then, the model will tune the filter according to what features best describe the label.
 
