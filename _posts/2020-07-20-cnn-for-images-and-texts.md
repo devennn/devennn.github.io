@@ -34,13 +34,13 @@ It uses feature detector called filter. At the begining of training, all filters
 
 The process undergo element-wise multiplication of input and filter matrix. This process produce a feature map according to the filter. As the filter become more descriptive, the feature map will show a better sumamry of the image.
 
-![gif](/assets/images/element_wise_multiplication.gif)
+<img src=/assets/images/element_wise_multiplication.gif height="300"> 
 
 [Source](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
 
 #### Max Pooling
 
-![image](/assets/images/max_pooling.gif)
+![image](/assets/images/max_pooling.png)
 
 [Source](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
 
@@ -99,7 +99,7 @@ pad     [0, 0, 0, 0]
 
 In NLP, one most preferred method to describe words is using word embeddings. There are some good tutorials on this topic. The main idea of word embedding is to represent a word in the vector space.
 
-![image](/assets/images/word_embeddings.png)
+<img src=/assets/images/word_embeddings.png width="931"> 
 
 [Source](https://shanelynnwebsite-mid9n9g1q9y8tt.netdna-ssl.com/wp-content/uploads/2018/01/one-hot-word-embedding-vectors.png)
 
@@ -146,7 +146,7 @@ And the last layer should be the standard neural network, which is connected to 
 
 #### Summary of CNN for text
 
-<img src=/assets/images/cnn_text.png height="250"> 
+<img src=/assets/images/cnn_text.png height="500"> 
 
 [Source](http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-12.05.40-PM.png)
 
