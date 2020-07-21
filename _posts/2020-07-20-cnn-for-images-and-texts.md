@@ -132,7 +132,7 @@ If we are checking for the word ```jump```, the context words are:
 
 Because words are arrange row-wise, the filter should slide according to row. The variation of feature detector is determined by the value of context words.
 
-![image](/assets/images/cnn_text_filter.jpeg)
+<img src=/assets/images/cnn_text_filter.jpeg width="500"> 
 
 [Source](https://cdn-images-1.medium.com/max/1600/0*2a9vtO_WuRYFBwov)
 
@@ -146,7 +146,7 @@ And the last layer should be the standard neural network, which is connected to 
 
 #### Summary of CNN for text
 
-<img src=/assets/images/cnn_text.png height="500"> 
+<img src=/assets/images/cnn_text.png width="500"> 
 
 [Source](http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-12.05.40-PM.png)
 
