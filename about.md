@@ -3,22 +3,29 @@ layout: page
 title: About
 permalink: /about/
 ---
+Three reasons why I blog.
+- Improve my communications skills. Especially idea sharing.
+- Write about something that I found interesting.
+- Well, wise men said, "to understand something, summarize it". So, I write to learn.
 
-Hi! I am Deven. Welcome to my little blog. I am a final year Electrical Engineering student. I started this blog for three reasons. First, I want to improve my communication skill, especially sharing ideas. Second, I want to share my perspectives and thoughts on interesting stuff. Third, I use this blog to reinforce my knowledge. Well, writing always makes you know what you don't know. Basically, this is a living document of my learning progress!
+### Frequently used tools
+- Machine Learning
+  - Data Cleaning: NLTK, Keras for text
+  - Modelling: Pytorch, Keras
+  - Visualization: Matplotlib, Seaborn
+  - Others: Numpy, Pandas
+- Software Development
+  - C & Java: Windows Subsystem for Linux, Atom editor
+  - C for Embedded system: Eclipse, STM32 Workbench to generate HAL Library
+  - Python: Anaconda prompt, Atom editor, Jupyter
 
-I'm also a big believer in open discussion. So, if you disagree with something on this blog, I am happy to discuss it! That way we can grow together.
-
-![image](/assets/images/me.jpg)
-
-A little bit about myself. I like to play sports! Probably, I am average in everything except swimming. My mom did send me to a swimming lesson once, but, I'm more into football. Haha. I am more interested in team sports. I guess that what makes me a good team player. 
-
-### More information about me:
+### More Information
 
 - Name: Deven Yantis
 - From: Sabah, Malaysia
 - Expected Graduation: December 2020
 
-#### Education
+### Education
 - Bachelor of Engineering (Honours), Electrical Engineering
   - University of Queensland, Australia
 - Bachelor of Engineering (Honours), Electrical Engineering
@@ -27,8 +34,6 @@ A little bit about myself. I like to play sports! Probably, I am average in ever
 - Diploma of Engineering Technology in Avionics Maintenance
   - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology (2014 - 2016)
 
-#### Contacts
+### Contact me
 
-- [devenyantis@gmail.com](mailto:devenyantis@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/devenyantis/)
-- [Github](https://github.com/devennn)
+[devenyantis@gmail.com](mailto:devenyantis@gmail.com)

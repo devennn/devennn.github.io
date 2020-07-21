@@ -83,7 +83,7 @@ As you notice from the comment, the default value is set to 200. I found out tha
 
 We have to be careful when setting the size. Well, it is not a big deal. But, you don't want to end up having an image that is zoomed to blur. WordCloud width and height is used to initialize NumPy array to create image pixels, while figsize is in inches. Bigger WordCloud size means more words can be fitted, while bigger figsize will give a zooming effect.
 
-![image](/assets/images/covidcloud.png)
+![image](/images/covidcloud.png)
 
 ## Conclusion
 
