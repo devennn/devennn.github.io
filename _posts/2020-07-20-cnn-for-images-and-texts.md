@@ -148,9 +148,6 @@ And the last layer should be the standard neural network, which is connected to 
 
 <<<<<<< HEAD
 <img src=./assets/images/cnn_text.png alt="summary of cnn" width="500"> 
-=======
-<img src=/assets/images/cnn_text.png width="500"> 
->>>>>>> dd55f37715f4c5b35c6e1324f1660407dbf2f005
 
 [*Image Source: wildml*](http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/)
 
