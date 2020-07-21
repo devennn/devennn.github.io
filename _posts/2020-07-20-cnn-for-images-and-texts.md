@@ -146,7 +146,7 @@ And the last layer should be the standard neural network, which is connected to 
 
 #### Summary of CNN for text
 
-![image](/assets/images/cnn_text.png)
+![image](/assets/images/cnn_text.png =250x)
 
 [Source](http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-12.05.40-PM.png)
 
