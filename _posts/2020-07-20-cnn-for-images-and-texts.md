@@ -23,6 +23,9 @@ The usual classification process of an image is usually as below:
 4. Fully Connected layer
 ```
 
+![image](/assets/images/cnn_standard_process.png)
+[Source](https://www.researchgate.net/profile/Tao_Jiang10/publication/320441691/figure/fig3/AS:631629156462608@1527603534394/A-CNN-architecture-that-adds-convolution-layers-and-pooling-layers-before-dense-layers.png)
+
 #### Convolutional Layer
 Humans classify an image by observing shapes to form an object. Almost the same idea is applied here. The only difference is CNN observe much more detail representation of shape. 
 
