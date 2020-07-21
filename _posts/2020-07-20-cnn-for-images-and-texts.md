@@ -23,7 +23,7 @@ The usual classification process of an image is usually as below:
 4. Fully Connected layer
 ```
 
-![image](/assets/images/cnn_standard_process.png)
+<img src=/assets/images/cnn_standard_process.png width="500"> 
 
 [Source](https://www.researchgate.net/profile/Tao_Jiang10/publication/320441691/figure/fig3/AS:631629156462608@1527603534394/A-CNN-architecture-that-adds-convolution-layers-and-pooling-layers-before-dense-layers.png)
 
@@ -34,13 +34,13 @@ It uses feature detector called filter. At the begining of training, all filters
 
 The process undergo element-wise multiplication of input and filter matrix. This process produce a feature map according to the filter. As the filter become more descriptive, the feature map will show a better sumamry of the image.
 
-<img src=/assets/images/element_wise_multiplication.gif height="300"> 
+<img src=/assets/images/element_wise_multiplication.gif width="500"> 
 
 [Source](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
 
 #### Max Pooling
 
-![image](/assets/images/max_pooling.png)
+<img src=/assets/images/max_pooling.png width="500"> 
 
 [Source](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
 
@@ -51,7 +51,7 @@ This problem can be solved by pooling the information. The bigest number from th
 #### Matrix Flatening
 At some point, the output must be a vector or 1D matrix. This is where falttening does its job. From previous stage, we understand that the output is still a 2D matrix. At this point, the matrix will be flatten by rearranging it according to its position in the space.
 
-![image](/assets/images/flatten.png)
+<img src=/assets/images/flatten.png width="500"> 
 
 [Source](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/73_blog_image_1.png)
 
@@ -71,7 +71,7 @@ Lets assume both input matrix has the size of 128 by 128. What can we understand
 
 For image, this can be understood as image of having width of 128 pixels and length of 128 pixels. A square image.
 
-![image](/assets/images/MNIST-Matrix.png)
+<img src=/assets/images/MNIST-Matrix.png width="500"> 
 
 [Source](https://www.tensorflow.org/images/MNIST-Matrix.png)
 
@@ -99,7 +99,7 @@ pad     [0, 0, 0, 0]
 
 In NLP, one most preferred method to describe words is using word embeddings. There are some good tutorials on this topic. The main idea of word embedding is to represent a word in the vector space.
 
-<img src=/assets/images/word_embeddings.png width="931"> 
+<img src=/assets/images/word_embeddings.png width="500"> 
 
 [Source](https://shanelynnwebsite-mid9n9g1q9y8tt.netdna-ssl.com/wp-content/uploads/2018/01/one-hot-word-embedding-vectors.png)
 
