@@ -39,12 +39,21 @@ The process undergo element-wise multiplication of input and filter matrix. This
 [Source](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
 
 #### Max Pooling
+
+![image](/assets/images/max_pooling.gif)
+
+[Source](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
+
 The feature map holds the summary of the input image with respect to the filter. The bigger the image, the more result CNN layer produce, which means the model will have more parameters and will take longer time to process.
 
 This problem can be solved by pooling the information. The bigest number from the feaure map will be taken to describe the feature. The bigger the number, the more prominent the features. In this way, the size of image is reduced without losing too much information.
 
 #### Matrix Flatening
 At some point, the output must be a vector or 1D matrix. This is where falttening does its job. From previous stage, we understand that the output is still a 2D matrix. At this point, the matrix will be flatten by rearranging it according to its position in the space.
+
+![image](/assets/images/flatten.png)
+
+[Source](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/73_blog_image_1.png)
 
 The output will be a vector.
 
@@ -61,6 +70,10 @@ Lets assume both input matrix has the size of 128 by 128. What can we understand
 #### Image  
 
 For image, this can be understood as image of having width of 128 pixels and length of 128 pixels. A square image.
+
+![image](/assets/images/MNIST-Matrix.png)
+
+[Source](https://www.tensorflow.org/images/MNIST-Matrix.png)
 
 Further observation tells us that every pixels surrounding a pixel (top, bottom, left, right, top-right, bottom-right, etc) contribute to the meaning of the whole image. This is why the filter slides sideways and downwards because it needs to take into account the neighbouring pixels.
 
@@ -85,6 +98,10 @@ pad     [0, 0, 0, 0]
 ```
 
 In NLP, one most preferred method to describe words is using word embeddings. There are some good tutorials on this topic. The main idea of word embedding is to represent a word in the vector space.
+
+![image](/assets/images/word_embeddings.png)
+
+[Source](https://shanelynnwebsite-mid9n9g1q9y8tt.netdna-ssl.com/wp-content/uploads/2018/01/one-hot-word-embedding-vectors.png)
 
 Each word is represent as a 1 by N vector. For example above, the N value is 4. There is no rule of thumb for the number. The length of BERT embeddings is 768. This value is experimental.
 
@@ -115,6 +132,10 @@ If we are checking for the word ```jump```, the context words are:
 
 Because words are arrange row-wise, the filter should slide according to row. The variation of feature detector is determined by the value of context words.
 
+![image](/assets/images/cnn_text.png)
+
+[Source](https://cdn-images-1.medium.com/max/1600/0*2a9vtO_WuRYFBwov)
+
 #### Pooling
 
 This layer serve the same purpose as in the image, to reduce size. Only the maximum value will be taken to represent the feature. As you can see, the output is already in vector format. So, there is no need to apply any more flatten process. 
@@ -122,6 +143,12 @@ This layer serve the same purpose as in the image, to reduce size. Only the maxi
 #### Fully Connected Layer
 
 And the last layer should be the standard neural network, which is connected to the output neurons.
+
+#### Summary of CNN for text
+
+![image](/assets/images/cnn_text.png)
+
+[Source](http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-12.05.40-PM.png)
 
 ### Conclusion
 
