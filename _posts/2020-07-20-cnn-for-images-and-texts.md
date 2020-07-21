@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Applying CNN for texts classification
-description: "Diffferences and practical example of CNN for texts"
+title: An overview of CNN for Image vs Text. 
+description: "Diffferences of CNN for texts vs images"
 keywords: "CNN, NLP, Images"
 ---
 
