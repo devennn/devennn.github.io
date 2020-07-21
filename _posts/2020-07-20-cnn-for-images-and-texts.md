@@ -24,6 +24,7 @@ The usual classification process of an image is usually as below:
 ```
 
 ![image](/assets/images/cnn_standard_process.png)
+
 [Source](https://www.researchgate.net/profile/Tao_Jiang10/publication/320441691/figure/fig3/AS:631629156462608@1527603534394/A-CNN-architecture-that-adds-convolution-layers-and-pooling-layers-before-dense-layers.png)
 
 #### Convolutional Layer
@@ -32,6 +33,10 @@ Humans classify an image by observing shapes to form an object. Almost the same 
 It uses feature detector called filter. At the begining of training, all filters are randomly initialized. Then, the model will tune the filter according to what features best describe the label.
 
 The process undergo element-wise multiplication of input and filter matrix. This process produce a feature map according to the filter. As the filter become more descriptive, the feature map will show a better sumamry of the image.
+
+![gif](/assets/image/element-wise-multiplication.gif)
+
+[Source](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
 
 #### Max Pooling
 The feature map holds the summary of the input image with respect to the filter. The bigger the image, the more result CNN layer produce, which means the model will have more parameters and will take longer time to process.
