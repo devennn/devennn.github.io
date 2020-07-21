@@ -3,7 +3,6 @@ layout: post
 title: Applying CNN for texts classification
 description: "Diffferences and practical example of CNN for texts"
 keywords: "CNN, NLP, Images"
-published: false
 ---
 
 In this post, I would like to write about the differences of the application of CNN for image versus text.
@@ -146,11 +145,7 @@ And the last layer should be the standard neural network, which is connected to 
 
 #### Summary of CNN for text
 
-<<<<<<< HEAD
-<img src=./assets/images/cnn_text.png alt="summary of cnn" width="500"> 
-=======
-<img src=/assets/images/cnn_text.png width="500"> 
->>>>>>> dd55f37715f4c5b35c6e1324f1660407dbf2f005
+<img src=./assets/images/cnn_text.png width="500"> 
 
 [*Image Source: wildml*](http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/)
 
