@@ -25,7 +25,7 @@ The usual classification process of an image is usually as below:
 
 <img src=/assets/images/cnn_standard_process.png width="500"> 
 
-[Image Source](https://www.researchgate.net/profile/Tao_Jiang10/publication/320441691/figure/fig3/AS:631629156462608@1527603534394/A-CNN-architecture-that-adds-convolution-layers-and-pooling-layers-before-dense-layers.png)
+[*Image Source: ResearchGate*](https://www.researchgate.net/profile/Tao_Jiang10/publication/320441691/figure/fig3/AS:631629156462608@1527603534394/A-CNN-architecture-that-adds-convolution-layers-and-pooling-layers-before-dense-layers.png)
 
 #### Convolutional Layer
 Humans classify an image by observing shapes to form an object. Almost the same idea is applied here. The only difference is CNN observe much more detail representation of shape. 
@@ -36,13 +36,13 @@ The process undergo element-wise multiplication of input and filter matrix. This
 
 <img src=/assets/images/element_wise_multiplication.gif width="500"> 
 
-[Image Source](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
+[*Image Source: Medium*](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
 
 #### Max Pooling
 
 <img src=/assets/images/max_pooling.png width="500"> 
 
-[Image Source](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
+[*Image Source: ComputerScienceWiki*](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
 
 The feature map holds the summary of the input image with respect to the filter. The bigger the image, the more result CNN layer produce, which means the model will have more parameters and will take longer time to process.
 
@@ -53,7 +53,7 @@ At some point, the output must be a vector or 1D matrix. This is where falttenin
 
 <img src=/assets/images/flatten.png width="500"> 
 
-[Image Source](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/73_blog_image_1.png)
+[*Image Source: Towards Data Science*](https://towardsdatascience.com/a-simple-guide-to-convolutional-neural-networks-751789e7bd88)
 
 The output will be a vector.
 
@@ -73,7 +73,7 @@ For image, this can be understood as image of having width of 128 pixels and len
 
 <img src=/assets/images/MNIST-Matrix.png width="500"> 
 
-[Image Source](https://www.tensorflow.org/images/MNIST-Matrix.png)
+[*Image Source: tensorflow.org*](https://www.tensorflow.org/images/MNIST-Matrix.png)
 
 Further observation tells us that every pixels surrounding a pixel (top, bottom, left, right, top-right, bottom-right, etc) contribute to the meaning of the whole image. This is why the filter slides sideways and downwards because it needs to take into account the neighbouring pixels.
 
@@ -101,7 +101,7 @@ In NLP, one most preferred method to describe words is using word embeddings. Th
 
 <img src=/assets/images/word_embeddings.png width="500"> 
 
-[Image Source](https://shanelynnwebsite-mid9n9g1q9y8tt.netdna-ssl.com/wp-content/uploads/2018/01/one-hot-word-embedding-vectors.png)
+[*Image Source*](https://shanelynnwebsite-mid9n9g1q9y8tt.netdna-ssl.com/wp-content/uploads/2018/01/one-hot-word-embedding-vectors.png)
 
 Each word is represent as a 1 by N vector. For example above, the N value is 4. There is no rule of thumb for the number. The length of BERT embeddings is 768. This value is experimental.
 
@@ -134,7 +134,7 @@ Because words are arrange row-wise, the filter should slide according to row. Th
 
 <img src=/assets/images/cnn_text_filter.jpeg width="500"> 
 
-[Image Source](https://cdn-images-1.medium.com/max/1600/0*2a9vtO_WuRYFBwov)
+[*Image Source: Medium*](https://cdn-images-1.medium.com/max/1600/0*2a9vtO_WuRYFBwov)
 
 #### Pooling
 
@@ -148,7 +148,7 @@ And the last layer should be the standard neural network, which is connected to 
 
 <img src=/assets/images/cnn_text.png width="500"> 
 
-[*Image Source*](http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-12.05.40-PM.png)
+[*Image Source: wildml*](http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/)
 
 ### Conclusion
 
