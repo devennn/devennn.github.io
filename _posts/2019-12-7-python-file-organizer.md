@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Simple GUI file organizer to Rearrange and Rename files
-published: false
+title: Python file organizer to Rearrange and Rename files
 ---
 
 ![File Organizer](/images/Filorg.PNG)
