@@ -30,7 +30,7 @@ This is done by projecting the input to three different set of weights, i.e. Que
 
 Each word in the sequence will have their own query, key and value. 
 
-![query, key and value process](/assets/images/qkv_result.png)
+![query, key and value process]()
 
 One thing to note is all three values actually mean nothing. They are just mathematical representations of the input word in different vector space which can be used for calculations. That's it.  
 
@@ -40,7 +40,7 @@ Up to here, the input embedding has been projected to Q, K and V spaces. In this
 
 Let's say we want to encode ```eat``` from the sentence ```He eat fried noodles```, after process 1, all input words will have Q, K and V.
 
-![Q, K and V for every word]()
+![Q, K and V for every word](/assets/images/qkv_result.png)
 
 The scores are calculated by performing dot products of Q of ```eat``` with K value of every words in the sequence, including itself. The result is a vector of size (1, 4) which holds the value of every dot product result.
 
