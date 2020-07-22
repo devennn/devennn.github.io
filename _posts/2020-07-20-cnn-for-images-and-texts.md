@@ -12,7 +12,7 @@ Convolutional Neural Network or CNN is a well known for its ability to detect lo
 
 ### How CNN works for Image
 
-If someone asks me to describe CNN in simple terms, my answer is *"algorithm that search for local features in an image."* Basically, it is observing signs of shapes. This approach is very useful in a classification task.
+If someone asks me to describe CNN in simple terms, I would say *"algorithm that search for local features in an image."* Basically, it is observing signs of shapes. This approach is very useful in a classification task.
 
 The usual classification process of an image is usually as below:
 
@@ -29,9 +29,11 @@ The usual classification process of an image is usually as below:
 #### Convolutional Layer
 Humans classify images by observing shapes to form an object. Almost the same idea is applied here. The only difference is CNN observe much more detail representation of shape. 
 
-It uses feature detector called filter. At the begining of training, all filters are randomly initialized. Then, the model will tune the filter according to what features best describe the label.
+It uses feature detector called filter(also known as kernel). At the begining of training, all filters are randomly initialized. Then, the model will tune the filter according to what features best describe the label.
 
-The process undergo element-wise multiplication of input and filter matrix. This process produce a feature map according to the filter. As the filter become more descriptive, the feature map will show a better sumamry of the image.
+The filter slides throughout the input image to detect patterns. This process is called convolving.
+
+The process is an element-wise multiplication of input at certain location and filter matrix. This process produce a feature map. As the filter become more descriptive, the feature map will show a better sumamry of the image.
 
 ![](/assets/images/element_wise_multiplication.gif)
 
