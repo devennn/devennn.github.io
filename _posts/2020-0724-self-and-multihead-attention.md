@@ -12,11 +12,11 @@ published: false
 
 When Transformer is introduced, the concept of self-attention becomes important. The main function is to produce a vector that is related to the word being focused.
 
-![output of self-attention]()
+![output of self-attention](/assets/images/self-attention-input-output.png)
 
 Zooming in, these are the process taken to produce the output.
 
-![process of self-attention]()
+![process of self-attention](/assets/images/self-attention-process.png)
 
 #### Process 1 - Word embedding to Query, Key and Value
 
