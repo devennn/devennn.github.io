@@ -6,7 +6,9 @@ keywords: "attention, bert"
 published: false
 ---
 
-## Purpose of attention
+This post aims to explain the workings of self and multi-headed attention in BERT family model. You can read more about attention algorithms in general from these references. 
+
+Simply said, the function of attention algorithm is to help focus on meaningful words.
 
 ## Self-Attention
 
@@ -20,9 +22,13 @@ Zooming in, these are the process taken to produce the output.
 
 #### Process 1 - Word embedding to Query, Key and Value
 
-There are three key parameters introduced in this concept. Query, Key and Value. These values are calculated from the word embedding. Another way to understand this process is the input embedding is translated to three different versions of itself. From embedding space to query, key and value space.
+There are three key parameters introduced in this concept. Query, Key and Value. To avoid confusion, I will use Q, K and V to reference them.
 
-This is done by projecting the input to three different set of weights, i.e. Query weight, Key weight and Value weight. All weights act as medium conversion which are trainable.  
+These vectors are calculated from the word embedding. Another way to understand this process is the input embedding is translated to three different versions of itself. From embedding space to Q, K and V space.
+
+This is done by projecting the input to three different set of weights, i.e. Query weight, Key weight and Value weight. All weights act as a projection medium which are trainable. 
+
+Each word in the sequence will have their own query, key and value. 
 
 ![query, key and value process]()
 
@@ -30,6 +36,29 @@ One thing to note is all three values actually mean nothing. They are just mathe
 
 #### Process 2 - Calculating Attention Score
 
+Up to here, the input embedding has been projected to Q, K and V spaces. In this process, Q and K are used for calculating the attention score. 
+
+Let's say we want to encode ```eat``` from the sentence ```He eat fried noodles```, after process 1, all input words will have Q, K and V.
+
+![Q, K and V for every word]()
+
+The scores are calculated by performing dot products of Q of ```eat``` with K value of every words in the sequence, including itself. The result is a vector of size (1, 4) which holds the value of every dot product result.
+
+![score calculation]()
+
+Then every score is divided by 8. According to this source, *"This leads to having more stable gradients"* [source](https://jalammar.github.io/illustrated-transformer/). 
+
+![value divided by 8]()
+
+The attention score is calculated by applying softmax function to the all values in the vector. This will adjust the scores to add up to 1.
+
+![softmax result]()
+
+The attention score indicate importance of word in the context of word being encoded, whcih is ```eat```. Higher value, higher importance.
+
 #### Process 3 - Calculating Output Vector
+
+The last process is to produce the output vector. Up to here, we have the attention score and V. 
+
 
 ## Multi-head Attention
