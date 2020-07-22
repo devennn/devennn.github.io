@@ -33,11 +33,11 @@ It uses feature detector called filter(also known as kernel). At the begining of
 
 The filter slides throughout the input image to detect patterns. This process is called convolving.
 
-The process is an element-wise multiplication of input at certain location and filter matrix. This process produce a feature map. As the filter become more descriptive, the feature map will show a better sumamry of the image.
-
 ![](/assets/images/element_wise_multiplication.gif)
 
 [*Image Source: Medium*](https://miro.medium.com/max/1920/1*60uqHq7wJ2Mbg0uP4SRgvg.gif)
+
+Basically, this is an element-wise multiplication of input(a matrix) at certain location and filter(also a matrix). Every filter will produce its own feature map. As the filter become more descriptive, the feature map will show a better summary of the image.
 
 #### Max Pooling
 
@@ -98,7 +98,11 @@ pad     [0, 0, 0, 0]
 pad     [0, 0, 0, 0]
 ```
 
-In NLP, one most preferred method to describe words is using word embeddings. There are some good tutorials on this topic. The main idea of word embedding is to represent a word in the vector space.
+In NLP tasks there are 2 ways of forming input:
+  - Word level: Sentence are describe bassed on words
+  - Character level: Sentences are describe based on character. i.e. letters, punctuations
+  
+For this post, I will use word level. The usual method to describe words is using word embeddings. The main idea of word embedding is to represent a word in the vector space.
 
 ![](/assets/images/word_embeddings.png)
 
@@ -114,9 +118,9 @@ If you get the idea of word embedding, you will understand two things:
 - Every row represents a word
 - Matrix columns mean nothing. They are just points to represent the word in the vector space. 
 
-That means, using a filter that slide from left to right is useless. The features of a word in a sentence is its neighbouring words also called as context words.
+That means, using a filter that slide from left to right is useless because there are no column-wise dependencies. The features of a word in a sentence is its neighbouring words also called as context words, which are arranged row-wise(top to bottom).
 
-#### Context words
+#### Brief explanation of context words
 
 If you are familiar with Word2Vec, there is a parameter called window size, which determine how many words to the left and right are considered as contexts. For example:
 
@@ -131,7 +135,7 @@ If we are checking for the word ```jump```, the context words are:
 
 #### CNN filter for text
 
-Because words are arrange row-wise, the filter should slide according to row. The variation of feature detector is determined by the value of context words.
+Because words are arrange row-wise, the filter should slide from top to bottom. The variation of feature detector is determined by the value of context words. For example one filter may slide over 3 words at a time and the other will slide through 5 words at a time. 
 
 ![](/assets/images/cnn_text_filter.jpeg)
 
@@ -144,6 +148,10 @@ This layer serve the same purpose as in the image, to reduce size. Only the maxi
 #### Fully Connected Layer
 
 And the last layer should be the standard neural network, which is connected to the output neurons.
+
+![](/assets/images/mlp.png)
+
+[*Image Source: davidbatista*](http://www.davidsbatista.net/assets/images/2018-03-31-mlp.png)
 
 #### Summary of CNN for text
 
