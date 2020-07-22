@@ -30,7 +30,7 @@ This is done by projecting the input to three different set of weights, i.e. Que
 
 Each word in the sequence will have their own query, key and value. 
 
-![query, key and value process]()
+![query, key and value process](/assets/images/qkv_result.png)
 
 One thing to note is all three values actually mean nothing. They are just mathematical representations of the input word in different vector space which can be used for calculations. That's it.  
 
