@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to build and deploy a simple Telegram chatbot
+title: Build and deploy a simple Telegram chatbot
 ---
 
 I want to build something "futuristic" while learning something new. So, I build a Telegram chatbot. View [full code here](https://github.com/devennn/blog-code/tree/master/tonduyutung-bot)

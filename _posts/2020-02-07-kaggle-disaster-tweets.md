@@ -1,9 +1,9 @@
 ---
-title: How to predict real and fake disaster tweets
+title: Predict real and fake disaster tweets with scikit-learn
 layout: post
 ---
 
-This is a Kaggle introductory competition to predict real and fake tweets from twitter tweets. You can find the full code [here](https://github.com/devennn/Programming-Challenge/blob/master/kaggle-submission/disaster-tweets/main_v2.ipynb)
+This is a Kaggle introductory competition to predict real and fake tweets from twitter tweets. You can find the full code [here](https://github.com/devennn/blog-code/blob/master/disaster-tweets-sklearn.ipynb)
 
 ## Exploring dataset
 ```
