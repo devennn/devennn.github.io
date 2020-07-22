@@ -38,11 +38,11 @@ One thing to note is all three values actually mean nothing. They are just mathe
 
 Up to here, the input embedding has been projected to Q, K and V spaces. In this process, Q and K are used for calculating the attention score. 
 
-Let's say we want to encode ```eat``` from the sentence ```He eat fried noodles```, after process 1, all input words will have Q, K and V.
+Let's say we want to encode ```eat``` from the sentence ```He eat fried noodles```, after process 1, all input words will have Q, K and V as below.
 
 ![Q, K and V for every word](/assets/images/qkv_result.png)
 
-The scores are calculated by performing dot products of Q of ```eat``` with K value of every words in the sequence, including itself. The result is a vector of size (1, 4) which holds the value of every dot product result.
+In process 2, the scores are calculated by performing dot products of Q of ```eat``` with K value of every words in the sequence, including itself. The result is a vector of size (1, 4) which holds the value of every dot product result.
 
 ![score calculation]()
 
