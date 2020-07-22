@@ -4,13 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Hi! I am Deven. Welcome to my little blog. I am a final year Electrical Engineering student. I started this blog for three reasons. First, I want to improve my communication skill, especially sharing ideas. Second, I want to share my perspectives and thoughts on interesting stuff. Third, I use this blog to reinforce my knowledge. Well, writing always makes you know what you don't know. Basically, this is a living document of my learning progress!
+Hi! I am Deven. Welcome to my little blog. I am a final year Electrical Engineering student. I started this blog for three reasons. First, I want to improve my communication skill, especially sharing ideas. Second, I want to share my perspectives and thoughts on interesting stuff. Third, I use this blog to reinforce my knowledge. Well, writing always makes you know what you don't know. This is a living document of my learning progress!
 
-I'm also a big believer in open discussion. So, if you disagree with something on this blog, I am happy to discuss it! That way we can grow together.
+I'm also a big believer in open discussion. So, if you disagree with something on this blog, I am happy to discuss it! That way, we can grow together.
 
 ![image](/assets/images/me.jpg)
 
-A little bit about myself. I like to play sports! Probably, I am average in everything except swimming. My mom did send me to a swimming lesson once, but, I'm more into football. Haha. I am more interested in team sports. I guess that what makes me a good team player. 
+A little bit about myself: I like to play sports! Probably, I am average in everything except swimming. My mom did send me to a swimming lesson once, but I'm more into football. Haha. I am more interested in team sports. I guess that what makes me a good team player. 
 
 ### More information about me:
 
