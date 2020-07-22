@@ -12,7 +12,7 @@ Convolutional Neural Network or CNN is a well known for its ability to detect lo
 
 ### How CNN works for Image
 
-If someone asks me to describe CNN in simple terms, I would say *"algorithm that search for local features in an image."* Basically, it is observing signs of shapes. This approach is very useful in a classification task.
+If someone asks me to describe CNN in simple terms, my answer is *"algorithm that search for local features in an image."* Basically, it is observing signs of shapes. This approach is very useful in a classification task.
 
 The usual classification process of an image is usually as below:
 
