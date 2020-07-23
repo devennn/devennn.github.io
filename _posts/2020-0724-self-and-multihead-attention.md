@@ -96,23 +96,31 @@ X = [0.0008(V11) 0.0008(V12) 0.0008(V13) 0.0008(V14)]
 
 The green box is the output vector of self-attention section. This is the value that is passed to the next part of the block.
 
-## Understanding how the matrix evolve
+## How Matrix Transform at every Process
 
-Before we go to the multi-head, lets understand the dimensions of matrixes for every stage. Let's use the dimensions from transformer model.
+Before we go to the multi-head, let us understand the transformation of matrixes by observing the dimension at every process. I am using the dimensions from the transformer model.
 
-The model requires input dimension to be (1, 512) for a single word vector. In our example sentence, The matrix size is (4, 512). The embedding size or number of features for every parts of encoder in the whole model should be 512. That means, the input and output matrix that pass through self-attention has matrix of size (4, 512).
+The model requires input dimension to be (1, 512) for a single word vector according to the paper. 
+
+For our example sentence, The matrix size will be (4, 512). As the value passing through every parts of the encoders and decoders, the embedding size(or number of features) will stay constant at 512.
+
+That means, the input and output matrix that pass through self-attention has matrix of size (4, 512).
 
 #### Evaluating self-attention
 
+Let's revisit the self-attention process.
+
 ![self-attention matirx evolution](/assets/images/self-attention-evolution.png)
 
-If we look at the output of self-attention, the size of output matrix is not equal to the input. This is intentional because self-attention is to be used as one of the many heads in this layer.
+If we look at the output of self-attention, the size of output matrix is not equal to the input. This is anticipated as self-attention is to be used as one of the many heads of the multi-headed attention.
 
 ## Multi-head Attention
 
 As said before, the self-attention is used as one of the heads of the multi-headed. Each head performs their own self-attention process, which means, they have separate Q, K and V and also have different output vector of size (4, 64) in our example.
 
 To produce the required output vector with correct dimension (4, 512), all heads will combine their output by concatenating with each other.
+
+Assume h1, h2 and h3 are the outputs from 3 different heads.
 
 ```
 h1 =    [1, 2, 3]    
@@ -132,8 +140,12 @@ h_concatenate = [1, 2, 3, 10, 11, 12, 19, 20, 21]
                 [7, 8, 9, 16, 17, 18, 25, 26, 27]
 ```
 
-To produce the outp ut, the combined output is multiplied with output projection matrix.
+So you can view the whole process this way
 
 ![output projection matrix](/assets/images/multi-head-evolution.png)
 
-This is the output for the multi-headed attention layer whcih is used for the next stage.
+To produce the output, the combined output is multiplied with output projection matrix.
+
+![output projection matrix]()
+
+This is the output for the multi-headed attention layer which is used for the next stage.
