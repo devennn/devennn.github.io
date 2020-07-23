@@ -104,7 +104,7 @@ The model requires input dimension to be (1, 512) for a single word vector. In o
 
 #### Evaluating self-attention
 
-![self-attention matirx evolution](assets/images/self-attention-evolution.png)
+![self-attention matirx evolution](/assets/images/self-attention-evolution.png)
 
 If we look at the output of self-attention, the size of output matrix is not equal to the input. This is intentional because self-attention is to be used as one of the many heads in this layer.
 
@@ -118,6 +118,6 @@ To produce the required output vector with correct dimension (4, 512), all heads
 
 To produce the output, the combined output is multiplied with output projection matrix.
 
-![output projection matrix](assets/images/multi-head-evolution.png)
+![output projection matrix](/assets/images/multi-head-evolution.png)
 
 This is the output for the multi-headed attention layer whcih is used for the next stage.
