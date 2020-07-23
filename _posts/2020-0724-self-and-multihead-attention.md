@@ -96,4 +96,28 @@ X = [0.0008(V11) 0.0008(V12) 0.0008(V13) 0.0008(V14)]
 
 The green box is the output vector of self-attention section. This is the value that is passed to the next part of the block.
 
+## Understanding how the matrix evolve
+
+Before we go to the multi-head, lets understand the dimensions of matrixes for every stage. Let's use the dimensions from transformer model.
+
+The model requires input dimension to be (1, 512) for a single word vector. In our example sentence, The matrix size is (4, 512). The embedding size or number of features for every parts of encoder in the whole model should be 512. That means, the input and output matrix that pass through self-attention has matrix of size (4, 512).
+
+#### Evaluating self-attention
+
+![self-attention matirx evolution](assets/images/self-attention-evolution.png)
+
+If we look at the output of self-attention, the size of output matrix is not equal to the input. This is intentional because self-attention is to be used as one of the many heads in this layer.
+
 ## Multi-head Attention
+
+As said before, the self-attention is used as one of the heads of the multi-headed. Each head performs their own self-attention process, which means, they have separate Q, K and V and also have different output vector of size (4, 64) in our example.
+
+To produce the required output vector with correct dimension (4, 512), all heads will combine their output by concatenating with each other.
+
+![concatenation]()
+
+To produce the output, the combined output is multiplied with output projection matrix.
+
+![output projection matrix](assets/images/multi-head-evolution.png)
+
+This is the output for the multi-headed attention layer whcih is used for the next stage.
