@@ -6,17 +6,15 @@ keywords: "attention, bert"
 published: false
 ---
 
-This post aims to explain the workings of self and multi-headed attention in BERT family model. You can read more about attention algorithms in general from these references. 
-
-Simply said, the function of attention algorithm is to help focus on meaningful words.
+This post aims to explain the workings of self and multi-headed attention.
 
 ## Self-Attention
 
-In the original BERT design, self-attention is a small part in the encoder and decoder block. The purpose is to focus on important words and are used with other parts such as feedforward, etc. to produce the output for the bigger block(encoder, decoder).
+Self-attention is a small part in the encoder and decoder block. The purpose is to focus on important words. In the encoder block, it is used together with a feedforward neural network.
 
 ![output of self-attention](/assets/images/self-attention-input-output.png)
 
-Zooming into the self-attention section, these are the processes to produce the output.
+Zooming into the self-attention section, these are the major processes.
 
 ![process of self-attention](/assets/images/self-attention-process.png)
 
@@ -42,13 +40,13 @@ Up to here, the input embedding has been projected to Q, K and V spaces. In this
 
 Let's say we want to encode ```eat``` from the sentence ```They eat fried noodles```, after process 1, all input words will have Q, K and V as below.
 
-Starting from here, all examples are referring to calculating for one word only. In a real application, every word will have to go through these steps.
+__Note: Starting from here, all examples are referring to the process of one word only. In a real application, every word will have to go through these steps.__
 
 ![Q, K and V for every word](/assets/images/qkv_result.png)
 
 In process 2, the scores are calculated by performing dot products of Q of ```eat``` with transposed K of every word in the sequence, including itself. The result for a single word is a vector of size (1, 4) which holds the value of every dot product result.
 
-The size (1, 4) is used as an example in this post for simplicity. BERT has its dimensions of word vectors. 
+The size (1, 4) is used as an example in this post for simplicity. (1, 4) means a word has 4 embedding length(or features). 
 
 ![score calculation](/assets/images/score_calculation.png)
 
@@ -69,7 +67,7 @@ This will adjust the scores so that the total will add up to 1.
 ```
 Softmax result
 
-softmax_score = [0.0008, 0.87, 0.0016, 0.012]
+softmax_score = [0.0008, 0.87, 0.015, 0.011]
 
 ```
 The attention scores indicate the importance of the word in the context of word being encoded, which is ```eat```. Higher value, higher importance.
@@ -86,7 +84,7 @@ For example, to produce value for ```eat``` with respect to ```they``` the calcu
 
 ```
 softmax score: 0.0008
-V for *they* = [V11 V12 V13 V14]
+V for "they" = [V11 V12 V13 V14]
 
 The Multiplication values, X are:
 
@@ -100,7 +98,7 @@ The green box is the output vector of self-attention section. This is the value 
 
 Before we go to the multi-head, let us understand the transformation of matrixes by observing the dimension at every process. I am using the dimensions from the transformer model.
 
-The model requires input dimension to be (1, 512) for a single word vector according to the paper. 
+According to the paper, the model requires input dimension to be (1, 512) for a single word vector. 
 
 For our example sentence, The matrix size will be (4, 512). As the value passing through every parts of the encoders and decoders, the embedding size(or number of features) will stay constant at 512.
 
@@ -112,13 +110,13 @@ Let's revisit the self-attention process.
 
 ![self-attention matirx evolution](/assets/images/self-attention-evolution.png)
 
-If we look at the output of self-attention, the size of output matrix is not equal to the input. This is anticipated as self-attention is to be used as one of the many heads of the multi-headed attention.
+If we look at the output of self-attention, the size of the output matrix is not equal to the input. This is anticipated as self-attention is to be used as one of the many heads of the multi-headed attention.
 
 ## Multi-head Attention
 
-As said before, the self-attention is used as one of the heads of the multi-headed. Each head performs their own self-attention process, which means, they have separate Q, K and V and also have different output vector of size (4, 64) in our example.
+As said before, the self-attention is used as one of the heads of the multi-headed. Each head performs their self-attention process, which means, they have separate Q, K and V and also have different output vector of size (4, 64) in our example.
 
-To produce the required output vector with correct dimension (4, 512), all heads will combine their output by concatenating with each other.
+To produce the required output vector with the correct dimension of (4, 512), all heads will combine their output by concatenating with each other.
 
 Assume h1, h2 and h3 are the outputs from 3 different heads.
 
@@ -140,12 +138,25 @@ h_concatenate = [1, 2, 3, 10, 11, 12, 19, 20, 21]
                 [7, 8, 9, 16, 17, 18, 25, 26, 27]
 ```
 
-So you can view the whole process this way
+So you can view the whole process this way.
 
 ![output projection matrix](/assets/images/multi-head-evolution.png)
 
-To produce the output, the combined output is multiplied with output projection matrix.
+To produce the output, the combined output is multiplied with the output projection matrix.
 
 ![output projection matrix](/assets/images/output-projection-matrix.png)
 
-This is the output for the multi-headed attention layer which is used for the next stage.
+This is the output for the multi-headed attention layer, which is used for the next stage.
+
+## Conclusion
+
+I hope you have good insights regarding self-attention algorithms. The example given is using the transformer parameters value. The differences compared to BERT are:
+
+- Embedding Dimensions
+        - Transformers = 512
+        - BERT = 768
+- Number of heads
+        - Transformer = 8
+        - BERT = 12
+
+Pretty much other processes are similar. Thanks for reading. Have a nice day!
