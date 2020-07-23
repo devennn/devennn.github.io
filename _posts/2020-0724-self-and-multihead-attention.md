@@ -46,7 +46,7 @@ Let's say we want to encode ```eat``` from the sentence ```He eat fried noodles`
 
 In process 2, the scores are calculated by performing dot products of Q of ```eat``` with transposed K of every words in the sequence, including itself. The result for a single word is a vector of size (1, 4) which holds the value of every dot product result.
 
-![score calculation]()
+![score calculation](/assets/images/score_calculation.png)
 
 Then, every score is divided by 8. According to this source, *"This leads to having more stable gradients"* [source](https://jalammar.github.io/illustrated-transformer/). 
 
@@ -58,7 +58,7 @@ score = [4, 11, 7, 9]
 ```
 The attention score is calculated by applying softmax function to the all values in the vector.
 
-![softmax function]()
+![softmax function](/assets/images/softmax_function.png)
 
 This will adjust the scores to add up to 1.
 
@@ -77,7 +77,7 @@ The last process is to produce the output vector. Up to here, we have the attent
 
 Here, the softmax scores are multiplied to their respective V. Then the values are added together to produce the output vector. 
 
-![Output vector calculation]()
+![Output vector calculation](/assets/images/attention_score.png)
 
 This is the end of self-attention.
 
