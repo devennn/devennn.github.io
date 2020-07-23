@@ -30,7 +30,9 @@ This is done by projecting the input to three different set of weights, i.e. Que
 
 Each word in the sequence will have their own query, key and value. 
 
-![query, key and value process]()
+![query, key and value process](/assets/images/transformer_self_attention_vec.png)
+
+[*Image Source: jalammar.github.io*](https://jalammar.github.io/illustrated-transformer/)
 
 One thing to note is all three values actually mean nothing. They are just mathematical representations of the input word in different vector space which can be used for calculations. That's it.  
 
@@ -42,11 +44,11 @@ Let's say we want to encode ```eat``` from the sentence ```He eat fried noodles`
 
 ![Q, K and V for every word](/assets/images/qkv_result.png)
 
-In process 2, the scores are calculated by performing dot products of Q of ```eat``` with K value of every words in the sequence, including itself. The result is a vector of size (1, 4) which holds the value of every dot product result.
+In process 2, the scores are calculated by performing dot products of Q of ```eat``` with transposed K of every words in the sequence, including itself. The result for a single word is a vector of size (1, 4) which holds the value of every dot product result.
 
 ![score calculation]()
 
-Then every score is divided by 8. According to this source, *"This leads to having more stable gradients"* [source](https://jalammar.github.io/illustrated-transformer/). 
+Then, every score is divided by 8. According to this source, *"This leads to having more stable gradients"* [source](https://jalammar.github.io/illustrated-transformer/). 
 
 ![value divided by 8]()
 
@@ -60,5 +62,10 @@ The attention score indicate importance of word in the context of word being enc
 
 The last process is to produce the output vector. Up to here, we have the attention score and V. 
 
+Here, the softmax scores are multiplied to their respective V. Then the values are added together to produce the output vector. 
+
+![Output vector calculation]()
+
+This is the end of self-attention.
 
 ## Multi-head Attention
