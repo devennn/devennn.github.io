@@ -50,11 +50,24 @@ In process 2, the scores are calculated by performing dot products of Q of ```ea
 
 Then, every score is divided by 8. According to this source, *"This leads to having more stable gradients"* [source](https://jalammar.github.io/illustrated-transformer/). 
 
-![value divided by 8]()
+```
+score = [32, 88, 56, 72]
 
-The attention score is calculated by applying softmax function to the all values in the vector. This will adjust the scores to add up to 1.
+after divide by 8
+score = [4, 11, 7, 9]
+```
+The attention score is calculated by applying softmax function to the all values in the vector.
 
-![softmax result]()
+![softmax function]()
+
+This will adjust the scores to add up to 1.
+
+```
+Softmax result
+
+softmax_score = [0.0008, 0.87, 0.0016, 0.012]
+
+```
 
 The attention score indicate importance of word in the context of word being encoded, whcih is ```eat```. Higher value, higher importance.
 
