@@ -6,17 +6,15 @@ keywords: "attention, bert"
 published: false
 ---
 
-This post aims to explain the workings of self and multi-headed attention in BERT family model. You can read more about attention algorithms in general from these references. 
-
-Simply said, the function of attention algorithm is to help focus on meaningful words.
+This post aims to explain the workings of self and multi-headed attention.
 
 ## Self-Attention
 
-In the original BERT design, self-attention is a small part in the encoder and decoder block. The purpose is to focus on important words and are used with other parts such as feedforward, etc. to produce the output for the bigger block(encoder, decoder).
+Self-attention is a small part in the encoder and decoder block. The purpose is to focus on important words. In the encoder block, it is used together with a feedforward neural network.
 
 ![output of self-attention](/assets/images/self-attention-input-output.png)
 
-Zooming into the self-attention section, these are the processes to produce the output.
+Zooming into the self-attention section, these are the major processes.
 
 ![process of self-attention](/assets/images/self-attention-process.png)
 
@@ -42,13 +40,13 @@ Up to here, the input embedding has been projected to Q, K and V spaces. In this
 
 Let's say we want to encode ```eat``` from the sentence ```They eat fried noodles```, after process 1, all input words will have Q, K and V as below.
 
-Starting from here, all examples are referring to calculating for one word only. In a real application, every word will have to go through these steps.
+__Note: Starting from here, all examples are referring to the process of one word only. In a real application, every word will have to go through these steps.__
 
 ![Q, K and V for every word](/assets/images/qkv_result.png)
 
 In process 2, the scores are calculated by performing dot products of Q of ```eat``` with transposed K of every word in the sequence, including itself. The result for a single word is a vector of size (1, 4) which holds the value of every dot product result.
 
-The size (1, 4) is used as an example in this post for simplicity. BERT has its dimensions of word vectors. 
+The size (1, 4) is used as an example in this post for simplicity. (1, 4) means a word has 4 embedding length(or features). 
 
 ![score calculation](/assets/images/score_calculation.png)
 
@@ -69,7 +67,7 @@ This will adjust the scores so that the total will add up to 1.
 ```
 Softmax result
 
-softmax_score = [0.0008, 0.87, 0.0016, 0.012]
+softmax_score = [0.0008, 0.87, 0.015, 0.011]
 
 ```
 The attention scores indicate the importance of the word in the context of word being encoded, which is ```eat```. Higher value, higher importance.
