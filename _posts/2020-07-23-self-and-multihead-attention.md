@@ -160,8 +160,8 @@ This is the output for the multi-headed attention layer, which is used for the n
 I hope you have good insights regarding self-attention algorithms. The example given is using the transformer parameters value. The differences compared to BERT are:
 
 - Embedding Dimensions
-        - Transformers = 512
-        - BERT = 768
+ - Transformers = 512
+ - BERT = 768
 - Number of heads
         - Transformer = 8
         - BERT = 12
