@@ -82,6 +82,18 @@ Here, the softmax scores are multiplied to their respective V. Then, the values 
 
 ![Output vector calculation](/assets/images/attention_score.png)
 
+For example, to produce value for ```eat``` with respect to ```they``` the calculation is
+
+```
+softmax score: 0.0008
+V for *they* = [V11 V12 V13 V14]
+
+The Multiplication values, X are:
+
+X = [X11 X12 X13 X14]
+X = [0.0008(V11) 0.0008(V12) 0.0008(V13) 0.0008(V14)]
+```
+
 The green box is the output vector of self-attention section. This is the value that is passed to the next part of the block.
 
 ## Multi-head Attention
