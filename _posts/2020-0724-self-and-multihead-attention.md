@@ -84,7 +84,7 @@ For example, to produce value for ```eat``` with respect to ```they``` the calcu
 
 ```
 softmax score: 0.0008
-V for *they* = [V11 V12 V13 V14]
+V for "they" = [V11 V12 V13 V14]
 
 The Multiplication values, X are:
 
@@ -98,7 +98,7 @@ The green box is the output vector of self-attention section. This is the value 
 
 Before we go to the multi-head, let us understand the transformation of matrixes by observing the dimension at every process. I am using the dimensions from the transformer model.
 
-The model requires input dimension to be (1, 512) for a single word vector according to the paper. 
+According to the paper, the model requires input dimension to be (1, 512) for a single word vector. 
 
 For our example sentence, The matrix size will be (4, 512). As the value passing through every parts of the encoders and decoders, the embedding size(or number of features) will stay constant at 512.
 
