@@ -7,6 +7,7 @@ keywords: "self attention, multi head, bert, transformers"
 
 This post aims to explain the workings of self and multi-headed attention.
 
+
 ## Self-Attention
 
 Self-attention is a small part in the encoder and decoder block. The purpose is to focus on important words. In the encoder block, it is used together with a feedforward neural network.
@@ -16,6 +17,7 @@ Self-attention is a small part in the encoder and decoder block. The purpose is 
 Zooming into the self-attention section, these are the major processes.
 
 ![process of self-attention](/assets/images/self-attention-process.png)
+
 
 #### Process 1 - Word embedding to Query, Key and Value
 
@@ -31,7 +33,8 @@ Each word in the sequence will have their query, key and value.
 
 [*Image Source: jalammar.github.io*](https://jalammar.github.io/illustrated-transformer/)
 
-One thing to note is all three values mean nothing. They are just mathematical representations of the input word in different vector space which can be used for calculations. That's it.  
+One thing to note is all three values mean nothing. They are just mathematical representations of the input word in different vector space which can be used for calculations. That's it.
+
 
 #### Process 2 - Calculating Attention Score
 
@@ -71,6 +74,7 @@ softmax_score = [0.0008, 0.87, 0.015, 0.011]
 ```
 The attention scores indicate the importance of the word in the context of word being encoded, which is ```eat```. Higher value, higher importance.
 
+
 #### Process 3 - Calculating Output Vector
 
 The last process is to produce the output vector. Up to here, we have the attention score and V. 
@@ -93,6 +97,7 @@ X = [0.0008(V11) 0.0008(V12) 0.0008(V13) 0.0008(V14)]
 
 The green box is the output vector of self-attention section. This is the value that is passed to the next part of the block.
 
+
 ## How Matrix Transform at every Process
 
 Before we go to the multi-head, let us understand the transformation of matrixes by observing the dimension at every process. I am using the dimensions from the transformer model.
@@ -103,6 +108,7 @@ For our example sentence, The matrix size will be (4, 512). As the value passing
 
 That means, the input and output matrix that pass through self-attention has matrix of size (4, 512).
 
+
 #### Evaluating self-attention
 
 Let's revisit the self-attention process.
@@ -110,6 +116,7 @@ Let's revisit the self-attention process.
 ![self-attention matirx evolution](/assets/images/self-attention-evolution.png)
 
 If we look at the output of self-attention, the size of the output matrix is not equal to the input. This is anticipated as self-attention is to be used as one of the many heads of the multi-headed attention.
+
 
 ## Multi-head Attention
 
@@ -146,6 +153,7 @@ To produce the output, the combined output is multiplied with the output project
 ![output projection matrix](/assets/images/output-projection-matrix.png)
 
 This is the output for the multi-headed attention layer, which is used for the next stage.
+
 
 ## Conclusion
 
