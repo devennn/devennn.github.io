@@ -149,3 +149,16 @@ To produce the output, the combined output is multiplied with the output project
 ![output projection matrix](/assets/images/output-projection-matrix.png)
 
 This is the output for the multi-headed attention layer, which is used for the next stage.
+
+## Conclusion
+
+I hope you have good insights regarding self-attention algorithms. The example given is using the transformer parameters value. The differences compared to BERT are:
+
+- Embedding Dimensions
+        - Transformers = 512
+        - BERT = 768
+- Number of heads
+        - Transformer = 8
+        - BERT = 12
+
+Pretty much other processes are similar. Thanks for reading. Have a nice day!
