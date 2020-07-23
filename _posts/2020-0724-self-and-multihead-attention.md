@@ -146,6 +146,6 @@ So you can view the whole process this way
 
 To produce the output, the combined output is multiplied with output projection matrix.
 
-![output projection matrix]()
+![output projection matrix](/assets/images/output-projection-matrix.png)
 
 This is the output for the multi-headed attention layer which is used for the next stage.
