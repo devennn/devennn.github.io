@@ -114,9 +114,25 @@ As said before, the self-attention is used as one of the heads of the multi-head
 
 To produce the required output vector with correct dimension (4, 512), all heads will combine their output by concatenating with each other.
 
-![concatenation]()
+```
+h1 =    [1, 2, 3]    
+        [4, 5, 6]
+        [7, 8, 9]
 
-To produce the output, the combined output is multiplied with output projection matrix.
+h2 =    [10, 11, 12]
+        [13, 14, 15]
+        [16, 17, 18]
+
+h3 =    [19, 20, 21]
+        [22, 23, 24]
+        [25, 26, 27]
+
+h_concatenate = [1, 2, 3, 10, 11, 12, 19, 20, 21]    
+                [4, 5, 6, 13, 14, 15, 22, 23, 24]
+                [7, 8, 9, 16, 17, 18, 25, 26, 27]
+```
+
+To produce the outp ut, the combined output is multiplied with output projection matrix.
 
 ![output projection matrix](/assets/images/multi-head-evolution.png)
 
