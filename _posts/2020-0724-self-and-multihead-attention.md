@@ -112,13 +112,13 @@ Let's revisit the self-attention process.
 
 ![self-attention matirx evolution](/assets/images/self-attention-evolution.png)
 
-If we look at the output of self-attention, the size of output matrix is not equal to the input. This is anticipated as self-attention is to be used as one of the many heads of the multi-headed attention.
+If we look at the output of self-attention, the size of the output matrix is not equal to the input. This is anticipated as self-attention is to be used as one of the many heads of the multi-headed attention.
 
 ## Multi-head Attention
 
-As said before, the self-attention is used as one of the heads of the multi-headed. Each head performs their own self-attention process, which means, they have separate Q, K and V and also have different output vector of size (4, 64) in our example.
+As said before, the self-attention is used as one of the heads of the multi-headed. Each head performs their self-attention process, which means, they have separate Q, K and V and also have different output vector of size (4, 64) in our example.
 
-To produce the required output vector with correct dimension (4, 512), all heads will combine their output by concatenating with each other.
+To produce the required output vector with the correct dimension of (4, 512), all heads will combine their output by concatenating with each other.
 
 Assume h1, h2 and h3 are the outputs from 3 different heads.
 
@@ -140,12 +140,12 @@ h_concatenate = [1, 2, 3, 10, 11, 12, 19, 20, 21]
                 [7, 8, 9, 16, 17, 18, 25, 26, 27]
 ```
 
-So you can view the whole process this way
+So you can view the whole process this way.
 
 ![output projection matrix](/assets/images/multi-head-evolution.png)
 
-To produce the output, the combined output is multiplied with output projection matrix.
+To produce the output, the combined output is multiplied with the output projection matrix.
 
 ![output projection matrix](/assets/images/output-projection-matrix.png)
 
-This is the output for the multi-headed attention layer which is used for the next stage.
+This is the output for the multi-headed attention layer, which is used for the next stage.
