@@ -2,8 +2,7 @@
 layout: post
 title: Understanding Self and Multi-Head Attention
 description: "Explaining the workings of self-attention and multi-head attention"
-keywords: "attention, bert"
-published: false
+keywords: "self attention, multi head, bert, transformers"
 ---
 
 This post aims to explain the workings of self and multi-headed attention.
