@@ -154,6 +154,17 @@ To produce the output, the combined output is multiplied with the output project
 
 This is the output for the multi-headed attention layer, which is used for the next stage.
 
+## Multi-head attention in Decoder
+
+The output of encoder stack will produce K and V for the input sequence. This is then pass to the Decoder section. 
+
+In the decoder, the Self-attention section does not compute the K and V from the sequence to be decoded. Instead, it only compute Q and used K and V from the encoder stack.
+
+This is how the two sequences are related.
+
+![encoder-decoder-stack](assets/images/transformer_decoding_2.gif)
+
+[*Image Source: jalammar*](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
 
 ## Conclusion
 
