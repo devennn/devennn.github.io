@@ -162,7 +162,7 @@ In the decoder, the Self-attention section does not compute the K and V from the
 
 This is how the two sequences are related.
 
-![encoder-decoder-stack](assets/images/transformer_decoding_2.gif)
+![encoder-decoder-stack](/assets/images/transformer_decoding_2.gif)
 
 [*Image Source: jalammar*](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
 
