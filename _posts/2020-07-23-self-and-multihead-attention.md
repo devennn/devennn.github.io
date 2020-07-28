@@ -180,4 +180,4 @@ BERT = 768
 Transformer = 8
 BERT = 12
 ```
-And of course, BERT is and encoder only model while Transformer is bot encoder and decoder. Thanks for reading. Have a nice day!
+And of course, BERT is and encoder only model while Transformer is both encoder and decoder. Thanks for reading. Have a nice day!
