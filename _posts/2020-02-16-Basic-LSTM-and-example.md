@@ -3,11 +3,7 @@ layout: post
 title: How to use LSTM for sentiment analysis
 ---
 
-Humans interpret based on context. We do not try to understand everything without connecting the "dots" of information. In other words, when we make decisions, it is always based on what happened before. We pass data from one stage to another, which builds up the context of problems or situations, including text interpretation.
-
-The key to understand is to listen. When we listen, we try to understand what the word means. Then, we pass the information to our future self, which will then interpret. It is human's nature to understand word sequences
-
-Sequence dependence learning is associated with RNN or Recurrent Neural Network. However convectional RNN has 2 major problems. LSTM or Long Short Term Memory is a type of RNN with a powerful application. The main reason that makes it useful in sequence learning is the ability avoids long-term dependency problems. They can remember information for a long time.
+In this post, I will explain the basic concept of LSTM for RNN cell and its application for sentiment analysis of sequence of words (or sentence).
 
 ## Understanding components of LSTM
 
@@ -24,7 +20,7 @@ Brief explanations:
 - ht : Output of current block
 - Ct : Memory from current block
 
-The first stage ft is called the forget gate. As the name said, it decides whether to remember or forget the input. This gate is controlled by sigmoid activation function which produce value of 0 and 1.
+The first stage ```ft``` is called the forget gate. As the name said, it decides whether to remember or forget the input. This gate is controlled by sigmoid activation function which produce value of 0 and 1.
 
 | Value | What it does |
 |-------|--------------|
@@ -33,7 +29,7 @@ The first stage ft is called the forget gate. As the name said, it decides wheth
 
 There are no in-between numbers. Hence, there are no other choices other than forgetting or remember.
 
-The second stage, which is the result of it and ct is the new memory stage. Tanh activation function is used at ct because it will never go to 0. So, there will always be "something". 
+The second stage, which is the result of ```it``` and ```ct``` is the new memory stage. Tanh activation function is used at ```ct``` because it will never go to 0. So, there will always be "something". 
 
 The last part is the output of the network. There is another sigmoid function used. It will decide which information is going to the next stage. Then, the data will go through a tanh function, which produces values needed.
 
@@ -53,7 +49,7 @@ from tensorflow.keras.datasets import imdb
 
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=10000)
 ```
-I set the maximum words to be 10000. This parameter will cause the function to return only the top 10000 frequent words from the corpus.
+I set the maximum words to be 10000. This parameter will make the function to return only the top 10000 frequent words from the corpus.
 
 Let's explore the loaded data
 ```python
@@ -93,14 +89,18 @@ Output:
 <START> begins better than it ends funny that the russian submarine crew <UNK> all other actors it's like those scenes where documentary shots br br spoiler part the message <UNK> was contrary to the whole story it just does not <UNK> br br
 ```
 
-It looks like the corpus has been preprocessed to numpy array. Every review is represented as word indexes sequence. The sentiment is in binary. So, there is no need to perform manual categorizing.
+It looks like the corpus has been preprocessed to numpy array. Every review is represented as word indexes sequence. The sentiment is in binary. So, there is no need to perform label encoding.
 
 Other things to observe from the reconstructed sentence are <start> and <UNK>.
   - <start> : This is to set the boundary such as informing the starting point of a sentence
   - <UNK> : Label new words that is not present in the English dictionary.
   
 ### Define Model
-Before defining the model, we need to make sure training and testing data to have sequences of the same length. This process is required because it defines the model input length. Not having the same length will cause input shape error. Keras provide a built-in function to do so by calling ```tensorflow.keras.preprocessing.sequence.pad_sequences```.
+Before defining the model, we need to make sure training and testing data to have sequences of the same length. This process is required because it defines the model input length.
+
+Not having the same length will cause input shape error. ```pad_sequences``` will make sure all data have the same length by adding paddings.
+
+```tensorflow.keras.preprocessing.sequence.pad_sequences```.
 
 ```python
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -130,12 +130,22 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 ```
 
-Function usage
-- Embedding: Turns positive integers (indexes) into dense vectors of fixed size. This layer turns one-hot encoded words to weights based on output_dim dimensions. These weights represent how similar the words are. [source 1](https://www.quora.com/What-is-the-embedding-layer-in-LSTM-long-short-term-memory), [source 2](https://stats.stackexchange.com/questions/270546/how-does-keras-embedding-layer-work)
-- LSTM: LSTM layer
-- Dense: Fully connected Neural Netowork.
+### Function usage
+#### Embedding Layer
+
+The model cannot work with strings. This layer change every word(string) to vector. So, a sentence(sequence of word) is represented as sequence of vectors.
+
+The weights are trainable.
+
+### LSTM layer
+This is the LSTM layer explained at the begining of the post.
+
+### Dense layer
+The standard neural network.
 
 I am using one output class to classify 0 and 1 as Negative and Positive. Because the output value will only be in the range of 0 to 1, I decide to use a Sigmoid activation function.
+
+### Compile
 
 For compilation, adam optimizer is used to change neural network attributes such as weights and hopefully minimize losses along the way.
 
@@ -206,9 +216,9 @@ Output
 Model Accuracy: 0.81556
 ```
 
-That's it. The result is quite impressive. It shows that the model can detect Positive and Negative review correctly for 81%. With better LSTM algorithm, the model can learn better!
+That's it. The result is quite impressive. It shows that the model can detect Positive and Negative review correctly for 81%.
 
 ## Conclusion
-The ability to pass information from one state to another is useful to understand texts. Its application is not only for texts. Any data interpretation that requires sequence understanding can use LSTM for learning.
+The ability to pass information from one state to another is useful to understand texts. The application is not only for texts. Any data interpretation that requires sequence understanding, such as time series modelling can use LSTM modelling.
 
 View full code [here](https://www.kaggle.com/deventommy96/lstm-sentiment)
