@@ -23,7 +23,7 @@ Zooming into the self-attention section, these are the major processes.
 
 There are three key parameters introduced in this concept—query, key and value. To avoid confusion, I will use Q, K and V to reference them.
 
-These vectors are calculated from the word embedding. Another way to understand this process is the input embedding is translated into three different versions of itself, from embedding space to Q, K and V space.
+These vectors are calculated from the word embedding. Another way to understand this process is the input embedding is translated into three different versions of itself, from embedding space to Q, K and V subspace.
 
 This is done by projecting the input to three different sets of weights, i.e. Query weight, Key weight and Value weight. All weights act as a projection medium which is trainable. 
 
@@ -33,12 +33,12 @@ Each word in the sequence will have their query, key and value.
 
 [*Image Source: jalammar.github.io*](https://jalammar.github.io/illustrated-transformer/)
 
-One thing to note is all three values mean nothing. They are just mathematical representations of the input word in different vector space which can be used for calculations. That's it.
+One thing to note is all three values mean nothing. They are just mathematical representations of the input word in different vector subspace which can be used for calculations. That's it.
 
 
 #### Process 2 - Calculating Attention Score
 
-Up to here, the input embedding has been projected to Q, K and V spaces. In this process, Q and K are used for calculating the attention score. 
+Up to here, the input embedding has been projected to Q, K and V subspaces. In this process, Q and K are used for calculating the attention score. 
 
 Let's say we want to encode ```eat``` from the sentence ```They eat fried noodles```, after process 1, all input words will have Q, K and V as below.
 
