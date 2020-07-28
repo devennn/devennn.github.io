@@ -175,9 +175,9 @@ I hope you have good insights regarding self-attention algorithms. The example g
 Transformers = 512
 BERT = 768
 ```
-- Number of heads
+- Number of headshttps://colab.research.google.com/drive/1cGtHn0gKJA7YTxwsvQUNS_yN5Oil4grp
 ```
 Transformer = 8
 BERT = 12
 ```
-Pretty much other processes are similar. Thanks for reading. Have a nice day!
+And of course, BERT is and encoder only model while Transformer is bot encoder and decoder. Thanks for reading. Have a nice day!
