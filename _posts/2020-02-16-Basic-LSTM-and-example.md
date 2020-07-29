@@ -44,6 +44,7 @@ In this example, i will be using:
 ### Explore Data
 
 Start by loading IMDB dataset
+
 ```python
 from tensorflow.keras.datasets import imdb
 
