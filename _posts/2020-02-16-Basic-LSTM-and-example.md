@@ -100,8 +100,6 @@ Before defining the model, we need to make sure training and testing data to hav
 
 Not having the same length will cause input shape error. ```pad_sequences``` will make sure all data have the same length by adding paddings.
 
-```tensorflow.keras.preprocessing.sequence.pad_sequences```.
-
 ```python
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
