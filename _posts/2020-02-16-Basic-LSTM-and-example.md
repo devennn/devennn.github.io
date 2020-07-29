@@ -91,9 +91,9 @@ Output:
 
 It looks like the corpus has been preprocessed to numpy array. Every review is represented as word indexes sequence. The sentiment is in binary. So, there is no need to perform label encoding.
 
-Other things to observe from the reconstructed sentence are <start> and <UNK>.
-  - <start> : This is to set the boundary such as informing the starting point of a sentence
-  - <UNK> : Label new words that is not present in the English dictionary.
+Other things to observe from the reconstructed sentence are ```<start>``` and ```<UNK>```.
+  - ```<start>``` : This is to set the boundary such as informing the starting point of a sentence
+  - ```<UNK>``` : Label new words that is not present in the English dictionary.
   
 ### Define Model
 Before defining the model, we need to make sure training and testing data to have sequences of the same length. This process is required because it defines the model input length.
