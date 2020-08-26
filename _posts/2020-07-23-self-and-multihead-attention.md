@@ -175,7 +175,7 @@ I hope you have good insights regarding self-attention algorithms. The example g
 Transformers = 512
 BERT = 768
 ```
-- Number of headshttps://colab.research.google.com/drive/1cGtHn0gKJA7YTxwsvQUNS_yN5Oil4grp
+- Number of heads
 ```
 Transformer = 8
 BERT = 12
