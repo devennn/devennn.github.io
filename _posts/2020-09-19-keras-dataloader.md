@@ -267,6 +267,6 @@ class ValidationGenerator(DataLoader):
 
 Just by observing the output, you can understand that they need to be processed separately. Both classes inherit from the custom data loader whcih enables them to use all the methods and modify ```_generate_data``` separately.
 
-You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data.
+You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data. These data loading technique not only limited to images, but as you can see, texts can be preprocessed the same way. It's very useful!
 
 That's it for this post. Hope you will learn something useful. Thanks
