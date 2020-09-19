@@ -104,7 +104,7 @@ class Custom_ImageGenerator(Sequence):
 
 The whole process of loading and processing the data will be...
 
-```
+```python
 if __name__ == "__main__":
 
     # create_files()
