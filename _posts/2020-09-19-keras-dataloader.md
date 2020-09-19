@@ -272,4 +272,4 @@ Just by observing the output, you can understand that they need to be processed 
 
 You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data. These data loading techniques are not only limited to images, but as you can see, texts can be preprocessed the same way. It's very useful!
 
-That's it for this post. Hope you will learn something useful. Thanks.
+That's it for this post. Hope you will learn something useful. Thanks. You can view full code [here](https://github.com/devennn/blog-code/tree/master/data_loaders)
