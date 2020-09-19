@@ -3,7 +3,6 @@ layout: post
 title: Three Keras Data Loader for different use case
 description: "Keras Data Loader for Image Dataset"
 keywords: "Keras, Data Loader, Images"
-published: False
 ---
 
 One part of the development cycle that took lots of time is creating a data loader. Almost every real world project requires the developer to carefully plan this part. The bigger the dataset, the more effort needed to develop efficient loaders.
@@ -272,4 +271,4 @@ Just by observing the output, you can understand that they need to be processed 
 
 You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data. These data loading techniques are not only limited to images, but as you can see, texts can be preprocessed the same way. It's very useful!
 
-That's it for this post. Hope you will learn something useful. Thanks. You can view full code [here](https://github.com/devennn/blog-code/tree/master/data_loaders)
+That's it for this post. Hope you will learn something useful. Thanks. [View code used here.](https://github.com/devennn/blog-code/tree/master/data_loaders)
