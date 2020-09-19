@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Three types of Keras Data Loader to load image dataset
+title: Three Keras Data Loader for different use case
 description: "Keras Data Loader for Image Dataset"
 keywords: "Keras, Data Loader, Images"
 published: False
 ---
 
-One part of the development cycle that took lots of time is creating data loader. Almost every real world project require the developer to carefully plan this part. The bigger the dataset, the more effort needed to develop an efficient loaders.
+One part of the development cycle that took lots of time is creating a data loader. Almost every real world project requires the developer to carefully plan this part. The bigger the dataset, the more effort needed to develop efficient loaders.
 
 In this blog post, I want to share three methods of data loading that are useful for any Keras projects.
 
@@ -24,7 +24,7 @@ This generator assume you to arrange your data in this format.
         └───dogs
 ```
 
-The data are placed in their respective classes. Test and train set have the same number of classes. This arrangement can utilize the keras built-in ImageDataGenerator feature.
+The data are placed in their respective classes. Test and train set have the same number of classes. This arrangement can utilize Keras built-in ImageDataGenerator feature.
 
 ```python
 def get_generator(data_path, batch_size, image_size, label_type, training=True):
@@ -51,13 +51,13 @@ def get_generator(data_path, batch_size, image_size, label_type, training=True):
     return data_flow
 ```
 
-In the code above, the ```data_path``` is the directory containing all the classes, i.e test_set, train_set. Usually, training and testing data required different preprocessing steps. You can data transformation by passing the options wanted.
+In the code above, the ```data_path``` is the directory containing all the classes, i.e test_set, train_set. Usually, training and testing data required different preprocessing steps. You can apply data transformation by passing the options wanted.
 
-The ```flow_from_directory``` method will do the heavy work to pull out and apply preprocessing to your data. One thing to note is the ```class_mode``` argument. You have to chosse the right class mode to ensure the labels are processed correctly. Refer to Keras documentation to see more control options.
+The ```flow_from_directory``` method will do the heavy work to pull out and apply preprocessing to your data. One thing to note is the ```class_mode``` argument. You have to choose the right class mode to ensure the labels are processed correctly. Refer to Keras documentation to see more control options.
 
 ## Custom Data Generator 1
 
-Sometimes, you may need a lot more preprocessing steps that are not available in the built-in feature. This is when custom Data Loader is useful. Take example of the dataset below, 
+Sometimes, you may need a lot more preprocessing steps that are not available in the built-in feature. This is when a custom Data Loader is useful. Take example of the dataset below,
 
 ```
 data/test_set\cats\cat.4999.jpg	cats
@@ -65,7 +65,7 @@ data/test_set\cats\cat.5000.jpg	cats
 data/test_set\dogs\dog.4001.jpg	dogs
 data/test_set\dogs\dog.4002.jpg	dogs
 ```
-The dataset are for cats vs dogs classifier. All the paths and labels are saved into train and test txt files which can be loaded into lists using the code below.
+The dataset is for cats vs dogs classifier. All the paths and labels are saved into train and test txt files which can be loaded into lists using the code below.
 
 ```python
 with open("train_set.txt", "r") as f:
@@ -133,22 +133,21 @@ if __name__ == "__main__":
     train_gen = Custom_ImageGenerator(img_path_list, label_list, label_encode, batch_size=64, 
                                         image_size=(224, 224))
 ```
+To understand how the code works, you need to know a few things. The main ingredients in our custom made class is ```Sequence```. This is a built-in Keras feature that is optimized for multiprocessing. According to their official documentation, _This structure guarantees that the network will only train once on each sample per epoch which is not the case with generators_.
 
-To understand how the code works, you need to know few things. The main ingredients in our custom made class is ```Sequence```. This is a built-in Keras features that is optimized for multiprocessing. According to their official documentation, _This structure guarantees that the network will only train once on each sample per epoch which is not the case with generators_. 
-
-By inheritting ```Sequence```, you must implement two methods, ```__getitem__``` and ```__len__```. 
+By inheriting ```Sequence```, you must implement two methods, ```__getitem__``` and ```__len__```.
 - ```__getitem__``` : This method will output data for the the batch specified by the argument ```index```
-- ```__len__``` : This method computes the number of batch for every sequence. 
+- ```__len__``` : This method computes the number of batches for every sequence.
 
-The only thing you care is what should you do in the ```__getitem__``` section which consists of how can you get the data for a given batch_size and idx. In this example, I store the imgs_path and labels as list which can be sliced accordingly. All data preprocessing are performed in this section.
+The only thing you care about is what you should do in the ```__getitem__``` section which consists of how you can get the data for a given batch_size and index. In this example, I store the imgs_path and labels as a list which can be sliced accordingly. All data preprocessing is performed in this section.
 
 ## Custom Data Generator 2
 
-In some projects, I found out that the previous custom generator is not useful enough. I was working on CRNN model for Optical Character Recontion (OCR), when I found out that the train and test model have different input shape. One way to use the custom generator before is to change the model to have the same train and test input shape.
+In some projects, I found out that the previous custom generator is not useful enough. I was working on the CRNN model for Optical Character Recognition (OCR), when I found out that the train and test model have different input shapes. One way to use the custom generator before is to change the model to have the same train and test input shape.
 
-But, since most(almost all) of open source research won't do it this way, it is wise to not reinvent the process so you can have more references. And, using the built-in Keras data loader is denfinitely not usable if you are loading from raw data as the labels are preprocessed differently.
+But, since most(almost all) of open source research won't do it this way, it is wise to not reinvent the process so you can have more references. And, using the built-in Keras data loader is definitely not usable if you are loading from raw data as the labels are preprocessed differently.
 
-For this, we are going to modify the code a little bit. The data are stored in the same manner as before which consists of image paths and labels. So, the first step is to load the the txt file to get the information. Then here comes the changes.
+For this, we are going to modify the code a little bit. The data are stored in the same manner as before which consists of image paths and labels. So, the first step is to load the txt file to get the information. Then here comes the changes.
 
 ```python
 class DataLoader(Sequence):
@@ -209,7 +208,7 @@ class DataLoader(Sequence):
         pass
 ```
 
-Our data loader still inherit from ```Sequence```. The addition is using abc library as the ```__metaclass__```. This library, through ``` @abc.abstractmethod``` creates abstraction of the decorated methods. In our example, we decorated ```_generate_data``` as abstract to be use somwhere else. 
+Our data loader still inherits from ```Sequence```. The addition is using the abc library as the ```__metaclass__```. This library, through ``` @abc.abstractmethod``` creates abstraction of the decorated methods. In our example, we decorated ```_generate_data``` as abstract to be used somewhere else.
 
 The somewhere else are...
 
@@ -271,6 +270,6 @@ class ValidationGenerator(DataLoader):
 
 Just by observing the output, you can understand that they need to be processed separately. Both classes inherit from the custom data loader which enables them to use all the methods such as ```_preprocess_image``` and ```encode_to_labels``` and modify ```_generate_data``` separately.
 
-You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data. These data loading technique not only limited to images, but as you can see, texts can be preprocessed the same way. It's very useful!
+You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data. These data loading techniques are not only limited to images, but as you can see, texts can be preprocessed the same way. It's very useful!
 
 That's it for this post. Hope you will learn something useful. Thanks.
