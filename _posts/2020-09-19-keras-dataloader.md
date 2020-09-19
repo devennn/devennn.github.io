@@ -6,7 +6,9 @@ keywords: "Keras, Data Loader, Images"
 published: False
 ---
 
-One part of the development cycle that took lots of time is creating data loader. Almost every real world project require the developer to carefully plan this part. The bigger the dataset, the more effort need to be put in the planning. In this blog post, I want to present three methods of data loading that can be used for any Keras projects.
+One part of the development cycle that took lots of time is creating data loader. Almost every real world project require the developer to carefully plan this part. The bigger the dataset, the more effort needed to develop an efficient loaders.
+
+In this blog post, I want to share three methods of data loading that are useful for any Keras projects.
 
 ## Built-in Image Generator
 
@@ -22,7 +24,7 @@ This generator assume you to arrange your data in this format.
         └───dogs
 ```
 
-As you can see, the data are placed in their respective classes. Then you can load the data using keras built-in ImageDataGenerator feature.
+The data are placed in their respective classes. Test and train set have the same number of classes. This arrangement can utilize the keras built-in ImageDataGenerator feature.
 
 ```python
 def get_generator(data_path, batch_size, image_size, label_type, training=True):
@@ -49,11 +51,13 @@ def get_generator(data_path, batch_size, image_size, label_type, training=True):
     return data_flow
 ```
 
-In the code above, the ```data_path``` is the directory containing all the classes. Usually, training and testing data required different preprocessing steps. By passing the required transformation options, your output images are transformed automatically. The ```flow_from_directory``` method will do the heavy work to pull out and apply preprocessing to your data. One thing to note is the ```class_mode```. You have to chosse the right class mode to ensure your data label is processed correctly. Refer to Keras documentation to see more control options.
+In the code above, the ```data_path``` is the directory containing all the classes, i.e test_set, train_set. Usually, training and testing data required different preprocessing steps. You can data transformation by passing the options wanted.
+
+The ```flow_from_directory``` method will do the heavy work to pull out and apply preprocessing to your data. One thing to note is the ```class_mode``` argument. You have to chosse the right class mode to ensure the labels are processed correctly. Refer to Keras documentation to see more control options.
 
 ## Custom Data Generator 1
 
-Sometimes, you might need a lot more preprocessing steps that are not available in the built-in feature. This is when custom Data Loader is useful. Take example of the dataset below, 
+Sometimes, you may need a lot more preprocessing steps that are not available in the built-in feature. This is when custom Data Loader is useful. Take example of the dataset below, 
 
 ```
 data/test_set\cats\cat.4999.jpg	cats
@@ -130,21 +134,21 @@ if __name__ == "__main__":
                                         image_size=(224, 224))
 ```
 
-To understand how the code works, you need to know few things. The main ingredients in our custom made class is ```Sequence```. This is a built-in Keras features that not only used in their built in data generator but also optimized for multiprocessing. According to their official documentation, _This structure guarantees that the network will only train once on each sample per epoch which is not the case with generators_. 
+To understand how the code works, you need to know few things. The main ingredients in our custom made class is ```Sequence```. This is a built-in Keras features that is optimized for multiprocessing. According to their official documentation, _This structure guarantees that the network will only train once on each sample per epoch which is not the case with generators_. 
 
 By inheritting ```Sequence```, you must implement two methods, ```__getitem__``` and ```__len__```. 
 - ```__getitem__``` : This method will output data for the the batch specified by the argument ```index```
 - ```__len__``` : This method computes the number of batch for every sequence. 
 
-The only thing you care is what should you do in the ```__getitem__``` section which consists of how can you get the data for a given batch_size and idx. In this example, I store the imgs_path and labels as list which can be sliced accordingly. You can apply any image preprocessing in this part.
+The only thing you care is what should you do in the ```__getitem__``` section which consists of how can you get the data for a given batch_size and idx. In this example, I store the imgs_path and labels as list which can be sliced accordingly. All data preprocessing are performed in this section.
 
 ## Custom Data Generator 2
 
-In some projects, even custom Sequence data is not useful enough. I was working with OCR project where the train model has different train and test model input shape. One way to use the custom generator before is to change the change the model, having the same train and test input shape.
+In some projects, I found out that the previous custom generator is not useful enough. I was working on CRNN model for Optical Character Recontion (OCR), when I found out that the train and test model have different input shape. One way to use the custom generator before is to change the model to have the same train and test input shape.
 
-But, since most(almost all) of open source research won't do it this way, it is wise to not reinvent the process so you can have more references. And, using the built in sequence model is denfinitely not usable if you are loading from raw data as the labels are preprocessed differently.
+But, since most(almost all) of open source research won't do it this way, it is wise to not reinvent the process so you can have more references. And, using the built-in Keras data loader is denfinitely not usable if you are loading from raw data as the labels are preprocessed differently.
 
-For this, we are going to change the first custom data loader a little bit. The data are stored in the same manner as before which consists of image paths and labels. So, the first step is to load the the txt file to get the information. Then here comes the changes.
+For this, we are going to modify the code a little bit. The data are stored in the same manner as before which consists of image paths and labels. So, the first step is to load the the txt file to get the information. Then here comes the changes.
 
 ```python
 class DataLoader(Sequence):
@@ -205,7 +209,7 @@ class DataLoader(Sequence):
         pass
 ```
 
-Our data loader still inherit from ```Sequence```. The addition is we also use abc library as the ```__metaclass__```. This library, through ``` @abc.abstractmethod``` creates abstraction of the decorated methods. In our example, we decorated ```_generate_data``` as abstract to be use somwhere else.
+Our data loader still inherit from ```Sequence```. The addition is using abc library as the ```__metaclass__```. This library, through ``` @abc.abstractmethod``` creates abstraction of the decorated methods. In our example, we decorated ```_generate_data``` as abstract to be use somwhere else. 
 
 The somewhere else are...
 
@@ -265,8 +269,8 @@ class ValidationGenerator(DataLoader):
         return batch_imgs, batch_labels
 ```
 
-Just by observing the output, you can understand that they need to be processed separately. Both classes inherit from the custom data loader whcih enables them to use all the methods and modify ```_generate_data``` separately.
+Just by observing the output, you can understand that they need to be processed separately. Both classes inherit from the custom data loader which enables them to use all the methods such as ```_preprocess_image``` and ```encode_to_labels``` and modify ```_generate_data``` separately.
 
 You only need to call ```TrainGenerator``` and ```ValidationGenerator``` in the main function to load the data. These data loading technique not only limited to images, but as you can see, texts can be preprocessed the same way. It's very useful!
 
-That's it for this post. Hope you will learn something useful. Thanks
+That's it for this post. Hope you will learn something useful. Thanks.
