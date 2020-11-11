@@ -10,8 +10,6 @@ I'm also a big believer in open discussion. So, if you disagree with something o
 
 ![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg)
 
-A little bit about myself: I like to play sports! Probably, I am average in everything except swimming. My mom did send me to a swimming lesson once, but I'm more into football. Haha. I am more interested in team sports. I guess that what makes me a good team player. 
-
 ### Work Experience
 - Data Science Intern - [Skymind Malaysia](https://skymind.global/)
   - Plan & Execute the development of OCR models
