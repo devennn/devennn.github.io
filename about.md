@@ -15,6 +15,13 @@ I'm also a big believer in open discussion. So, if you disagree with something o
   - Plan & Execute the development of OCR models
   - Involve in core development of Face Recognition Model
   - Involve in the development and maintainence of AI Computer Vision Courses for Python and Java 
+  
+- Deep Learning Engineer - [CertifAI](https://certifai.ai/) Subsidiary of Skymind
+  - Involve in product development planning 
+  - Develop Deep Learing models using Python with PyTorch
+  - Develop backend architecture for Facial detection & recognition model serving
+  - Develop program for Jetson Nano hardware interface for program deployment
+  - Develop teaching materials for Jetbot course product
 
 ### More information about me:
 
