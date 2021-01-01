@@ -34,7 +34,7 @@ I'm also a big believer in open discussion. So, if you disagree with something o
   - University of Queensland, Australia
 - Bachelor of Engineering (Honours), Electrical Engineering
   - Universiti Kuala Lumpur, British Malaysian Institute (2017 - 2018)
-  - Transfer to UQ, supported by MARA sponsorship
+  - Transfer to UQ, sponsored by MARA
 - Diploma of Engineering Technology in Avionics Maintenance
   - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology (2014 - 2016)
 
