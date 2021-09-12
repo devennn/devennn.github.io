@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Three data loaders for almost all Keras applications
-description: "Keras Data Loader for Image Dataset"
-keywords: "Keras, Data Loader, Images"
+title: Simple ways to make a codebase more readable
+description: "Increase readibility of codebase"
+keywords: "Coding practice"
 published: false
 ---
 
