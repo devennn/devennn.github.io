@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Can we find similar and unknown word in Word2Vec? 
+title: Is it possible to find similar word yet unknown by Word2Vec? 
 ---
 
 Word2Vec is, no doubt, a powerful algorithm to compute word embeddings. The one-layer network makes it consume less compute power while producing excellent results compared to other embeddings algorithms. One of its downsides is the inability to identify new words. In this post, I tested a simple method to overcome this problem. 
