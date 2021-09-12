@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to make a Python package
+title: Organize a Python codebase with package
 ---
 
 Python packages make project more organized. Whenever a folder need to be declared as package, \_\_init\_\_.py need to be included. Take example of directory below.
