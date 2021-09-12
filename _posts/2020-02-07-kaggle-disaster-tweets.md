@@ -1,5 +1,5 @@
 ---
-title: Predict real and fake disaster tweets with scikit-learn
+title: Dipping my toe into text prediction.My thought process.
 layout: post
 ---
 
