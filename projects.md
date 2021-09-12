@@ -3,6 +3,8 @@ layout: page
 permalink: /projects/
 ---
 
+These are some of my past non-work related projects.
+
 - [Mini smart home system to detect and regulate user's emotions](https://github.com/devennn/Smart-Home-Emotional-Detection-Regulation)
   - This project is used for design fiction for my undergraduate thesis
   - Using Keras model to detect user's emotion from facial expressions
