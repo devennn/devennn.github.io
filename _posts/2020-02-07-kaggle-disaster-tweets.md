@@ -1,5 +1,5 @@
 ---
-title: Dipping my toe into text prediction.My thought process.
+title: Dipping my toe into text prediction. My thought process
 layout: post
 ---
 
