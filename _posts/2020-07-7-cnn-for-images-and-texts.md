@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An overview of CNN for Image vs Text
+title: How is it different to use CNN for images and text?
 description: "Diffferences of CNN for texts vs images"
 keywords: "CNN, NLP, Images"
 ---
