@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hi! I am Deven working as an AI Engineer at Skymind.
+Hi! I am Deven. An AI Engineer at Skymind.
 
 ![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg)
 
