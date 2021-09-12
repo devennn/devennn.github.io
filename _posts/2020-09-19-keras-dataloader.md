@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Three Keras Data Loader for different use case
+title: These 3 data loaders cover almost all Keras applications. Learn it
 description: "Keras Data Loader for Image Dataset"
 keywords: "Keras, Data Loader, Images"
 ---
