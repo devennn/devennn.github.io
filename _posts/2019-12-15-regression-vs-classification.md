@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Intuition of Regression vs Classification
+title: How to differentiate Regression and Classification
 description: "When predicting, regression is more accurate. Sometimes, the other way around"
-keywords: "Regression vs Classification"
+keywords: "Regression Classification"
 ---
 
 When to use them? How do I know if this is the right algorithm to use? Asking these questions is crucial when developing a predictive model. I've encountered a few experiences where classification gives me higher accuracy during training. When predicting, regression is more accurate. Sometimes, the other way around.
