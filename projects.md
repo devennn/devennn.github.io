@@ -21,32 +21,13 @@ permalink: /projects/
   - GOL alogrithm will simulate generations
   - Simulations is shown on terminal 
   - Tools: C, FreeRTOS, STM32 Nucleo, Joystick, Keypad
-  
----
-
-- [Scrapping Momogun Language corpus](https://github.com/devennn/rungus-language-corpus)
-  - Collecting Rngus - English corpus
-  - Analyzing language to be used as datasets
-  - Tools: Python, Keras
- 
----
-  
-- [Syncer cli - GUI for RClone](https://github.com/devennn/Syncer-cli)
-  - Using RClone for backend process
-  - Using PySimpleGUI for GUI
-  - Running RClone process via subprocess
-  - Tools: Python, Open Souce Library: RClone, PySimpleGUI
-  
----
-  
-- [Twitter text dataset](https://github.com/devennn/malaysian-tweets)
-  - Scrapped twitter text data using Twint
-  - Train Word2Vec model from scratch
-  - Tools: Python, DigitalOcean droplet, Gensim, Google Colab, Open Source Library: Twint
 
 ---
 
-- Other Hardware related - Using pure C programming language
+- Others
   - [Client - Server system](https://github.com/devennn/depot-server-client)
   - [Multiplayer console game](https://github.com/devennn/multiplayer-hub)
   - [STM32 F446RE SD Card and Filesystem firmware](https://github.com/devennn/sd_card_l446re_spi)
+  - [Twitter text dataset](https://github.com/devennn/malaysian-tweets)
+  - [Syncer cli - GUI for RClone](https://github.com/devennn/Syncer-cli)
+  - [Scrapping Momogun Language corpus](https://github.com/devennn/rungus-language-corpus)
