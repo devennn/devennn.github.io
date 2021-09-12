@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use LSTM for sentiment analysis
+title: LSTM works well for sentiment analysis. This is a basic walkthrough
 ---
 
 In this post, I will explain the basic concept of LSTM for RNN cell and its application for sentiment analysis of sequence of words (or sentence).
