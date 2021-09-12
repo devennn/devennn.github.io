@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use Python logging module
+title: Want a good python logs, use logger
 ---
 
 Python built-in module called ```Logging``` can be used to log everything that needs to be recorded. Common benefits of logging are:
