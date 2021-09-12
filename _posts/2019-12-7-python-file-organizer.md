@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python file organizer to Rearrange and Rename files
+title: My folder is messy, so I build a File Organizer with Python
 ---
 
 ![File Organizer](/images/Filorg.PNG)
