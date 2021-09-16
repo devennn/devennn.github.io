@@ -3,7 +3,6 @@ layout: post
 title: Simple way for a readable codebase - Remove Json object
 description: "Increase readibility of codebase"
 keywords: "Coding practice"
-published: false
 ---
 
 I always try to produce a readable code. Making them short and sweet. Abstracting classes to hide the unrelated process. And probably make a config file to cater for different use case without touching the codebase.
