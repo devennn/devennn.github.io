@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Towards maintainable codebase. Remove Json object
+title: Towards maintainable codebase by removing Json Object 
 description: "Increase readibility of codebase"
 keywords: "Coding practice"
 ---
