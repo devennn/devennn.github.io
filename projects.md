@@ -3,7 +3,11 @@ layout: page
 permalink: /projects/
 ---
 
-These are some of my past non-work related projects.
+- [Compilation of viral tweets in Malaysia](https://www.gerbang.space/)
+  - Daily (almost real-time) update of Malaysia Twitter Tweets
+  - Python scrapper deployed on Digitalocean
+  - Django backend deployed on Heroku (with Postgress database)
+  - Next & React deoployed on Vercel
 
 - [Mini smart home system to detect and regulate user's emotions](https://github.com/devennn/Smart-Home-Emotional-Detection-Regulation)
   - This project is used for design fiction for my undergraduate thesis
