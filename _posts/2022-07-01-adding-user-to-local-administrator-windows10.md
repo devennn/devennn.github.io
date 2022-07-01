@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Adding a user to Local Administrator group
+title: Add user to Local Administrator group Windows Server 2016
 description: "Adding a user to Local Administrator group"
 keywords: "Windows 10 2016 Server, add user group, Local Administrator"
 ---
