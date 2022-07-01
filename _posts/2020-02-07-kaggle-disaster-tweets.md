@@ -1,5 +1,5 @@
 ---
-title: Dipping my toe into text prediction. My thought process
+title: Getting started with Twitter Kaggle dataset prediction
 layout: post
 ---
 
@@ -215,12 +215,3 @@ id  target
 
 [3263 rows x 2 columns]
 ```
-
-## Future Work
-
-1. I am still exploring few possibilities to fine-tune the model such as running grid search on the algorithm
-2. Try different ways of tokenizing.
-3. Cleaning texts
-  - Short-form words
-  - Numbers
-  - Non-English words
