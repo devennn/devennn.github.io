@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Telegram bot is awesome! Here is a boilerplate code.
+title: Building Telegram Bot using python-telegram-bot 
 ---
 
 I want to build something "futuristic" while learning something new. So, I build a Telegram chatbot. View [full code here](https://github.com/devennn/blog-code/tree/master/tonduyutung-bot)
