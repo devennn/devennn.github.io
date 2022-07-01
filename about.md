@@ -4,9 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hi! I am Deven. An AI Engineer at Skymind.
-
-![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg)
+![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg =250x)
 
 ### Work Experience
 - AI Engineer - [Skymind Malaysia](https://skymind.global/)
