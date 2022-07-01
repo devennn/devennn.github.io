@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My folder is messy, so I build a File Organizer with Python
+title: Building a File Organizer with Python
 ---
 
 ![File Organizer](/images/Filorg.PNG)
