@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg =250x)
+![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg)
 
 ### Work Experience
 - AI Engineer - [Skymind Malaysia](https://skymind.global/)
