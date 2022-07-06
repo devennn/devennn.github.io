@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Removing Json object will increase codebase readability
+title: Good coding practice - Remove Json object
 description: "Increase readibility of codebase"
 keywords: "Coding practice"
 ---
