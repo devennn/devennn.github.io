@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Easy way to map columns from different dataframe using pandas
+title: Map column from different dataframes with Pandas
 ---
 
 There is a time when 2 dataframes need to be summarized in a single table. 
