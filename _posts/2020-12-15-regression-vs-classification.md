@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to differentiate Regression and Classification
+title: Differentiating Regression and Classification
 description: "When predicting, regression is more accurate. Sometimes, the other way around"
 keywords: "Regression Classification"
 ---
