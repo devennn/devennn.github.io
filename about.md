@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg){:height="36px" width="36px"}.
+<img src="https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg"  width="400">
 
 ### Work Experience
 
@@ -31,11 +31,8 @@ permalink: /about/
 #### Education
 - Bachelor of Engineering (Honours), Electrical Engineering
   - University of Queensland, Australia
-- Bachelor of Engineering (Honours), Electrical Engineering
-  - Universiti Kuala Lumpur, British Malaysian Institute (2017 - 2018)
-  - Transfer to UQ, sponsored by MARA
 - Diploma of Engineering Technology in Avionics Maintenance
-  - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology (2014 - 2016)
+  - Universiti Kuala Lumpur, Malaysian Institute of Aviation Technology
 
 #### Contacts
 
