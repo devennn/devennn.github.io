@@ -16,7 +16,7 @@ permalink: /about/
   - Team Lead to build AI testing pipelines
   - Work with Intel labs to perform AI testing and optimization on hardware owned by Intel and competitors
 
-- AI Engineer - [Skymind Malaysia]
+- AI Engineer - Skymind
   - Team lead and system design for data labelling software. Responsible for product roadmap.
   - Develop and Optimize various AI models for customer projects. eg: Facial Detection, Segmentation
   - Plan & Execute the development of OCR models
