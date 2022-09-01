@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg)
+![image](https://filedn.com/l5qh0nREM5jm9t10JjPxfgJ/me.jpg){:height="36px" width="36px"}.
 
 ### Work Experience
 
