@@ -11,17 +11,14 @@ permalink: /about/
 - System Analyst - Penang Adventist Hospital
   - Build Information System for management reporting
   - Building on-premise data warehouse and data pipeline 
-  - Technologies: SSIS, PBIRS, T-SQL, Jupyter notebook, Apache Airflow
 
 - Team Lead - Thunder Software Tech (Thundersoft)
   - Team Lead to build AI testing pipelines
   - Work with Intel labs to perform AI testing and optimization on hardware owned by Intel and competitors
-  - Technologies: Python, Bash, Ubuntu, TensorRt, Tensorflow
 
 - AI Engineer - [Skymind Malaysia](https://skymind.global/)
   - Team lead and system design for data labelling software. Responsible for product roadmap.
   - Develop and Optimize various AI models for customer projects. eg: Facial Detection, Segmentation
-  - Technologies: Java Vertx, Angular, Docker, Postgres, PyTorch, Tensorflow, Scikit-learn
   
 - Data Science Intern - [Skymind Malaysia](https://skymind.global/)
   - Plan & Execute the development of OCR models
