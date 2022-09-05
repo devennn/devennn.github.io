@@ -9,11 +9,10 @@ permalink: /about/
 ### Work Experience
 
 - System Analyst - Penang Adventist Hospital
-  - Build Information System for management reporting
-  - Building on-premise data warehouse and data pipeline 
+  - Build on-premise data pipeline - ETL & analytics
 
 - Team Lead - Thunder Software Tech (Thundersoft)
-  - Team Lead to build AI testing pipelines
+  - Team Lead for AI benchmarking pipelines
   - Work with Intel labs to perform AI testing and optimization on hardware owned by Intel and competitors
 
 - AI Engineer - Skymind
