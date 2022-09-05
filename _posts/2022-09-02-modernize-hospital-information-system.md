@@ -5,7 +5,7 @@ title: Modernizing Hospital Information System -Thought Process
 
 I was fortunate to join a healthcare company in the middle of this year. My hopes are high as I was informed during the interview that my role focuses a lot on building data systems.
 
-A few days after I joined, I was bewildered by the amount of work needed. The problems are these:
+One week after I joined, I was bewildered by the amount of work needed. The problems are these:
 
 1) Hospital just changed to a new medical records system.
 2) Previous analysts and engineers have left the company.
@@ -29,20 +29,20 @@ This makes me curious about the warehouse and fact table that is used to provide
 
 # The thought process
 
-If I want to summarize the problem, this is the list.
+This list summarize the problem.
 
 1) No documentation
 2) Slow query
-3) Unreliable data
+3) Unreliable data warehouse
 
-What interests me is that these problems also exist in the data pipeline of the previous company I worked for. I understand that part of the problem is because of the tech debt in the current stack.
+A data-driven organization does not dependent on engineers. As an engineer, building a system is not a problem. A leader have to realize that modern technology is only a tool to serve the company. That means, if a tool does not make sense for the organization's goal it will be a bad investment. 
 
-The data-driven organization is not dependent on engineers. It is everyone. As an engineer, the building is not a problem. I can say, "Let's invest in Databricks." But if it doesn't make sense for the company-wide usage, the latest technology is a waste. 
+Modern data stack can be described by these two aspects - fast and reliable. As decision need to be real-time as possible, different technology emerge to serve the purpose. However, to move an entire stack, one should make the approach one by one. 
 
-Planning a roadmap is challenging. The problems need to be tackled one by one. Thus, I came up with a few standards for the new system. 
+For that reason, I come up with 3 milestones that act as a standard of the end product. This way, the team is able to sel-check as we progress to the new information system.
 
 1) Ability to observe the ETL process-Is my fact table, correct?
 2) Not every ETL process needs to be fast- Which process is essential?
 3) Think SDLC-Code standard, versioning, self-explanatory (almost)
 
-In my opinion, having the wrong standard is better than having no standard. It helps to focus on what makes sense for the developer and the stakeholders. I am sure that the standard will change as time goes by. But it's better to have it before embarking on the journey!
+One thing I need to keep in mind, is that, standards might change as the data source is stil in hot development. But it is definitely a good starting point for the team!
