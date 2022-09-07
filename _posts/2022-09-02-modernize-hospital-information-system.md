@@ -19,7 +19,7 @@ To give an overview, three important principles govern the technology choice.
 
 There is always a possibility of error when moving and processing data. Even more frustrating is that some error isn't obvious because no error messages are thrown. One example is when data is wrong. An outside party manages the data source database. So, when something changes, it affects the entire pipeline. For instance, I've run into a problem where a table join gives me incorrect data because the primary key was changed.
 
-To fix this, monitoring of pipeline processes and databases (warehouses) should be separated. Warehouse data should be treated as final. Sanity checks should only happen at the pipeline stage. In the old system, ETL processes were done as cron jobs for stored procedures. Only at the destination does a sanity check happen.
+To fix this, monitoring of pipeline processes and databases (warehouses) should be separated. Warehouse data should be treated as final. Sanity checks should only happen at the pipeline stage. In the old system, ETL processes were done using scheduled stored procedures. Only at the destination does a sanity check happen.
 
 We've decided to replace stored procedure-based ETL with Python jobs. The chosen framework is the Dagster. It is a scheduler with the power of logging for observability. Another important reason is that it can run smoothly on Windows server 2016, the primary operating system for all VMs in this company.
 
