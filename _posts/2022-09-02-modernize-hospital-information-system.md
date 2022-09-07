@@ -48,11 +48,11 @@ So, our MVP project directory looks like this. Inside the data_pipeline module a
 
 I remember once during a meeting where a person tries to query the whole year's data, and it takes 10 minutes to give the result. It is not a good experience. Few things can be done here. One is changing VM's processor to a better version to let the database engine perform to its fullest potential, and the second is enhancing pipeline processes.
 
-We focus on the second approach since changing the processor is expensive. One thing we note from the old script is that it processes data from multiple tables sequentially. Doing this definitely will slow down the entire process. Investigating deeper, some calculation steps are a constant derived from another table. In other words, it does not have to be calculated every time the script is invoked. A simple example - is the recalculation of minimum and maximum date. This can be done once a day and saved to a table.
+We focus on the second approach since changing the processor is expensive. One thing we note from the old script is that it processes data from multiple tables sequentially. Doing this definitely will slow down the entire process. Investigating deeper, some calculation steps are referencing multiple tables to produce a constant. In other words, it does not have to be calculated every time the script is invoked. A simple example - is the recalculation of minimum and maximum date. This can be done once a day and saved to a table.
 
 So, we start to split out the process. Some can be done in the python pipeline, and some will stay as stored procedures. As a result, we see a massive improvement in the query without affecting the readability and traceability of the pipeline. Plus, doing it this way help to break up the monolithic process to help catch error quickly.
 
-My principle is performance should not affect readability, especially in mission-critical sections. If there is no other way, a detailed document should follow the segment.
+The principle is performance should not affect readability, especially in mission-critical sections. If there is no other way, a detailed document should follow the segment.
 
 ## Conclusion
 
