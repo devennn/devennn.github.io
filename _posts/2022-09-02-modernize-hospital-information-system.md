@@ -7,7 +7,7 @@ Three years into my career, I was tasked to build an information system. Actuall
 
 The old system was built in 2017. The group seems to rush the project as no software development standards are set. The data warehouse is a bunch of SQL files and database naming are coded, and there is no documentation to give an overview of the process. The old system used SQL Server and SSMS to perform ETL processes and warehousing. 
 
-I researched big technology companies on how they implement a good data architecture. This post is about my decisions which were inspired by my readings that have been tailored to the company situation.
+I researched big technology companies on how they implement a good data architecture. This post is about decisions made which were inspired by my readings that have been tailored to the company situation.
 
 To give an overview, three important principles govern the technology choice.
 
