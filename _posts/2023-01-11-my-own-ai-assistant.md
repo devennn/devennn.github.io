@@ -25,7 +25,7 @@ It's a very tailored experience to my needs:
 
 And that's how the Assistant was born.
 
-<img src="https://user-images.githubusercontent.com/49480914/211729088-e9792688-d2d5-4472-8618-16a643eabdcf.PNG" width="600" height="250">
+<img src="https://user-images.githubusercontent.com/49480914/211729088-e9792688-d2d5-4472-8618-16a643eabdcf.PNG">
 
 At a high level, this is how it works:
 
