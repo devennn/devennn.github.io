@@ -66,7 +66,11 @@ Since all of these services are built as single services, I have the flexibility
 
 Building something that is beneficial to you and your family is incredibly fulfilling.
 
-https://user-images.githubusercontent.com/49480914/211730325-13cd1b6f-b5c2-49d6-844a-0a496f7dfe4d.mp4
+<video controls>
+    <source src="https://user-images.githubusercontent.com/49480914/211730325-13cd1b6f-b5c2-49d6-844a-0a496f7dfe4d.mp4" type="video/mp4">
+</video>
+
+
 
 I'm already thinking of ways to extend the functionality of my AI Assistant. I have a few ideas in mind, like:
 
