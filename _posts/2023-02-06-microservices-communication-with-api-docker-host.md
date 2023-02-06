@@ -70,7 +70,7 @@ res = requests.post(url, json={
 })
 ```
 
-That's it. Refer to the code for full example.
+That's it. Refer to the [code for full example](https://github.com/devennn/blog-code/tree/master/networkplayground).
 
 Result..
 
