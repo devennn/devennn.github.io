@@ -1,12 +1,12 @@
 ---
 title: "Docker Container Network Communication"
 date: "February 6, 2023"
-excerpt: "Docker Network communication. Internal to Internal and Internal to External"
+excerpt: "Docker Network communication. Internal to Internal and Internal to External. For Windows host"
 cover_image: "https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 project: ""
 ---
 
-In this post, I will write about how to communicate between microservices, both internally and externally.
+In this post, I will write about how to communicate between microservices, both internally and externally for windows host.
 
 The use cases I want to share today are:
 
